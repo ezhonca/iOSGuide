@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Objective-C</key>
+	<dict>
+		<key>基础语法</key>
+		<dict>
+			<key>编码规范</key>
+			<dict>
+				<key>请Review下面的代码，并根据iOS的编码规范做出正确的修改</key>
+				<string>http://www.jianshu.com/p/21cfbaca7f07</string>
+			</dict>
+			<key>关键字</key>
+			<dict/>
+			<key>属性访问</key>
+			<dict/>
+			<key>Block</key>
+			<dict/>
+			<key>Category</key>
+			<dict/>
+			<key>KVC/KVO</key>
+			<dict/>
+			<key>Protocal/Delegate</key>
+			<dict/>
+			<key>Notification</key>
+			<dict/>
+		</dict>
+		<key>面对对象</key>
+		<dict>
+			<key>Toll-Free Bridging 是什么？什么情况下会使用？</key>
+			<string>http://www.jianshu.com/p/a45f3f52a15f</string>
+			<key>New item</key>
+			<string>http://www.sina.com.cn/</string>
+		</dict>
+		<key>内存管理</key>
+		<dict/>
+		<key>多线程</key>
+		<dict/>
+		<key>Runloop</key>
+		<dict/>
+		<key>Runtime</key>
+		<dict/>
+	</dict>
+	<key>iOS</key>
+	<dict/>
+	<key>数据结构与算法</key>
+	<dict/>
+	<key>设计模式</key>
+	<dict/>
+	<key>UI设计</key>
+	<dict/>
+	<key>开发工具</key>
+	<dict/>
+</dict>
+</plist>
