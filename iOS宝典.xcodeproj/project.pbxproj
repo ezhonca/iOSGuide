@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B3A4E121F7E6689006CFEBC /* SearchResultTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3A4E111F7E6689006CFEBC /* SearchResultTableViewController.m */; };
 		8BADE9841F722B46009BB78E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BADE9831F722B46009BB78E /* main.m */; };
 		8BADE9871F722B46009BB78E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BADE9861F722B46009BB78E /* AppDelegate.m */; };
 		8BADE98D1F722B46009BB78E /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BADE98C1F722B46009BB78E /* SecondViewController.m */; };
@@ -26,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8B3A4E101F7E6689006CFEBC /* SearchResultTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultTableViewController.h; sourceTree = "<group>"; };
+		8B3A4E111F7E6689006CFEBC /* SearchResultTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultTableViewController.m; sourceTree = "<group>"; };
 		8BADE97F1F722B45009BB78E /* iOS宝典.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS宝典.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BADE9831F722B46009BB78E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8BADE9851F722B46009BB78E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -94,6 +97,8 @@
 				8BADE9861F722B46009BB78E /* AppDelegate.m */,
 				8BADE99C1F728035009BB78E /* KnowledgeViewController.h */,
 				8BADE99D1F728035009BB78E /* KnowledgeViewController.m */,
+				8B3A4E101F7E6689006CFEBC /* SearchResultTableViewController.h */,
+				8B3A4E111F7E6689006CFEBC /* SearchResultTableViewController.m */,
 				8BADE9B41F73BC64009BB78E /* KnowledgeDetailTableViewController.h */,
 				8BADE9B51F73BC64009BB78E /* KnowledgeDetailTableViewController.m */,
 				8BB429BE1F7BFBA000AE5B19 /* ContentsTableViewController.h */,
@@ -225,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BB429BD1F7A6DC600AE5B19 /* ExpandableTableViewHeaderModel.m in Sources */,
+				8B3A4E121F7E6689006CFEBC /* SearchResultTableViewController.m in Sources */,
 				8BADE98D1F722B46009BB78E /* SecondViewController.m in Sources */,
 				8BADE9B61F73BC64009BB78E /* KnowledgeDetailTableViewController.m in Sources */,
 				8BADE99E1F728035009BB78E /* KnowledgeViewController.m in Sources */,

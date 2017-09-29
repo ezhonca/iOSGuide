@@ -92,6 +92,7 @@
                     <navigationItem key="navigationItem" id="EsB-jz-6qm"/>
                     <connections>
                         <outlet property="grid" destination="J0D-fE-kiD" id="QVd-iT-iQB"/>
+                        <outlet property="searchBar" destination="If2-OC-0KT" id="jY4-De-HXS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>

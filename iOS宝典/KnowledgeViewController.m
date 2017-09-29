@@ -9,6 +9,7 @@
 #import "KnowledgeViewController.h"
 #import "CustomCollectionViewCell.h"
 #import "KnowledgeDetailTableViewController.h"
+#import "SearchResultTableViewController.h"
 
 @interface KnowledgeViewController ()
 
@@ -24,8 +25,8 @@
     self.title = @"iOS宝典";
     NSString *rootPath = [[NSBundle mainBundle] pathForResource:@"pathData" ofType:@"plist"];
     self.rootDic = [[NSDictionary alloc] initWithContentsOfFile:rootPath];
-   
-    
+    self.searchController = [[UISearchController alloc] initWithSearchResultsController:[[SearchResultTableViewController alloc] init]];
+    self.searchBar = self.searchController.searchBar;
   
 }
 
