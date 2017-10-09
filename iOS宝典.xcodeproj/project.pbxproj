@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		8B3A4E121F7E6689006CFEBC /* SearchResultTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3A4E111F7E6689006CFEBC /* SearchResultTableViewController.m */; };
+		8B3A4E181F7E9E4F006CFEBC /* SearchSuggestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3A4E171F7E9E4F006CFEBC /* SearchSuggestionViewController.m */; };
+		8B3A4E201F7EC70B006CFEBC /* SearchSuggestionTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3A4E1F1F7EC70B006CFEBC /* SearchSuggestionTableView.m */; };
+		8B3A4E241F7F7F57006CFEBC /* UIView+FrameExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3A4E231F7F7F57006CFEBC /* UIView+FrameExtension.m */; };
 		8BADE9841F722B46009BB78E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BADE9831F722B46009BB78E /* main.m */; };
 		8BADE9871F722B46009BB78E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BADE9861F722B46009BB78E /* AppDelegate.m */; };
 		8BADE98D1F722B46009BB78E /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BADE98C1F722B46009BB78E /* SecondViewController.m */; };
@@ -29,6 +32,12 @@
 /* Begin PBXFileReference section */
 		8B3A4E101F7E6689006CFEBC /* SearchResultTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultTableViewController.h; sourceTree = "<group>"; };
 		8B3A4E111F7E6689006CFEBC /* SearchResultTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultTableViewController.m; sourceTree = "<group>"; };
+		8B3A4E161F7E9E4F006CFEBC /* SearchSuggestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchSuggestionViewController.h; sourceTree = "<group>"; };
+		8B3A4E171F7E9E4F006CFEBC /* SearchSuggestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchSuggestionViewController.m; sourceTree = "<group>"; };
+		8B3A4E1E1F7EC70B006CFEBC /* SearchSuggestionTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchSuggestionTableView.h; sourceTree = "<group>"; };
+		8B3A4E1F1F7EC70B006CFEBC /* SearchSuggestionTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchSuggestionTableView.m; sourceTree = "<group>"; };
+		8B3A4E221F7F7F57006CFEBC /* UIView+FrameExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FrameExtension.h"; sourceTree = "<group>"; };
+		8B3A4E231F7F7F57006CFEBC /* UIView+FrameExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FrameExtension.m"; sourceTree = "<group>"; };
 		8BADE97F1F722B45009BB78E /* iOS宝典.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS宝典.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BADE9831F722B46009BB78E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8BADE9851F722B46009BB78E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -71,6 +80,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8B3A4E211F7F7DFE006CFEBC /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				8B3A4E221F7F7F57006CFEBC /* UIView+FrameExtension.h */,
+				8B3A4E231F7F7F57006CFEBC /* UIView+FrameExtension.m */,
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
 		8BADE9761F722B45009BB78E = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +108,7 @@
 		8BADE9811F722B45009BB78E /* iOS宝典 */ = {
 			isa = PBXGroup;
 			children = (
+				8B3A4E211F7F7DFE006CFEBC /* Extentions */,
 				8BB429B61F7A6C7A00AE5B19 /* Model */,
 				8BB429B71F7A6C7A00AE5B19 /* View */,
 				8BADE9A51F72A861009BB78E /* BlurLayout */,
@@ -97,6 +116,8 @@
 				8BADE9861F722B46009BB78E /* AppDelegate.m */,
 				8BADE99C1F728035009BB78E /* KnowledgeViewController.h */,
 				8BADE99D1F728035009BB78E /* KnowledgeViewController.m */,
+				8B3A4E161F7E9E4F006CFEBC /* SearchSuggestionViewController.h */,
+				8B3A4E171F7E9E4F006CFEBC /* SearchSuggestionViewController.m */,
 				8B3A4E101F7E6689006CFEBC /* SearchResultTableViewController.h */,
 				8B3A4E111F7E6689006CFEBC /* SearchResultTableViewController.m */,
 				8BADE9B41F73BC64009BB78E /* KnowledgeDetailTableViewController.h */,
@@ -150,6 +171,8 @@
 		8BB429B71F7A6C7A00AE5B19 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8B3A4E1E1F7EC70B006CFEBC /* SearchSuggestionTableView.h */,
+				8B3A4E1F1F7EC70B006CFEBC /* SearchSuggestionTableView.m */,
 				8BB429B81F7A6D4000AE5B19 /* ExpandableTableViewHeader.h */,
 				8BB429B91F7A6D4000AE5B19 /* ExpandableTableViewHeader.m */,
 			);
@@ -229,6 +252,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B3A4E181F7E9E4F006CFEBC /* SearchSuggestionViewController.m in Sources */,
 				8BB429BD1F7A6DC600AE5B19 /* ExpandableTableViewHeaderModel.m in Sources */,
 				8B3A4E121F7E6689006CFEBC /* SearchResultTableViewController.m in Sources */,
 				8BADE98D1F722B46009BB78E /* SecondViewController.m in Sources */,
@@ -242,6 +266,8 @@
 				8BB429C01F7BFBA000AE5B19 /* ContentsTableViewController.m in Sources */,
 				8BADE9841F722B46009BB78E /* main.m in Sources */,
 				8BADE9AB1F72A898009BB78E /* BlurView.m in Sources */,
+				8B3A4E241F7F7F57006CFEBC /* UIView+FrameExtension.m in Sources */,
+				8B3A4E201F7EC70B006CFEBC /* SearchSuggestionTableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

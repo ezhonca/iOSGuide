@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SearchSuggestionViewController.h"
 
-@interface KnowledgeViewController : UIViewController<UICollectionViewDelegate,UICollectionViewDataSource>
+@interface KnowledgeViewController : UIViewController<UICollectionViewDelegate,UICollectionViewDataSource, UISearchResultsUpdating>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *grid;
 @property (strong, nonatomic) NSDictionary *rootDic;
-@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
-@property (strong, nonatomic) UISearchController *searchController;
+@property (weak, nonatomic) IBOutlet UIView *searchBarView;
+@property (strong, nonatomic) SearchSuggestionViewController *searchController;
 
 @end

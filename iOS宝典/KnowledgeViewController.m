@@ -12,21 +12,26 @@
 #import "SearchResultTableViewController.h"
 
 @interface KnowledgeViewController ()
-
+@property(strong, nonatomic) SearchResultTableViewController *resultVC;
 @end
 
 @implementation KnowledgeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view.
     self.grid.dataSource = self;
     self.grid.delegate = self;
     self.title = @"iOS宝典";
     NSString *rootPath = [[NSBundle mainBundle] pathForResource:@"pathData" ofType:@"plist"];
     self.rootDic = [[NSDictionary alloc] initWithContentsOfFile:rootPath];
-    self.searchController = [[UISearchController alloc] initWithSearchResultsController:[[SearchResultTableViewController alloc] init]];
-    self.searchBar = self.searchController.searchBar;
+    self.resultVC = [[SearchResultTableViewController alloc] init];
+    //UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:self.resultVC];
+    self.searchController = [[SearchSuggestionViewController alloc] initWithSearchResultsController:self.resultVC];
+    [self.searchBarView addSubview:self.searchController.searchBar];
+    self.searchController.searchResultsUpdater = self;
+   
   
 }
 
@@ -84,6 +89,15 @@
 }
 
 
-
+- (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
+    //if([searchController isKindOfClass:[SearchSuggestionViewController class]]){
+       // SearchSuggestionViewController *customSearchVC = (SearchSuggestionViewController *)searchController;
+        if(self.searchController.searchBar.text.length){
+            self.searchController.tableView.hidden = YES;
+        }else{
+            self.searchController.tableView.hidden = NO;
+        }
+   // }
+}
 
 @end
