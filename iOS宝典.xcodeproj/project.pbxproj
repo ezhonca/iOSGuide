@@ -11,6 +11,7 @@
 		8B3A4E181F7E9E4F006CFEBC /* SearchSuggestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3A4E171F7E9E4F006CFEBC /* SearchSuggestionViewController.m */; };
 		8B3A4E201F7EC70B006CFEBC /* SearchSuggestionTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3A4E1F1F7EC70B006CFEBC /* SearchSuggestionTableView.m */; };
 		8B3A4E241F7F7F57006CFEBC /* UIView+FrameExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3A4E231F7F7F57006CFEBC /* UIView+FrameExtension.m */; };
+		8B4C75EE1F8C35CC009160DC /* CONSTFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4C75ED1F8C35CC009160DC /* CONSTFile.m */; };
 		8BADE9841F722B46009BB78E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BADE9831F722B46009BB78E /* main.m */; };
 		8BADE9871F722B46009BB78E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BADE9861F722B46009BB78E /* AppDelegate.m */; };
 		8BADE98D1F722B46009BB78E /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BADE98C1F722B46009BB78E /* SecondViewController.m */; };
@@ -38,6 +39,8 @@
 		8B3A4E1F1F7EC70B006CFEBC /* SearchSuggestionTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchSuggestionTableView.m; sourceTree = "<group>"; };
 		8B3A4E221F7F7F57006CFEBC /* UIView+FrameExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FrameExtension.h"; sourceTree = "<group>"; };
 		8B3A4E231F7F7F57006CFEBC /* UIView+FrameExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FrameExtension.m"; sourceTree = "<group>"; };
+		8B4C75EC1F8C35CC009160DC /* CONSTFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CONSTFile.h; sourceTree = "<group>"; };
+		8B4C75ED1F8C35CC009160DC /* CONSTFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CONSTFile.m; sourceTree = "<group>"; };
 		8BADE97F1F722B45009BB78E /* iOS宝典.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS宝典.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BADE9831F722B46009BB78E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8BADE9851F722B46009BB78E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -83,6 +86,8 @@
 		8B3A4E211F7F7DFE006CFEBC /* Extentions */ = {
 			isa = PBXGroup;
 			children = (
+				8B4C75EC1F8C35CC009160DC /* CONSTFile.h */,
+				8B4C75ED1F8C35CC009160DC /* CONSTFile.m */,
 				8B3A4E221F7F7F57006CFEBC /* UIView+FrameExtension.h */,
 				8B3A4E231F7F7F57006CFEBC /* UIView+FrameExtension.m */,
 			);
@@ -254,6 +259,7 @@
 			files = (
 				8B3A4E181F7E9E4F006CFEBC /* SearchSuggestionViewController.m in Sources */,
 				8BB429BD1F7A6DC600AE5B19 /* ExpandableTableViewHeaderModel.m in Sources */,
+				8B4C75EE1F8C35CC009160DC /* CONSTFile.m in Sources */,
 				8B3A4E121F7E6689006CFEBC /* SearchResultTableViewController.m in Sources */,
 				8BADE98D1F722B46009BB78E /* SecondViewController.m in Sources */,
 				8BADE9B61F73BC64009BB78E /* KnowledgeDetailTableViewController.m in Sources */,

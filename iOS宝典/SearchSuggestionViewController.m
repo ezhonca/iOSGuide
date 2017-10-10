@@ -19,6 +19,7 @@
     // Do any additional setup after loading the view.
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    [self.searchBar becomeFirstResponder];
 
  
 }
@@ -57,7 +58,11 @@
 - (instancetype) initWithSearchResultsController:(UIViewController *)searchResultsController {
     if(self = [super initWithSearchResultsController:searchResultsController]){
         SearchSuggestionTableView *table = [[SearchSuggestionTableView alloc] initWithFrame:CGRectMake(0, 100, 375, 500)];
-        
+        __weak SearchSuggestionViewController *weakSelf = self;
+        table.hotLabelDidClickBlock = ^(NSString *labelText){
+            weakSelf.searchBar.text = labelText;
+            
+        };
         table.delegate = self;
         table.dataSource = self;
 //        UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];

@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void (^HotLabelDidClickBlock)(NSString *);
+
 @interface SearchSuggestionTableView : UITableView
+
+@property(nonatomic, strong) HotLabelDidClickBlock hotLabelDidClickBlock;
 
 @end
