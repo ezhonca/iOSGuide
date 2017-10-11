@@ -29,6 +29,11 @@
     self.resultVC = [[SearchResultTableViewController alloc] init];
     //UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:self.resultVC];
     self.searchController = [[SearchSuggestionViewController alloc] initWithSearchResultsController:self.resultVC];
+    __weak KnowledgeViewController *weakSelf = self;
+    self.resultVC.tableViewDidScrollBlock = ^{
+        if(weakSelf.searchController.searbarDidSelected)
+          [weakSelf.searchController.searchBar resignFirstResponder];
+    };
     [self.searchBarView addSubview:self.searchController.searchBar];
     self.searchController.searchResultsUpdater = self;
    

@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+typedef void (^TableViewDidScrollBlock) (void);
 
 @interface SearchResultTableViewController : UITableViewController
+@property (nonatomic, strong) TableViewDidScrollBlock tableViewDidScrollBlock;
 
 @end

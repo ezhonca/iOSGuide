@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "SearchSuggestionTableView.h"
 
-@interface SearchSuggestionViewController : UISearchController<UITableViewDelegate, UITableViewDataSource>
+@interface SearchSuggestionViewController : UISearchController<UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
 @property (strong, nonatomic) SearchSuggestionTableView *tableView;
+@property (nonatomic, strong) NSMutableArray *historyArray;
+@property (nonatomic, assign) BOOL searbarDidSelected;
 
 @end

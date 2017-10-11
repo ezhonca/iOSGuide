@@ -98,11 +98,12 @@
                     <connections>
                         <outlet property="grid" destination="J0D-fE-kiD" id="QVd-iT-iQB"/>
                         <outlet property="searchBarView" destination="D9o-wZ-eRW" id="ryK-o5-c1j"/>
+                        <segue destination="eUs-lo-hES" kind="show" identifier="SearchResultToWebView" id="Pvm-L8-Z1M"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1688.8" y="-320.68965517241384"/>
+            <point key="canvasLocation" x="1644" y="-316"/>
         </scene>
         <!--Knowledge Detail Table View Controller-->
         <scene sceneID="NNR-3C-zhb">
@@ -133,7 +134,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="62K-PI-7xQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2492" y="-316"/>
+            <point key="canvasLocation" x="3025" y="458"/>
         </scene>
         <!--Contents Table View Controller-->
         <scene sceneID="xPS-GI-qRM">
@@ -164,7 +165,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vYc-kP-chB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3241" y="-320"/>
+            <point key="canvasLocation" x="4385" y="-321"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="iK5-ZH-8rA">
@@ -178,11 +179,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xFj-Cd-d4x">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </webView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="aZw-OB-aLo">
                                 <rect key="frame" x="177" y="323" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask"/>
@@ -193,12 +189,11 @@
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="aZw-OB-aLo" id="3kz-xh-4Ty"/>
-                        <outlet property="webView" destination="xFj-Cd-d4x" id="dft-n5-ZMW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hwK-Qn-MrW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3944.8000000000002" y="-317.09145427286359"/>
+            <point key="canvasLocation" x="3198" y="-829"/>
         </scene>
         <!--收藏-->
         <scene sceneID="wg7-f3-ORb">
@@ -290,4 +285,7 @@
         <image name="library" width="32" height="32"/>
         <image name="my" width="32" height="31"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Pvm-L8-Z1M"/>
+    </inferredMetricsTieBreakers>
 </document>

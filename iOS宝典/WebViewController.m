@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.webView.delegate = self;
+    //self.webView.delegate = self;
 
     //self.activityIndicator.hidden = YES;
 

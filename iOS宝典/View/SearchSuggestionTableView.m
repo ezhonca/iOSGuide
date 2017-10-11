@@ -52,14 +52,26 @@
     contentsView.width_Adjustable = self.frame.size.width;
     contentsView.x_Adjustable = headTitle.x_Adjustable + HOTSEARCH_MARGIN;
     contentsView.y_Adjustable = CGRectGetMaxY(headTitle.frame) + HOTSEARCH_MARGIN;
-    NSArray<NSString *> *array = @[@"1sfgdsfgdfgdfgdfgdfgdfg", @"2dfgdfgdfgdfgdfgdfgdfgdfgdfgdfgdfgdfg", @"3dfgd", @"3dsfgddsasdasd"];
+    NSArray<NSString *> *array = @[@"面对对象", @"多线程", @"设计模式", @"Delegate"];
     [self setupHotLabelsInContentsView:contentsView labelsTexts:array];
     //contentsView.height_Adjustable = 50;
     [tableHeadView addSubview:contentsView];
     UILabel *historyTitle = [self setupHotViewTitleLabel:@"搜索历史"];
     historyTitle.y_Adjustable = CGRectGetMaxY(contentsView.frame) + HOTSEARCH_MARGIN * 2;
     [tableHeadView addSubview:historyTitle];
-    tableHeadView.height_Adjustable = CGRectGetMaxY(tableHeadView.subviews.lastObject.frame);
+    UIButton *clearButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [clearButton setImage:[UIImage imageNamed:@"empty"] forState:UIControlStateNormal];
+    [clearButton setTitle:@"清空记录" forState:UIControlStateNormal];
+    [clearButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+    
+    clearButton.titleLabel.font = [UIFont systemFontOfSize:12];
+    [clearButton addTarget:self action:@selector(clearButtonDidClick) forControlEvents:UIControlEventTouchUpInside];
+    //clearButton.titleLabel.text = @"清空记录";
+    [clearButton sizeToFit];
+    clearButton.x_Adjustable = self.frame.size.width - clearButton.width_Adjustable - HOTSEARCH_MARGIN;
+    clearButton.y_Adjustable = historyTitle.y_Adjustable;
+    [tableHeadView addSubview:clearButton];
+    tableHeadView.height_Adjustable = CGRectGetMaxY(tableHeadView.subviews.lastObject.frame) + HOTSEARCH_MARGIN;
     self.tableHeaderView = tableHeadView;
     
     
@@ -68,13 +80,20 @@
     //[self.tableHeaderView addSubview:button];
 }
 
+- (void)clearButtonDidClick
+{
+    self.clearButtonClickBlock();
+    
+    
+}
+
 - (UILabel *)setupHotViewTitleLabel:(NSString *)title
 {
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, 5, 50, 20)];
     titleLabel.text = title;
     titleLabel.font = [UIFont systemFontOfSize:13];
     titleLabel.tag = 1;
-    titleLabel.textColor = [UIColor grayColor];
+    titleLabel.textColor = [UIColor orangeColor];
     [titleLabel sizeToFit];
 
     return titleLabel;
@@ -86,9 +105,10 @@
     label.userInteractionEnabled = YES;
     label.font = [UIFont systemFontOfSize:12];
     label.text = title;
-    label.textColor = [UIColor lightGrayColor];
-    label.backgroundColor = [UIColor grayColor];
-    label.layer.cornerRadius = 3;
+    label.textColor = [UIColor grayColor];
+    label.backgroundColor = [UIColor colorWithWhite:0.5 alpha:0.2];
+    //label.backgroundColor = [UIColor lightGrayColor];
+    label.layer.cornerRadius = 5;
     label.clipsToBounds = YES;
     label.textAlignment = NSTextAlignmentCenter;
     [label sizeToFit];
