@@ -7,6 +7,7 @@
 //
 
 #import "SearchResultTableViewController.h"
+#import "WebViewController.h"
 
 @interface SearchResultTableViewController ()
 
@@ -18,12 +19,17 @@
     [super viewDidLoad];
     //self.edgesForExtendedLayout = UIRectEdgeNone;
     self.navigationController.navigationBar.translucent = NO;
-    self.tableView.contentInsetAdjustmentBehavior = NO;
+    self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    //self.automaticallyAdjustsScrollViewInsets = NO;
+    
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    //UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:self];
+    //[navigationController setNavigationBarHidden:YES animated:NO];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -48,6 +54,7 @@
     UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:flag];
     if (cell==nil) {
         cell=[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:flag];
+        
     }
     cell.textLabel.text = @"111";
     return cell;
@@ -58,6 +65,14 @@
     self.tableViewDidScrollBlock();
     
     
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    self.tableViewDidSelectedBlock();
+//    WebViewController *webVC = [[WebViewController alloc] init];
+//    webVC.urlString = @"https://www.apple.com";
+//    [self.navigationController pushViewController:webVC animated:YES];
 }
 /*
 // Override to support conditional editing of the table view.
@@ -93,14 +108,28 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if([segue.identifier isEqualToString:@"SearchResultToWebView"]){
+        if([segue.destinationViewController isKindOfClass:[WebViewController class]]){
+            WebViewController *knowledgeDetailVC = segue.destinationViewController;
+            knowledgeDetailVC.urlString = @"https://www.apple.com";
+//            if([sender isKindOfClass:[CustomCollectionViewCell class]]){
+//                CustomCollectionViewCell *cell = sender;
+//                NSIndexPath *indexPath = [self.grid indexPathForCell:cell];
+//                NSString *key = [self.rootDic.allKeys objectAtIndex:indexPath.row];
+//                knowledgeDetailVC.title = key;
+//                knowledgeDetailVC.knowledgeDetailDic = [self.rootDic objectForKey:key];
+//            }
+            
+        }
+    }
 }
-*/
+
 
 @end

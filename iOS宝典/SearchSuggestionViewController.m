@@ -20,7 +20,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-  
+    //self.navi = [[UINavigationController alloc] initWithRootViewController:self];
+    //self.definesPresentationContext = YES;
     self.searbarDidSelected = NO;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;

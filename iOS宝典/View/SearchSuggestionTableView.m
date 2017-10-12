@@ -40,6 +40,7 @@
 
 - (void)setupView {
     //UIView *tableHeadView = [[UIView alloc] init];
+    
     UIView *tableHeadView = [[UIView alloc] init];
     tableHeadView.width_Adjustable = self.frame.size.width;
 //    CGRect frame = tableHeadView.frame;

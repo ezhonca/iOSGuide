@@ -10,6 +10,7 @@
 #import "CustomCollectionViewCell.h"
 #import "KnowledgeDetailTableViewController.h"
 #import "SearchResultTableViewController.h"
+#import "WebViewController.h"
 
 @interface KnowledgeViewController ()
 @property(strong, nonatomic) SearchResultTableViewController *resultVC;
@@ -19,7 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.definesPresentationContext = YES;
     // Do any additional setup after loading the view.
     self.grid.dataSource = self;
     self.grid.delegate = self;
@@ -27,13 +28,25 @@
     NSString *rootPath = [[NSBundle mainBundle] pathForResource:@"pathData" ofType:@"plist"];
     self.rootDic = [[NSDictionary alloc] initWithContentsOfFile:rootPath];
     self.resultVC = [[SearchResultTableViewController alloc] init];
-    //UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:self.resultVC];
+    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:self.searchController];
+    [nav setNavigationBarHidden:YES animated:NO];
     self.searchController = [[SearchSuggestionViewController alloc] initWithSearchResultsController:self.resultVC];
+    //self.searchController = [[SearchSuggestionViewController alloc] initWithSearchResultsController:nav];
     __weak KnowledgeViewController *weakSelf = self;
     self.resultVC.tableViewDidScrollBlock = ^{
         if(weakSelf.searchController.searbarDidSelected)
           [weakSelf.searchController.searchBar resignFirstResponder];
     };
+    self.resultVC.tableViewDidSelectedBlock = ^{
+        WebViewController *webVC = [[WebViewController alloc] init];
+        webVC.urlString = @"https://www.apple.com";
+        //[weakSelf.navigationController presentViewController:webVC animated:YES completion:nil];
+        [weakSelf.navigationController pushViewController:webVC animated:YES];
+        //[weakSelf.navigationController showViewController:webVC sender:nil];
+    };
+    //[self.searchBarView addSubview:self.searchController.searchBar];
+    
+    //SearchSuggestionViewController *s = (SearchSuggestionViewController *)nav.topViewController;
     [self.searchBarView addSubview:self.searchController.searchBar];
     self.searchController.searchResultsUpdater = self;
    

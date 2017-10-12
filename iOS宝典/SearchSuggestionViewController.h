@@ -13,5 +13,6 @@
 @property (strong, nonatomic) SearchSuggestionTableView *tableView;
 @property (nonatomic, strong) NSMutableArray *historyArray;
 @property (nonatomic, assign) BOOL searbarDidSelected;
+//@property (strong, nonatomic) UINavigationController *navi;
 
 @end
