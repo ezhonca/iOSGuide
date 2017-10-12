@@ -8,6 +8,7 @@
 
 #import "SearchResultTableViewController.h"
 #import "WebViewController.h"
+#import "CONSTFile.h"
 
 @interface SearchResultTableViewController ()
 
@@ -45,7 +46,8 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 5;
+    return self.dateDic.count;
+    
 }
 
 
@@ -54,22 +56,56 @@
     UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:flag];
     if (cell==nil) {
         cell=[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:flag];
-        
+        cell.backgroundColor = [UIColor clearColor];
     }
-    cell.textLabel.text = @"111";
+    NSString *cellText = [[self.dateDic allKeys] objectAtIndex:indexPath.row];
+    //cell.textLabel.text = [[self.dateDic allKeys] objectAtIndex:indexPath.row];
+    //cell.textLabel.minimumScaleFactor = 0.5;
+    cell.textLabel.numberOfLines = 0;
+    cell.textLabel.adjustsFontSizeToFitWidth = YES;
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:cellText];
+    NSRange range = [[attributedString string] rangeOfString:self.searchString];
+    [attributedString addAttribute:NSForegroundColorAttributeName value:[UIColor orangeColor] range:range];
+    
+    //[attributedString addAttribute:NSFontAttributeName value:[UIFont boldSystemFontOfSize:] range:range];
+    cell.textLabel.attributedText = attributedString;
+    cell.imageView.image = [UIImage imageNamed:@"search"];
+//    UIImageView *line = [[UIImageView alloc] initWithImage: [UIImage imageNamed:@"cell-content-line"]];
+//    line.height_Adjustable= 0.5;
+//    line.alpha = 0.7;
+//    line.x_Adjustable = HOTSEARCH_MARGIN;
+//    line.y_Adjustable = CGRectGetMaxY(cell.textLabel.frame) + HOTSEARCH_MARGIN;
+//    line.width_Adjustable = self.view.frame.size.width;
+//    [cell.contentView addSubview:line];
     return cell;
 }
 
--(void)scrollViewDidScroll:(UIScrollView *)scrollView
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 40;
+}
+
+//-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+//{
+//    return @"搜索结果";
+//}
+
+//-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+//{
+//    self.tableViewDidScrollBlock();
+//
+//
+//}
+
+-(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
     self.tableViewDidScrollBlock();
-    
-    
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    self.tableViewDidSelectedBlock();
+    
+    self.tableViewDidSelectedBlock([self.dateDic valueForKey:[[self.dateDic allKeys] objectAtIndex:indexPath.row]]);
 //    WebViewController *webVC = [[WebViewController alloc] init];
 //    webVC.urlString = @"https://www.apple.com";
 //    [self.navigationController pushViewController:webVC animated:YES];
@@ -131,5 +167,40 @@
     }
 }
 
+-(instancetype)init{
+    if(self = [super init]){
+        self.dateDic = [[NSMutableDictionary alloc] init];
+    }
+    return self;
+}
 
+//-(void)updateSearchResultsForSearchController:(UISearchController *)searchController
+//{
+//    NSString *searchString = [self.searchBar text];
+//    NSPredicate *preicate = [NSPredicate predicateWithFormat:@"SELF CONTAINS[c] %@", searchString];
+//    
+//    if (self.searchResultDic!= nil) {
+//        [self.searchResultDic removeAllObjects];
+//    }
+//    
+//    NSMutableArray *searchResultArray = [NSMutableArray arrayWithArray:[[self.dateDic allKeys] filteredArrayUsingPredicate:preicate]];
+//    //过滤数据
+//    for(NSString *key in searchResultArray){
+//        [self.searchResultDic setValue:self.dateDic[key] forKey:key];
+//    }
+//    SearchResultTableViewController *resultVC = (SearchResultTableViewController *)self.searchResultsController;
+//    resultVC.dateDic = self.searchResultDic;
+//    //刷新表格
+//    [resultVC.tableView reloadData];
+//}
+//- (void)setDateDicWithRootDic:(NSDictionary *)rootDic
+//{
+//    for(id key in rootDic){
+//        if([rootDic[key] isKindOfClass:[NSDictionary class]]){
+//            [self setDateDicWithRootDic:rootDic[key]];
+//        }else{
+//            [self.dateDic setValue:rootDic[key] forKey:key];
+//        }
+//    }
+//}
 @end

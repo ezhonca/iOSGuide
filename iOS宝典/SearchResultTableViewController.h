@@ -8,10 +8,15 @@
 
 #import <UIKit/UIKit.h>
 typedef void (^TableViewDidScrollBlock) (void);
-typedef void (^TableViewDidSelectedBlock) (void);
+typedef void (^TableViewDidSelectedBlock) (NSString *);
 
 @interface SearchResultTableViewController : UITableViewController
 @property (nonatomic, strong) TableViewDidScrollBlock tableViewDidScrollBlock;
 @property (nonatomic, strong) TableViewDidSelectedBlock tableViewDidSelectedBlock;
+@property (nonatomic, strong) NSMutableDictionary *dateDic;
+@property (nonatomic, strong) NSString *searchString;
+//
+//- (void)setDateDicWithRootDic:(NSDictionary *)rootDic;
+
 
 @end

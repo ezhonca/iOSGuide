@@ -8,6 +8,7 @@
 
 #import "SearchSuggestionViewController.h"
 #import "CONSTFile.h"
+#import "SearchResultTableViewController.h"
 
 @interface SearchSuggestionViewController ()
 
@@ -116,11 +117,16 @@
     
 }
 
--(void)scrollViewDidScroll:(UIScrollView *)scrollView
+//-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+//{
+//    if(self.searbarDidSelected)
+//        [self.searchBar resignFirstResponder];
+//    self.searbarDidSelected = YES;
+//}
+
+-(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
-    if(self.searbarDidSelected)
-        [self.searchBar resignFirstResponder];
-    self.searbarDidSelected = YES;
+    [self.searchBar resignFirstResponder];
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -150,6 +156,26 @@
     
     
 }
+
+//-(void)updateSearchResultsForSearchController:(UISearchController *)searchController
+//{
+//    NSString *searchString = [self.searchBar text];
+//    NSPredicate *preicate = [NSPredicate predicateWithFormat:@"SELF CONTAINS[c] %@", searchString];
+//    
+//    if (self.searchResultDic!= nil) {
+//        [self.searchResultDic removeAllObjects];
+//    }
+//    
+//    NSMutableArray *searchResultArray = [NSMutableArray arrayWithArray:[[self.dateDic allKeys] filteredArrayUsingPredicate:preicate]];
+//    //过滤数据
+//    for(NSString *key in searchResultArray){
+//        [self.searchResultDic setValue:self.dateDic[key] forKey:key];
+//    }
+//    SearchResultTableViewController *resultVC = (SearchResultTableViewController *)self.searchResultsController;
+//    resultVC.dateDic = self.searchResultDic;
+//    //刷新表格
+//    [resultVC.tableView reloadData];
+//}
 
 -(void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
 {
@@ -181,6 +207,8 @@
         };
         self.tableView.delegate = self;
         self.tableView.dataSource = self;
+     
+        //self.dateDic = [[NSMutableDictionary alloc] init];
 //        UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 //        button.frame = CGRectMake(0, 0, 50, 50);
 //        button.titleLabel.text = @"haha";
@@ -206,6 +234,15 @@
 }
 
 
-
+//- (void)setDateDicWithRootDic:(NSDictionary *)rootDic
+//{
+//    for(id key in rootDic){
+//        if([rootDic[key] isKindOfClass:[NSDictionary class]]){
+//            [self setDateDicWithRootDic:rootDic[key]];
+//        }else{
+//            [self.dateDic setValue:rootDic[key] forKey:key];
+//        }
+//    }
+//}
 
 @end

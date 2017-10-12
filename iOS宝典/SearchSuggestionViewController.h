@@ -14,5 +14,9 @@
 @property (nonatomic, strong) NSMutableArray *historyArray;
 @property (nonatomic, assign) BOOL searbarDidSelected;
 //@property (strong, nonatomic) UINavigationController *navi;
+//@property (nonatomic, strong) NSMutableDictionary *dateDic;
+//@property (nonatomic, strong) NSMutableDictionary *searchResultDic;
+//
+//- (void)setDateDicWithRootDic:(NSDictionary *)rootDic;
 
 @end
