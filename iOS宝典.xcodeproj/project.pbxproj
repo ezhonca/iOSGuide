@@ -94,6 +94,54 @@
 			path = Extentions;
 			sourceTree = "<group>";
 		};
+		8B40F21A1F97D9ED00B0D132 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8B40F21B1F97D9ED00B0D132 /* FirstVCRelated */,
+				8B40F21C1F97D9ED00B0D132 /* SecondVCRelated */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8B40F21B1F97D9ED00B0D132 /* FirstVCRelated */ = {
+			isa = PBXGroup;
+			children = (
+				8BADE99C1F728035009BB78E /* KnowledgeViewController.h */,
+				8BADE99D1F728035009BB78E /* KnowledgeViewController.m */,
+				8B3A4E161F7E9E4F006CFEBC /* SearchSuggestionViewController.h */,
+				8B3A4E171F7E9E4F006CFEBC /* SearchSuggestionViewController.m */,
+				8B3A4E101F7E6689006CFEBC /* SearchResultTableViewController.h */,
+				8B3A4E111F7E6689006CFEBC /* SearchResultTableViewController.m */,
+				8BADE9B41F73BC64009BB78E /* KnowledgeDetailTableViewController.h */,
+				8BADE9B51F73BC64009BB78E /* KnowledgeDetailTableViewController.m */,
+				8BB429BE1F7BFBA000AE5B19 /* ContentsTableViewController.h */,
+				8BB429BF1F7BFBA000AE5B19 /* ContentsTableViewController.m */,
+				8BED3C921F7C326100D8EFBB /* WebViewController.h */,
+				8BED3C931F7C326100D8EFBB /* WebViewController.m */,
+			);
+			path = FirstVCRelated;
+			sourceTree = "<group>";
+		};
+		8B40F21C1F97D9ED00B0D132 /* SecondVCRelated */ = {
+			isa = PBXGroup;
+			children = (
+				8BADE98B1F722B46009BB78E /* SecondViewController.h */,
+				8BADE98C1F722B46009BB78E /* SecondViewController.m */,
+			);
+			path = SecondVCRelated;
+			sourceTree = "<group>";
+		};
+		8B40F21D1F97D9FC00B0D132 /* FirstTabViewRelated */ = {
+			isa = PBXGroup;
+			children = (
+				8B3A4E1E1F7EC70B006CFEBC /* SearchSuggestionTableView.h */,
+				8B3A4E1F1F7EC70B006CFEBC /* SearchSuggestionTableView.m */,
+				8BB429B81F7A6D4000AE5B19 /* ExpandableTableViewHeader.h */,
+				8BB429B91F7A6D4000AE5B19 /* ExpandableTableViewHeader.m */,
+			);
+			path = FirstTabViewRelated;
+			sourceTree = "<group>";
+		};
 		8BADE9761F722B45009BB78E = {
 			isa = PBXGroup;
 			children = (
@@ -113,26 +161,12 @@
 		8BADE9811F722B45009BB78E /* iOS宝典 */ = {
 			isa = PBXGroup;
 			children = (
+				8B40F21A1F97D9ED00B0D132 /* Controller */,
 				8B3A4E211F7F7DFE006CFEBC /* Extentions */,
 				8BB429B61F7A6C7A00AE5B19 /* Model */,
 				8BB429B71F7A6C7A00AE5B19 /* View */,
-				8BADE9A51F72A861009BB78E /* BlurLayout */,
 				8BADE9851F722B46009BB78E /* AppDelegate.h */,
 				8BADE9861F722B46009BB78E /* AppDelegate.m */,
-				8BADE99C1F728035009BB78E /* KnowledgeViewController.h */,
-				8BADE99D1F728035009BB78E /* KnowledgeViewController.m */,
-				8B3A4E161F7E9E4F006CFEBC /* SearchSuggestionViewController.h */,
-				8B3A4E171F7E9E4F006CFEBC /* SearchSuggestionViewController.m */,
-				8B3A4E101F7E6689006CFEBC /* SearchResultTableViewController.h */,
-				8B3A4E111F7E6689006CFEBC /* SearchResultTableViewController.m */,
-				8BADE9B41F73BC64009BB78E /* KnowledgeDetailTableViewController.h */,
-				8BADE9B51F73BC64009BB78E /* KnowledgeDetailTableViewController.m */,
-				8BB429BE1F7BFBA000AE5B19 /* ContentsTableViewController.h */,
-				8BB429BF1F7BFBA000AE5B19 /* ContentsTableViewController.m */,
-				8BED3C921F7C326100D8EFBB /* WebViewController.h */,
-				8BED3C931F7C326100D8EFBB /* WebViewController.m */,
-				8BADE98B1F722B46009BB78E /* SecondViewController.h */,
-				8BADE98C1F722B46009BB78E /* SecondViewController.m */,
 				8BADE98E1F722B46009BB78E /* Main.storyboard */,
 				8BADE9B11F73AEAE009BB78E /* CustomCollectionViewCell.h */,
 				8BADE9B21F73AEAE009BB78E /* CustomCollectionViewCell.m */,
@@ -148,6 +182,7 @@
 		8BADE9821F722B46009BB78E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8BADE9A51F72A861009BB78E /* BlurLayout */,
 				8BADE9831F722B46009BB78E /* main.m */,
 			);
 			name = "Supporting Files";
@@ -176,10 +211,7 @@
 		8BB429B71F7A6C7A00AE5B19 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8B3A4E1E1F7EC70B006CFEBC /* SearchSuggestionTableView.h */,
-				8B3A4E1F1F7EC70B006CFEBC /* SearchSuggestionTableView.m */,
-				8BB429B81F7A6D4000AE5B19 /* ExpandableTableViewHeader.h */,
-				8BB429B91F7A6D4000AE5B19 /* ExpandableTableViewHeader.m */,
+				8B40F21D1F97D9FC00B0D132 /* FirstTabViewRelated */,
 			);
 			path = View;
 			sourceTree = "<group>";
