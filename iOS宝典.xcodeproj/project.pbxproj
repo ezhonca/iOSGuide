@@ -11,6 +11,8 @@
 		8B3A4E181F7E9E4F006CFEBC /* SearchSuggestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3A4E171F7E9E4F006CFEBC /* SearchSuggestionViewController.m */; };
 		8B3A4E201F7EC70B006CFEBC /* SearchSuggestionTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3A4E1F1F7EC70B006CFEBC /* SearchSuggestionTableView.m */; };
 		8B3A4E241F7F7F57006CFEBC /* UIView+FrameExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3A4E231F7F7F57006CFEBC /* UIView+FrameExtension.m */; };
+		8B40F22F1F97DC7D00B0D132 /* BookmarkModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8B40F22D1F97DC7D00B0D132 /* BookmarkModel.xcdatamodeld */; };
+		8B40F2321F98CAD400B0D132 /* FavoriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B40F2311F98CAD400B0D132 /* FavoriteViewController.m */; };
 		8B4C75EE1F8C35CC009160DC /* CONSTFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4C75ED1F8C35CC009160DC /* CONSTFile.m */; };
 		8BADE9841F722B46009BB78E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BADE9831F722B46009BB78E /* main.m */; };
 		8BADE9871F722B46009BB78E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BADE9861F722B46009BB78E /* AppDelegate.m */; };
@@ -39,6 +41,9 @@
 		8B3A4E1F1F7EC70B006CFEBC /* SearchSuggestionTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchSuggestionTableView.m; sourceTree = "<group>"; };
 		8B3A4E221F7F7F57006CFEBC /* UIView+FrameExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FrameExtension.h"; sourceTree = "<group>"; };
 		8B3A4E231F7F7F57006CFEBC /* UIView+FrameExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FrameExtension.m"; sourceTree = "<group>"; };
+		8B40F22E1F97DC7D00B0D132 /* BookmarkModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BookmarkModel.xcdatamodel; sourceTree = "<group>"; };
+		8B40F2301F98CAD400B0D132 /* FavoriteViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FavoriteViewController.h; sourceTree = "<group>"; };
+		8B40F2311F98CAD400B0D132 /* FavoriteViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FavoriteViewController.m; sourceTree = "<group>"; };
 		8B4C75EC1F8C35CC009160DC /* CONSTFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CONSTFile.h; sourceTree = "<group>"; };
 		8B4C75ED1F8C35CC009160DC /* CONSTFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CONSTFile.m; sourceTree = "<group>"; };
 		8BADE97F1F722B45009BB78E /* iOS宝典.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS宝典.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,6 +130,8 @@
 		8B40F21C1F97D9ED00B0D132 /* SecondVCRelated */ = {
 			isa = PBXGroup;
 			children = (
+				8B40F2301F98CAD400B0D132 /* FavoriteViewController.h */,
+				8B40F2311F98CAD400B0D132 /* FavoriteViewController.m */,
 				8BADE98B1F722B46009BB78E /* SecondViewController.h */,
 				8BADE98C1F722B46009BB78E /* SecondViewController.m */,
 			);
@@ -161,6 +168,7 @@
 		8BADE9811F722B45009BB78E /* iOS宝典 */ = {
 			isa = PBXGroup;
 			children = (
+				8B40F22D1F97DC7D00B0D132 /* BookmarkModel.xcdatamodeld */,
 				8B40F21A1F97D9ED00B0D132 /* Controller */,
 				8B3A4E211F7F7DFE006CFEBC /* Extentions */,
 				8BB429B61F7A6C7A00AE5B19 /* Model */,
@@ -300,6 +308,8 @@
 				8BADE9871F722B46009BB78E /* AppDelegate.m in Sources */,
 				8BADE9B31F73AEAE009BB78E /* CustomCollectionViewCell.m in Sources */,
 				8BED3C941F7C326100D8EFBB /* WebViewController.m in Sources */,
+				8B40F22F1F97DC7D00B0D132 /* BookmarkModel.xcdatamodeld in Sources */,
+				8B40F2321F98CAD400B0D132 /* FavoriteViewController.m in Sources */,
 				8BB429BA1F7A6D4000AE5B19 /* ExpandableTableViewHeader.m in Sources */,
 				8BB429C01F7BFBA000AE5B19 /* ContentsTableViewController.m in Sources */,
 				8BADE9841F722B46009BB78E /* main.m in Sources */,
@@ -479,6 +489,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8B40F22D1F97DC7D00B0D132 /* BookmarkModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8B40F22E1F97DC7D00B0D132 /* BookmarkModel.xcdatamodel */,
+			);
+			currentVersion = 8B40F22E1F97DC7D00B0D132 /* BookmarkModel.xcdatamodel */;
+			path = BookmarkModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 8BADE9771F722B45009BB78E /* Project object */;
 }
