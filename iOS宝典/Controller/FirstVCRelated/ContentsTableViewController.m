@@ -8,8 +8,11 @@
 
 #import "ContentsTableViewController.h"
 #import "WebViewController.h"
+#import "AppDelegate.h"
 
 @interface ContentsTableViewController ()
+
+@property(strong, nonatomic) NSString *key;
 
 @end
 
@@ -24,6 +27,14 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
+
+//- (void)viewWillDisappear:(BOOL)animated
+//{
+//    [super viewWillDisappear:animated];
+//    [self resignFirstResponder];
+//    [[UIMenuController sharedMenuController] setMenuVisible:NO];
+//
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -45,14 +56,89 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    cell.textLabel.text = [[self.contentsDic allKeys] objectAtIndex:indexPath.row];
+    NSString *key = [[self.contentsDic allKeys] objectAtIndex:indexPath.row];
+    cell.textLabel.text = key;
+  
     // Configure the cell...
     //cell.textLabel.minimumScaleFactor = 0.5;
     cell.textLabel.numberOfLines = 0;
     cell.textLabel.adjustsFontSizeToFitWidth = YES;
+    UILongPressGestureRecognizer *longPress=[[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(longPress:)];
+    [cell addGestureRecognizer:longPress];
     return cell;
 }
 
+-(void)longPress:(UILongPressGestureRecognizer *)recognizer
+{
+    if (recognizer.state == UIGestureRecognizerStateBegan) {
+
+        UITableViewCell *cell = (UITableViewCell *)recognizer.view;
+        [self becomeFirstResponder];
+        
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+        self.key = [[self.contentsDic allKeys] objectAtIndex:indexPath.row];
+        UIMenuItem *favorate = [[UIMenuItem alloc] initWithTitle:@"收藏" action:@selector(addFavorate:)];
+        
+        UIMenuController *menu = [UIMenuController sharedMenuController];
+        [menu setMenuItems:[NSArray arrayWithObjects:favorate, nil]];
+        [menu setTargetRect:cell.frame inView:cell.superview];
+        [menu setMenuVisible:YES animated:YES];
+        //[cell resignFirstResponder];
+        //[menu setMenuVisible:NO];
+//        if (![menu isMenuVisible]) {
+//            UIWindow *window = [[UIApplication sharedApplication].delegate window];
+//            if ([window isKeyWindow] == NO) {
+//                [window becomeKeyWindow];
+//                [window makeKeyAndVisible];
+//                [menu setMenuVisible:YES animated:YES];
+//            }  }
+    }
+}
+
+-(void)addFavorate:(id)sender
+{
+    //id view = [sender superview];
+    NSLog(@"举报啦");
+    if([sender isKindOfClass:[UIMenuController class]]){
+//
+//        Bookmark *bookmark = [[Bookmark alloc] init];
+//        bookmark.name = self.key;
+//        bookmark.urlString = [self.contentsDic objectForKey:self.key];
+        AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+        NSManagedObjectContext *managedObjectContext = app.persistentContainer.viewContext;
+//        [managedObjectContext insertObject:bookmark];
+        
+        Bookmark *bookmark = [[Bookmark alloc] initWithContext:managedObjectContext];
+        bookmark.name = self.key;
+        bookmark.urlString = [self.contentsDic objectForKey:self.key];
+        NSError *error = nil;
+        if (![managedObjectContext save:&error]) {
+            // Replace this implementation with code to handle the error appropriately.
+            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            NSLog(@"Unresolved error %@, %@", error, error.userInfo);
+            abort();
+        }
+    
+    
+    }
+}
+
+- (BOOL)canPerformAction:(SEL)action withSender:(id)sender{
+    if (action == @selector(addFavorate:))
+    {
+        return YES;
+    }
+   
+    
+    return NO;
+    
+
+}
+
+-(BOOL)canBecomeFirstResponder
+{
+    return YES;
+}
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 40;

@@ -7,6 +7,7 @@
 //
 
 #import "FavoriteViewController.h"
+#import "AppDelegate.h"
 
 @interface FavoriteViewController ()
 
@@ -16,7 +17,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    self.managedObjectContext = app.persistentContainer.viewContext;;
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     

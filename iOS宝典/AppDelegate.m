@@ -64,7 +64,7 @@
 {
     @synchronized (self){
         if(_persistentContainer == nil){
-            _persistentContainer = [[NSPersistentContainer alloc] initWithName:@"chaojinglou"];
+            _persistentContainer = [[NSPersistentContainer alloc] initWithName:@"BookmarkModel"];
             [_persistentContainer loadPersistentStoresWithCompletionHandler:^(NSPersistentStoreDescription *storeDescription, NSError *error) {
                 if (error != nil) {
                     // Replace this implementation with code to handle the error appropriately.
