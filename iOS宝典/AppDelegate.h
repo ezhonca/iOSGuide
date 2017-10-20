@@ -14,6 +14,7 @@
 @property (strong, nonatomic) UIWindow *window;
 
 @property (nonatomic, strong, readonly) NSPersistentContainer *persistentContainer;
+@property (nonatomic, strong) NSMutableSet *favoriteMutableSet;
 
 - (void)saveContext;
 

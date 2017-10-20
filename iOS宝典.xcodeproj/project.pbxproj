@@ -30,6 +30,7 @@
 		8BB429BD1F7A6DC600AE5B19 /* ExpandableTableViewHeaderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB429BC1F7A6DC600AE5B19 /* ExpandableTableViewHeaderModel.m */; };
 		8BB429C01F7BFBA000AE5B19 /* ContentsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB429BF1F7BFBA000AE5B19 /* ContentsTableViewController.m */; };
 		8BED3C941F7C326100D8EFBB /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BED3C931F7C326100D8EFBB /* WebViewController.m */; };
+		8BF24C051F99CC7F00A223BD /* BookmarkHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BF24C041F99CC7F00A223BD /* BookmarkHandle.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +76,8 @@
 		8BB429BF1F7BFBA000AE5B19 /* ContentsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentsTableViewController.m; sourceTree = "<group>"; };
 		8BED3C921F7C326100D8EFBB /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		8BED3C931F7C326100D8EFBB /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		8BF24C031F99CC7F00A223BD /* BookmarkHandle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookmarkHandle.h; sourceTree = "<group>"; };
+		8BF24C041F99CC7F00A223BD /* BookmarkHandle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookmarkHandle.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,7 +171,7 @@
 		8BADE9811F722B45009BB78E /* iOS宝典 */ = {
 			isa = PBXGroup;
 			children = (
-				8B40F22D1F97DC7D00B0D132 /* BookmarkModel.xcdatamodeld */,
+				8BF24C021F99CB5800A223BD /* CoreData */,
 				8B40F21A1F97D9ED00B0D132 /* Controller */,
 				8B3A4E211F7F7DFE006CFEBC /* Extentions */,
 				8BB429B61F7A6C7A00AE5B19 /* Model */,
@@ -222,6 +225,16 @@
 				8B40F21D1F97D9FC00B0D132 /* FirstTabViewRelated */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		8BF24C021F99CB5800A223BD /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				8BF24C031F99CC7F00A223BD /* BookmarkHandle.h */,
+				8BF24C041F99CC7F00A223BD /* BookmarkHandle.m */,
+				8B40F22D1F97DC7D00B0D132 /* BookmarkModel.xcdatamodeld */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -314,6 +327,7 @@
 				8BB429C01F7BFBA000AE5B19 /* ContentsTableViewController.m in Sources */,
 				8BADE9841F722B46009BB78E /* main.m in Sources */,
 				8BADE9AB1F72A898009BB78E /* BlurView.m in Sources */,
+				8BF24C051F99CC7F00A223BD /* BookmarkHandle.m in Sources */,
 				8B3A4E241F7F7F57006CFEBC /* UIView+FrameExtension.m in Sources */,
 				8B3A4E201F7EC70B006CFEBC /* SearchSuggestionTableView.m in Sources */,
 			);

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Bookmark+CoreDataClass.h"
+#import "BookmarkHandle.h"
 
 @interface ContentsTableViewController : UITableViewController
 

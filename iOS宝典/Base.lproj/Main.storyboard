@@ -128,7 +128,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="62K-PI-7xQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3025" y="458"/>
+            <point key="canvasLocation" x="3364" y="457.42128935532236"/>
         </scene>
         <!--Contents Table View Controller-->
         <scene sceneID="xPS-GI-qRM">
@@ -179,7 +179,7 @@
             </objects>
             <point key="canvasLocation" x="3198" y="-829"/>
         </scene>
-        <!--收藏-->
+        <!--Favorite View Controller-->
         <scene sceneID="8uJ-nN-Iu5">
             <objects>
                 <tableViewController storyboardIdentifier="favoriteVC" id="R0K-tu-Qog" customClass="FavoriteViewController" sceneMemberID="viewController">
@@ -195,6 +195,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="eUs-lo-hES" kind="show" identifier="ShowWebFromFavorite" id="glX-hG-Jee"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -202,11 +205,11 @@
                             <outlet property="delegate" destination="R0K-tu-Qog" id="hmN-Kz-JPG"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="收藏" image="favorate" id="BbX-Cw-2zt"/>
+                    <navigationItem key="navigationItem" id="usX-gY-Rsm"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dyg-DD-eCa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-105" y="546"/>
+            <point key="canvasLocation" x="1564" y="545"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -225,7 +228,7 @@
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="jab-eP-ZlG" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
-                        <segue destination="R0K-tu-Qog" kind="relationship" relationship="viewControllers" id="Aif-Mr-wkM"/>
+                        <segue destination="fPY-Hl-J9D" kind="relationship" relationship="viewControllers" id="Aif-Mr-wkM"/>
                         <segue destination="r87-Jy-pul" kind="relationship" relationship="viewControllers" id="Ouo-q6-MtW"/>
                     </connections>
                 </tabBarController>
@@ -241,6 +244,7 @@
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9TG-OH-kCd">
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="0.5560616961" blue="0.17234071200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -251,6 +255,25 @@
             </objects>
             <point key="canvasLocation" x="749.60000000000002" y="-320.68965517241384"/>
         </scene>
+        <!--收藏-->
+        <scene sceneID="b1t-P2-RUF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fPY-Hl-J9D" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="收藏" image="favorate" id="BbX-Cw-2zt"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RTO-aI-4Uv">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="0.5560616961" blue="0.17234071200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="R0K-tu-Qog" kind="relationship" relationship="rootViewController" id="cDK-6B-Hde"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m8D-IL-owH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-105.59999999999999" y="545.1274362818591"/>
+        </scene>
     </scenes>
     <resources>
         <image name="book-orange" width="64" height="64"/>
@@ -259,6 +282,6 @@
         <image name="my" width="32" height="31"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="YvX-Q4-5bl"/>
+        <segue reference="Pvm-L8-Z1M"/>
     </inferredMetricsTieBreakers>
 </document>

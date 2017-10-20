@@ -10,10 +10,11 @@
 #import "WebViewController.h"
 #import "AppDelegate.h"
 
+
 @interface ContentsTableViewController ()
 
 @property(strong, nonatomic) NSString *key;
-
+@property(strong, nonatomic) UIMenuItem *favorate;
 @end
 
 @implementation ContentsTableViewController
@@ -73,14 +74,18 @@
     if (recognizer.state == UIGestureRecognizerStateBegan) {
 
         UITableViewCell *cell = (UITableViewCell *)recognizer.view;
+        //bool a = [cell isFirstResponder];
         [self becomeFirstResponder];
-        
+        //[cell becomeFirstResponder];
         NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
         self.key = [[self.contentsDic allKeys] objectAtIndex:indexPath.row];
-        UIMenuItem *favorate = [[UIMenuItem alloc] initWithTitle:@"收藏" action:@selector(addFavorate:)];
         
+        //UIMenuItem *favorate = [[UIMenuItem alloc] initWithTitle:@"收藏" action:@selector(addFavorate:)];
+        if(self.favorate == nil){
+            self.favorate = [[UIMenuItem alloc] initWithTitle:@"收藏" action:@selector(addFavorate:)];
+        }
         UIMenuController *menu = [UIMenuController sharedMenuController];
-        [menu setMenuItems:[NSArray arrayWithObjects:favorate, nil]];
+        [menu setMenuItems:[NSArray arrayWithObjects:self.favorate, nil]];
         [menu setTargetRect:cell.frame inView:cell.superview];
         [menu setMenuVisible:YES animated:YES];
         //[cell resignFirstResponder];
@@ -100,24 +105,26 @@
     //id view = [sender superview];
     NSLog(@"举报啦");
     if([sender isKindOfClass:[UIMenuController class]]){
+        [BookmarkHandle InsertBookmark:self.key WithBookmarkUrl:[self.contentsDic objectForKey:self.key]];
 //
 //        Bookmark *bookmark = [[Bookmark alloc] init];
 //        bookmark.name = self.key;
 //        bookmark.urlString = [self.contentsDic objectForKey:self.key];
-        AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication] delegate];
-        NSManagedObjectContext *managedObjectContext = app.persistentContainer.viewContext;
-//        [managedObjectContext insertObject:bookmark];
-        
-        Bookmark *bookmark = [[Bookmark alloc] initWithContext:managedObjectContext];
-        bookmark.name = self.key;
-        bookmark.urlString = [self.contentsDic objectForKey:self.key];
-        NSError *error = nil;
-        if (![managedObjectContext save:&error]) {
-            // Replace this implementation with code to handle the error appropriately.
-            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-            NSLog(@"Unresolved error %@, %@", error, error.userInfo);
-            abort();
-        }
+//        AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+//        NSManagedObjectContext *managedObjectContext = app.persistentContainer.viewContext;
+////        [managedObjectContext insertObject:bookmark];
+//
+//        Bookmark *bookmark = [[Bookmark alloc] initWithContext:managedObjectContext];
+//        bookmark.name = self.key;
+//        bookmark.urlString = [self.contentsDic objectForKey:self.key];
+//        NSError *error = nil;
+//        if (![managedObjectContext save:&error]) {
+//            // Replace this implementation with code to handle the error appropriately.
+//            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+//            NSLog(@"Unresolved error %@, %@", error, error.userInfo);
+//            abort();
+//        }
+       
     
     
     }

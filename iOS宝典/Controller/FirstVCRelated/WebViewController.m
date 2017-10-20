@@ -10,6 +10,8 @@
 
 @interface WebViewController ()
 
+@property (strong, nonatomic)UIBarButtonItem *favoriteBarButtonItem;
+
 @end
 
 @implementation WebViewController
@@ -27,6 +29,7 @@
     self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     self.activityIndicator.center = self.view.center;
      [self.activityIndicator startAnimating];
+    self.navigationItem.rightBarButtonItem = self.favoriteBarButtonItem;
     [self.view addSubview:self.activityIndicator];
     
    
@@ -34,6 +37,14 @@
 
 }
 
+-(UIBarButtonItem *)favoriteBarButtonItem
+{
+    if(_favoriteBarButtonItem == nil){
+        _favoriteBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"favorites"] style:UIBarButtonItemStylePlain target:self action:@selector(favoriteBarButtonClick:)];
+    }
+    
+    return _favoriteBarButtonItem;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

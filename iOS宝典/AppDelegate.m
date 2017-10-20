@@ -14,8 +14,17 @@
 
 @end
 
+
 @implementation AppDelegate
 
+-(NSMutableSet *)favoriteMutableSet
+{
+    if(_favoriteMutableSet == nil){
+        _favoriteMutableSet = [[NSMutableSet alloc] init];
+    }
+    
+    return _favoriteMutableSet;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.

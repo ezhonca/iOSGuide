@@ -8,7 +8,8 @@
 
 #import "FavoriteViewController.h"
 #import "AppDelegate.h"
-
+#import "WebViewController.h"
+#import "BookmarkHandle.h"
 @interface FavoriteViewController ()
 
 @end
@@ -18,7 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication] delegate];
-    self.managedObjectContext = app.persistentContainer.viewContext;;
+    self.managedObjectContext = app.persistentContainer.viewContext;
+    self.title = @"我的收藏";
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -68,14 +70,15 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
         //[tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-        NSManagedObjectContext *context = self.fechedResultController.managedObjectContext;
-        [context deleteObject:[self.fechedResultController objectAtIndexPath:indexPath]];
-        
-        NSError *error = nil;
-        if(![context save:&error]){
-            NSLog(@"Unresolved error %@, %@", error, error.userInfo);
-            abort();
-        }
+//        NSManagedObjectContext *context = self.fechedResultController.managedObjectContext;
+//        [context deleteObject:[self.fechedResultController objectAtIndexPath:indexPath]];
+//
+//        NSError *error = nil;
+//        if(![context save:&error]){
+//            NSLog(@"Unresolved error %@, %@", error, error.userInfo);
+//            abort();
+//        }
+        [BookmarkHandle DeleteBookmark:[self.fechedResultController objectAtIndexPath:indexPath]];
         
     }
 //    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
@@ -105,6 +108,22 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if([segue.identifier isEqualToString:@"ShowWebFromFavorite"]){
+        if([segue.destinationViewController isKindOfClass:[WebViewController class]]){
+            WebViewController *vc = segue.destinationViewController;
+            if([sender isKindOfClass:[UITableViewCell class]]){
+                UITableViewCell *cell = sender;
+                NSString *key = cell.textLabel.text;
+                NSFetchRequest<Bookmark *> *request = Bookmark.fetchRequest;
+                NSPredicate * pre = [NSPredicate predicateWithFormat:@"name CONTAINS %@",key];
+                request.predicate = pre;
+                NSArray<Bookmark *> *array = [self.managedObjectContext executeFetchRequest:request error:NULL];
+                vc.urlString = array[0].urlString;
+                //vc.title = [self.contentsDic objectForKey:key];
+                
+            }
+        }
+    }
 }
 
 #pragma mark - Fetched results controller
