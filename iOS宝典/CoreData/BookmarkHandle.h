@@ -17,4 +17,8 @@
 
 + (void)DeleteBookmark:(id)object;
 
++ (Bookmark *)FetchBookmark:(NSString *)name;
+
++ (NSMutableSet *)FetchAllBookmark;
+
 @end

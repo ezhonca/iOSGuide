@@ -61,7 +61,7 @@
         //if(weakSelf.searchController.searbarDidSelected)
           [weakSelf.searchController.searchBar resignFirstResponder];
     };
-    self.resultVC.tableViewDidSelectedBlock = ^(NSString *url){
+    self.resultVC.tableViewDidSelectedBlock = ^(NSString *name, NSString *urlString){
         if(![weakSelf.searchController.historyArray containsObject:weakSelf.searchController.searchBar.text]){
             [weakSelf.searchController.historyArray insertObject:weakSelf.searchController.searchBar.text atIndex:0];
             if(weakSelf.searchController.historyArray.count > SEARCHHISTORY_COUNT){
@@ -72,7 +72,9 @@
             
         }
         WebViewController *webVC = [[WebViewController alloc] init];
-        webVC.urlString = url;
+        //webVC.bookmark = [BookmarkHandle FetchBookmark:name];
+        webVC.name = name;
+        webVC.urlString = urlString;
         //[weakSelf.navigationController presentViewController:webVC animated:YES completion:nil];
         [weakSelf.navigationController pushViewController:webVC animated:YES];
         //[weakSelf.navigationController showViewController:webVC sender:nil];

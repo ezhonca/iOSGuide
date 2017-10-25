@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "SearchSuggestionViewController.h"
+#import "BookmarkHandle.h"
 
 @interface KnowledgeViewController : UIViewController<UICollectionViewDelegate,UICollectionViewDataSource, UISearchResultsUpdating>
 

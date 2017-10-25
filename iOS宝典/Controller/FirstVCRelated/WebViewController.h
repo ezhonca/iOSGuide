@@ -8,10 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import <WebKit/WebKit.h>
+#import "BookmarkModel+CoreDataModel.h"
+#import "AppDelegate.h"
+#import "BookmarkHandle.h"
 
 @interface WebViewController : UIViewController<WKNavigationDelegate>
 
 @property(nonatomic, strong) NSString *urlString;
+@property(nonatomic, strong) NSString *name;
+//@property(nonatomic, strong) Bookmark *bookmark;
 @property (strong, nonatomic) WKWebView *webView;
 @property (strong, nonatomic) UIActivityIndicatorView *activityIndicator;
 

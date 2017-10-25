@@ -114,11 +114,12 @@
             if([sender isKindOfClass:[UITableViewCell class]]){
                 UITableViewCell *cell = sender;
                 NSString *key = cell.textLabel.text;
-                NSFetchRequest<Bookmark *> *request = Bookmark.fetchRequest;
-                NSPredicate * pre = [NSPredicate predicateWithFormat:@"name CONTAINS %@",key];
-                request.predicate = pre;
-                NSArray<Bookmark *> *array = [self.managedObjectContext executeFetchRequest:request error:NULL];
-                vc.urlString = array[0].urlString;
+//                NSFetchRequest<Bookmark *> *request = Bookmark.fetchRequest;
+//                NSPredicate * pre = [NSPredicate predicateWithFormat:@"name CONTAINS %@",key];
+//                request.predicate = pre;
+//                NSArray<Bookmark *> *array = [self.managedObjectContext executeFetchRequest:request error:NULL];
+                vc.urlString = [BookmarkHandle FetchBookmark:key].urlString;
+                vc.name = key;
                 //vc.title = [self.contentsDic objectForKey:key];
                 
             }

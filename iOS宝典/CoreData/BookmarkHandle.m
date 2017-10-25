@@ -30,12 +30,12 @@
  
 }
 
-+ (void)DeleteBookmark:(id)object
++ (void)DeleteBookmark:(NSString *)name
 {
     AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     NSManagedObjectContext *context = app.persistentContainer.viewContext;;
-    [context deleteObject:object];
-    
+    [context deleteObject:[BookmarkHandle FetchBookmark:name]];
+    [app.favoriteMutableSet removeObject:name];
     NSError *error = nil;
     if(![context save:&error]){
         NSLog(@"Unresolved error %@, %@", error, error.userInfo);
@@ -43,6 +43,35 @@
     }
 }
 
++ (Bookmark *)FetchBookmark:(NSString *)name
+{
+    AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *managedObjectContext = app.persistentContainer.viewContext;
+    NSFetchRequest<Bookmark *> *request = Bookmark.fetchRequest;
+    NSPredicate * pre = [NSPredicate predicateWithFormat:@"name CONTAINS %@",name];
+    request.predicate = pre;
+    NSArray<Bookmark *> *array = [managedObjectContext executeFetchRequest:request error:NULL];
+    if(array.count < 1){
+        return nil;
+    }else{
+        return array[0];
+    }
+    
+    
+}
 
++ (NSMutableSet *)FetchAllBookmark
+{
+    NSMutableSet *mutableSet = [[NSMutableSet alloc] init];
+    AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *managedObjectContext = app.persistentContainer.viewContext;
+    NSFetchRequest<Bookmark *> *request = Bookmark.fetchRequest;
+    NSArray<Bookmark *> *array = [managedObjectContext executeFetchRequest:request error:NULL];
+    for(Bookmark *bookmark in array){
+        [mutableSet addObject:bookmark.name];
+    }
+    
+    return mutableSet;
+}
 
 @end

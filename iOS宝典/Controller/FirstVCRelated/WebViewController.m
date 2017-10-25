@@ -18,11 +18,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //self.hidesBottomBarWhenPushed = YES;
+    self.tabBarController.tabBar.hidden = YES;
     // Do any additional setup after loading the view.
     //self.webView.delegate = self;
 
     self.webView = [[WKWebView alloc] initWithFrame:self.view.bounds];
-    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.urlString]]];
+    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.urlString] cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:120]];
     //[self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://www.apple.com"]]];
     self.webView.navigationDelegate = self;
     [self.view addSubview:self.webView];
@@ -37,13 +39,41 @@
 
 }
 
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    self.tabBarController.tabBar.hidden = NO;
+}
+
+-(NSMutableSet *)favoriteSet
+{
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    return appDelegate.favoriteMutableSet;
+}
+
 -(UIBarButtonItem *)favoriteBarButtonItem
 {
     if(_favoriteBarButtonItem == nil){
-        _favoriteBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"favorites"] style:UIBarButtonItemStylePlain target:self action:@selector(favoriteBarButtonClick:)];
+        if([[self favoriteSet] containsObject:self.name]){
+            _favoriteBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"isFavorite"] style:UIBarButtonItemStylePlain target:self action:@selector(favoriteBarButtonClick:)];
+        }else{
+             _favoriteBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"isNotFavorite"] style:UIBarButtonItemStylePlain target:self action:@selector(favoriteBarButtonClick:)];
+        }
+       
     }
     
     return _favoriteBarButtonItem;
+}
+
+- (void)favoriteBarButtonClick:(id)sender
+{
+    if([[self favoriteSet] containsObject:self.name]){
+        [BookmarkHandle DeleteBookmark:self.name];
+        [self.navigationItem.rightBarButtonItem setImage:[UIImage imageNamed:@"isNotFavorite"]];
+    }else{
+        [BookmarkHandle InsertBookmark:self.name WithBookmarkUrl:self.urlString];
+        [self.navigationItem.rightBarButtonItem setImage:[UIImage imageNamed:@"isFavorite"]];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

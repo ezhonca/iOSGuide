@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 typedef void (^TableViewDidScrollBlock) (void);
-typedef void (^TableViewDidSelectedBlock) (NSString *);
+typedef void (^TableViewDidSelectedBlock) (NSString *, NSString *);
 
 @interface SearchResultTableViewController : UITableViewController
 @property (nonatomic, strong) TableViewDidScrollBlock tableViewDidScrollBlock;

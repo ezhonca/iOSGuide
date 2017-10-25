@@ -21,6 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //self.hidesBottomBarWhenPushed = YES;
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -195,6 +196,8 @@
             if([sender isKindOfClass:[UITableViewCell class]]){
                 UITableViewCell *cell = sender;
                 NSString *key = cell.textLabel.text;
+                //vc.bookmark = [BookmarkHandle FetchBookmark:key];
+                vc.name = key;
                 vc.urlString = [self.contentsDic objectForKey:key];
                 //vc.title = [self.contentsDic objectForKey:key];
             

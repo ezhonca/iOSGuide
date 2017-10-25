@@ -105,7 +105,8 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    self.tableViewDidSelectedBlock([self.dateDic valueForKey:[[self.dateDic allKeys] objectAtIndex:indexPath.row]]);
+    //self.tableViewDidSelectedBlock([self.dateDic valueForKey:[[self.dateDic allKeys] objectAtIndex:indexPath.row]]);
+    self.tableViewDidSelectedBlock([[self.dateDic allKeys] objectAtIndex:indexPath.row],[self.dateDic valueForKey:[[self.dateDic allKeys] objectAtIndex:indexPath.row]]);
 //    WebViewController *webVC = [[WebViewController alloc] init];
 //    webVC.urlString = @"https://www.apple.com";
 //    [self.navigationController pushViewController:webVC animated:YES];
@@ -153,8 +154,8 @@
     // Pass the selected object to the new view controller.
     if([segue.identifier isEqualToString:@"SearchResultToWebView"]){
         if([segue.destinationViewController isKindOfClass:[WebViewController class]]){
-            WebViewController *knowledgeDetailVC = segue.destinationViewController;
-            knowledgeDetailVC.urlString = @"https://www.apple.com";
+            //WebViewController *knowledgeDetailVC = segue.destinationViewController;
+            //knowledgeDetailVC.urlString = @"https://www.apple.com";
 //            if([sender isKindOfClass:[CustomCollectionViewCell class]]){
 //                CustomCollectionViewCell *cell = sender;
 //                NSIndexPath *indexPath = [self.grid indexPathForCell:cell];

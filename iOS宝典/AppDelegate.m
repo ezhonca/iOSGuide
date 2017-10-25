@@ -20,7 +20,7 @@
 -(NSMutableSet *)favoriteMutableSet
 {
     if(_favoriteMutableSet == nil){
-        _favoriteMutableSet = [[NSMutableSet alloc] init];
+        _favoriteMutableSet = [BookmarkHandle FetchAllBookmark];
     }
     
     return _favoriteMutableSet;
