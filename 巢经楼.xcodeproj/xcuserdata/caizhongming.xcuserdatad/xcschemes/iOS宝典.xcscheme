@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8BADE97E1F722B45009BB78E"
-               BuildableName = "iOS&#x5b9d;&#x5178;.app"
-               BlueprintName = "iOS&#x5b9d;&#x5178;"
-               ReferencedContainer = "container:iOS&#x5b9d;&#x5178;.xcodeproj">
+               BuildableName = "&#x5de2;&#x7ecf;&#x697c;.app"
+               BlueprintName = "&#x5de2;&#x7ecf;&#x697c;"
+               ReferencedContainer = "container:&#x5de2;&#x7ecf;&#x697c;.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,9 +34,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8BADE97E1F722B45009BB78E"
-            BuildableName = "iOS&#x5b9d;&#x5178;.app"
-            BlueprintName = "iOS&#x5b9d;&#x5178;"
-            ReferencedContainer = "container:iOS&#x5b9d;&#x5178;.xcodeproj">
+            BuildableName = "&#x5de2;&#x7ecf;&#x697c;.app"
+            BlueprintName = "&#x5de2;&#x7ecf;&#x697c;"
+            ReferencedContainer = "container:&#x5de2;&#x7ecf;&#x697c;.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -58,9 +58,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8BADE97E1F722B45009BB78E"
-            BuildableName = "iOS&#x5b9d;&#x5178;.app"
-            BlueprintName = "iOS&#x5b9d;&#x5178;"
-            ReferencedContainer = "container:iOS&#x5b9d;&#x5178;.xcodeproj">
+            BuildableName = "&#x5de2;&#x7ecf;&#x697c;.app"
+            BlueprintName = "&#x5de2;&#x7ecf;&#x697c;"
+            ReferencedContainer = "container:&#x5de2;&#x7ecf;&#x697c;.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -77,9 +77,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8BADE97E1F722B45009BB78E"
-            BuildableName = "iOS&#x5b9d;&#x5178;.app"
-            BlueprintName = "iOS&#x5b9d;&#x5178;"
-            ReferencedContainer = "container:iOS&#x5b9d;&#x5178;.xcodeproj">
+            BuildableName = "&#x5de2;&#x7ecf;&#x697c;.app"
+            BlueprintName = "&#x5de2;&#x7ecf;&#x697c;"
+            ReferencedContainer = "container:&#x5de2;&#x7ecf;&#x697c;.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

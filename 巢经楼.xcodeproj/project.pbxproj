@@ -11,6 +11,8 @@
 		8B3A4E181F7E9E4F006CFEBC /* SearchSuggestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3A4E171F7E9E4F006CFEBC /* SearchSuggestionViewController.m */; };
 		8B3A4E201F7EC70B006CFEBC /* SearchSuggestionTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3A4E1F1F7EC70B006CFEBC /* SearchSuggestionTableView.m */; };
 		8B3A4E241F7F7F57006CFEBC /* UIView+FrameExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3A4E231F7F7F57006CFEBC /* UIView+FrameExtension.m */; };
+		8B3C9A0E1FA114CC0041A66F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B3C9A0D1FA114CC0041A66F /* Default-568h@2x.png */; };
+		8B3C9A111FA115210041A66F /* BlurLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3C9A101FA115210041A66F /* BlurLayout.m */; };
 		8B40F22F1F97DC7D00B0D132 /* BookmarkModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8B40F22D1F97DC7D00B0D132 /* BookmarkModel.xcdatamodeld */; };
 		8B40F2321F98CAD400B0D132 /* FavoriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B40F2311F98CAD400B0D132 /* FavoriteViewController.m */; };
 		8B4C75EE1F8C35CC009160DC /* CONSTFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4C75ED1F8C35CC009160DC /* CONSTFile.m */; };
@@ -21,7 +23,6 @@
 		8BADE9921F722B46009BB78E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BADE9911F722B46009BB78E /* Assets.xcassets */; };
 		8BADE9951F722B46009BB78E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BADE9931F722B46009BB78E /* LaunchScreen.storyboard */; };
 		8BADE99E1F728035009BB78E /* KnowledgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BADE99D1F728035009BB78E /* KnowledgeViewController.m */; };
-		8BADE9A11F72A73C009BB78E /* BlurLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BADE9A01F72A73C009BB78E /* BlurLayout.m */; };
 		8BADE9AB1F72A898009BB78E /* BlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BADE9AA1F72A898009BB78E /* BlurView.m */; };
 		8BADE9B01F739F48009BB78E /* pathData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8BADE9AF1F739F48009BB78E /* pathData.plist */; };
 		8BADE9B31F73AEAE009BB78E /* CustomCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BADE9B21F73AEAE009BB78E /* CustomCollectionViewCell.m */; };
@@ -42,12 +43,15 @@
 		8B3A4E1F1F7EC70B006CFEBC /* SearchSuggestionTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchSuggestionTableView.m; sourceTree = "<group>"; };
 		8B3A4E221F7F7F57006CFEBC /* UIView+FrameExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FrameExtension.h"; sourceTree = "<group>"; };
 		8B3A4E231F7F7F57006CFEBC /* UIView+FrameExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FrameExtension.m"; sourceTree = "<group>"; };
+		8B3C9A0D1FA114CC0041A66F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		8B3C9A0F1FA115210041A66F /* BlurLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlurLayout.h; sourceTree = "<group>"; };
+		8B3C9A101FA115210041A66F /* BlurLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlurLayout.m; sourceTree = "<group>"; };
 		8B40F22E1F97DC7D00B0D132 /* BookmarkModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BookmarkModel.xcdatamodel; sourceTree = "<group>"; };
 		8B40F2301F98CAD400B0D132 /* FavoriteViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FavoriteViewController.h; sourceTree = "<group>"; };
 		8B40F2311F98CAD400B0D132 /* FavoriteViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FavoriteViewController.m; sourceTree = "<group>"; };
 		8B4C75EC1F8C35CC009160DC /* CONSTFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CONSTFile.h; sourceTree = "<group>"; };
 		8B4C75ED1F8C35CC009160DC /* CONSTFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CONSTFile.m; sourceTree = "<group>"; };
-		8BADE97F1F722B45009BB78E /* iOS宝典.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS宝典.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BADE97F1F722B45009BB78E /* 巢经楼.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "巢经楼.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BADE9831F722B46009BB78E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8BADE9851F722B46009BB78E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8BADE9861F722B46009BB78E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -59,8 +63,6 @@
 		8BADE9961F722B46009BB78E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8BADE99C1F728035009BB78E /* KnowledgeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KnowledgeViewController.h; sourceTree = "<group>"; };
 		8BADE99D1F728035009BB78E /* KnowledgeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KnowledgeViewController.m; sourceTree = "<group>"; };
-		8BADE99F1F72A73C009BB78E /* BlurLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BlurLayout.h; path = "iOS宝典/BlurLayout.h"; sourceTree = SOURCE_ROOT; };
-		8BADE9A01F72A73C009BB78E /* BlurLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BlurLayout.m; path = "iOS宝典/BlurLayout.m"; sourceTree = SOURCE_ROOT; };
 		8BADE9A91F72A898009BB78E /* BlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlurView.h; sourceTree = "<group>"; };
 		8BADE9AA1F72A898009BB78E /* BlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlurView.m; sourceTree = "<group>"; };
 		8BADE9AF1F739F48009BB78E /* pathData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = pathData.plist; sourceTree = "<group>"; };
@@ -155,7 +157,8 @@
 		8BADE9761F722B45009BB78E = {
 			isa = PBXGroup;
 			children = (
-				8BADE9811F722B45009BB78E /* iOS宝典 */,
+				8B3C9A0D1FA114CC0041A66F /* Default-568h@2x.png */,
+				8BADE9811F722B45009BB78E /* 巢经楼 */,
 				8BADE9801F722B45009BB78E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -163,12 +166,12 @@
 		8BADE9801F722B45009BB78E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8BADE97F1F722B45009BB78E /* iOS宝典.app */,
+				8BADE97F1F722B45009BB78E /* 巢经楼.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		8BADE9811F722B45009BB78E /* iOS宝典 */ = {
+		8BADE9811F722B45009BB78E /* 巢经楼 */ = {
 			isa = PBXGroup;
 			children = (
 				8BF24C021F99CB5800A223BD /* CoreData */,
@@ -187,7 +190,7 @@
 				8BADE9AF1F739F48009BB78E /* pathData.plist */,
 				8BADE9821F722B46009BB78E /* Supporting Files */,
 			);
-			path = "iOS宝典";
+			path = "巢经楼";
 			sourceTree = "<group>";
 		};
 		8BADE9821F722B46009BB78E /* Supporting Files */ = {
@@ -202,8 +205,8 @@
 		8BADE9A51F72A861009BB78E /* BlurLayout */ = {
 			isa = PBXGroup;
 			children = (
-				8BADE99F1F72A73C009BB78E /* BlurLayout.h */,
-				8BADE9A01F72A73C009BB78E /* BlurLayout.m */,
+				8B3C9A0F1FA115210041A66F /* BlurLayout.h */,
+				8B3C9A101FA115210041A66F /* BlurLayout.m */,
 				8BADE9A91F72A898009BB78E /* BlurView.h */,
 				8BADE9AA1F72A898009BB78E /* BlurView.m */,
 			);
@@ -240,9 +243,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8BADE97E1F722B45009BB78E /* iOS宝典 */ = {
+		8BADE97E1F722B45009BB78E /* 巢经楼 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8BADE9991F722B46009BB78E /* Build configuration list for PBXNativeTarget "iOS宝典" */;
+			buildConfigurationList = 8BADE9991F722B46009BB78E /* Build configuration list for PBXNativeTarget "巢经楼" */;
 			buildPhases = (
 				8BADE97B1F722B45009BB78E /* Sources */,
 				8BADE97C1F722B45009BB78E /* Frameworks */,
@@ -252,9 +255,9 @@
 			);
 			dependencies = (
 			);
-			name = "iOS宝典";
+			name = "巢经楼";
 			productName = "iOS宝典";
-			productReference = 8BADE97F1F722B45009BB78E /* iOS宝典.app */;
+			productReference = 8BADE97F1F722B45009BB78E /* 巢经楼.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -273,7 +276,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 8BADE97A1F722B45009BB78E /* Build configuration list for PBXProject "iOS宝典" */;
+			buildConfigurationList = 8BADE97A1F722B45009BB78E /* Build configuration list for PBXProject "巢经楼" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -286,7 +289,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8BADE97E1F722B45009BB78E /* iOS宝典 */,
+				8BADE97E1F722B45009BB78E /* 巢经楼 */,
 			);
 		};
 /* End PBXProject section */
@@ -299,6 +302,7 @@
 				8BADE9951F722B46009BB78E /* LaunchScreen.storyboard in Resources */,
 				8BADE9921F722B46009BB78E /* Assets.xcassets in Resources */,
 				8BADE9901F722B46009BB78E /* Main.storyboard in Resources */,
+				8B3C9A0E1FA114CC0041A66F /* Default-568h@2x.png in Resources */,
 				8BADE9B01F739F48009BB78E /* pathData.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -312,12 +316,12 @@
 			files = (
 				8B3A4E181F7E9E4F006CFEBC /* SearchSuggestionViewController.m in Sources */,
 				8BB429BD1F7A6DC600AE5B19 /* ExpandableTableViewHeaderModel.m in Sources */,
+				8B3C9A111FA115210041A66F /* BlurLayout.m in Sources */,
 				8B4C75EE1F8C35CC009160DC /* CONSTFile.m in Sources */,
 				8B3A4E121F7E6689006CFEBC /* SearchResultTableViewController.m in Sources */,
 				8BADE98D1F722B46009BB78E /* SecondViewController.m in Sources */,
 				8BADE9B61F73BC64009BB78E /* KnowledgeDetailTableViewController.m in Sources */,
 				8BADE99E1F728035009BB78E /* KnowledgeViewController.m in Sources */,
-				8BADE9A11F72A73C009BB78E /* BlurLayout.m in Sources */,
 				8BADE9871F722B46009BB78E /* AppDelegate.m in Sources */,
 				8BADE9B31F73AEAE009BB78E /* CustomCollectionViewCell.m in Sources */,
 				8BED3C941F7C326100D8EFBB /* WebViewController.m in Sources */,
@@ -462,7 +466,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = AL9MN53CG2;
-				INFOPLIST_FILE = "iOS宝典/Info.plist";
+				INFOPLIST_FILE = "巢经楼/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "caizhongming.iOS--";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -474,7 +478,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = AL9MN53CG2;
-				INFOPLIST_FILE = "iOS宝典/Info.plist";
+				INFOPLIST_FILE = "巢经楼/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "caizhongming.iOS--";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -484,7 +488,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8BADE97A1F722B45009BB78E /* Build configuration list for PBXProject "iOS宝典" */ = {
+		8BADE97A1F722B45009BB78E /* Build configuration list for PBXProject "巢经楼" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8BADE9971F722B46009BB78E /* Debug */,
@@ -493,7 +497,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8BADE9991F722B46009BB78E /* Build configuration list for PBXNativeTarget "iOS宝典" */ = {
+		8BADE9991F722B46009BB78E /* Build configuration list for PBXNativeTarget "巢经楼" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8BADE99A1F722B46009BB78E /* Debug */,
