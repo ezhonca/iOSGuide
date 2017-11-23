@@ -15,6 +15,7 @@
 		8B3C9A111FA115210041A66F /* BlurLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3C9A101FA115210041A66F /* BlurLayout.m */; };
 		8B40F22F1F97DC7D00B0D132 /* BookmarkModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8B40F22D1F97DC7D00B0D132 /* BookmarkModel.xcdatamodeld */; };
 		8B40F2321F98CAD400B0D132 /* FavoriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B40F2311F98CAD400B0D132 /* FavoriteViewController.m */; };
+		8B4B95CC1FC7367800FEB4F6 /* CJLTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4B95CB1FC7367800FEB4F6 /* CJLTabBar.m */; };
 		8B4C75EE1F8C35CC009160DC /* CONSTFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4C75ED1F8C35CC009160DC /* CONSTFile.m */; };
 		8BADE9841F722B46009BB78E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BADE9831F722B46009BB78E /* main.m */; };
 		8BADE9871F722B46009BB78E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BADE9861F722B46009BB78E /* AppDelegate.m */; };
@@ -49,6 +50,8 @@
 		8B40F22E1F97DC7D00B0D132 /* BookmarkModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BookmarkModel.xcdatamodel; sourceTree = "<group>"; };
 		8B40F2301F98CAD400B0D132 /* FavoriteViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FavoriteViewController.h; sourceTree = "<group>"; };
 		8B40F2311F98CAD400B0D132 /* FavoriteViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FavoriteViewController.m; sourceTree = "<group>"; };
+		8B4B95CA1FC7367800FEB4F6 /* CJLTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJLTabBar.h; sourceTree = "<group>"; };
+		8B4B95CB1FC7367800FEB4F6 /* CJLTabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJLTabBar.m; sourceTree = "<group>"; };
 		8B4C75EC1F8C35CC009160DC /* CONSTFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CONSTFile.h; sourceTree = "<group>"; };
 		8B4C75ED1F8C35CC009160DC /* CONSTFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CONSTFile.m; sourceTree = "<group>"; };
 		8BADE97F1F722B45009BB78E /* 巢经楼.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "巢经楼.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,6 +110,8 @@
 		8B40F21A1F97D9ED00B0D132 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				8BED3C921F7C326100D8EFBB /* WebViewController.h */,
+				8BED3C931F7C326100D8EFBB /* WebViewController.m */,
 				8B40F21B1F97D9ED00B0D132 /* FirstVCRelated */,
 				8B40F21C1F97D9ED00B0D132 /* SecondVCRelated */,
 			);
@@ -126,8 +131,6 @@
 				8BADE9B51F73BC64009BB78E /* KnowledgeDetailTableViewController.m */,
 				8BB429BE1F7BFBA000AE5B19 /* ContentsTableViewController.h */,
 				8BB429BF1F7BFBA000AE5B19 /* ContentsTableViewController.m */,
-				8BED3C921F7C326100D8EFBB /* WebViewController.h */,
-				8BED3C931F7C326100D8EFBB /* WebViewController.m */,
 			);
 			path = FirstVCRelated;
 			sourceTree = "<group>";
@@ -225,6 +228,8 @@
 		8BB429B71F7A6C7A00AE5B19 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8B4B95CA1FC7367800FEB4F6 /* CJLTabBar.h */,
+				8B4B95CB1FC7367800FEB4F6 /* CJLTabBar.m */,
 				8B40F21D1F97D9FC00B0D132 /* FirstTabViewRelated */,
 			);
 			path = View;
@@ -333,6 +338,7 @@
 				8BADE9AB1F72A898009BB78E /* BlurView.m in Sources */,
 				8BF24C051F99CC7F00A223BD /* BookmarkHandle.m in Sources */,
 				8B3A4E241F7F7F57006CFEBC /* UIView+FrameExtension.m in Sources */,
+				8B4B95CC1FC7367800FEB4F6 /* CJLTabBar.m in Sources */,
 				8B3A4E201F7EC70B006CFEBC /* SearchSuggestionTableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -468,7 +474,7 @@
 				DEVELOPMENT_TEAM = AL9MN53CG2;
 				INFOPLIST_FILE = "巢经楼/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "caizhongming.iOS--";
+				PRODUCT_BUNDLE_IDENTIFIER = caizhongming.caojinglou;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -480,7 +486,7 @@
 				DEVELOPMENT_TEAM = AL9MN53CG2;
 				INFOPLIST_FILE = "巢经楼/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "caizhongming.iOS--";
+				PRODUCT_BUNDLE_IDENTIFIER = caizhongming.caojinglou;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

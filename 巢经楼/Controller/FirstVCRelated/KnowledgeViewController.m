@@ -43,7 +43,7 @@
     // Do any additional setup after loading the view.
     self.grid.dataSource = self;
     self.grid.delegate = self;
-    self.title = @"iOS宝典";
+    self.title = @"知识";
     NSString *rootPath = [[NSBundle mainBundle] pathForResource:@"pathData" ofType:@"plist"];
     self.rootDic = [[NSDictionary alloc] initWithContentsOfFile:rootPath];
     //self.dateDic = [[NSMutableDictionary alloc] init];

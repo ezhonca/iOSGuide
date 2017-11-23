@@ -723,5 +723,69 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "&#x5de2;&#x7ecf;&#x697c;/View/CJLTabBar.m"
+            timestampString = "533159807.713912"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "-layoutSubviews"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "&#x5de2;&#x7ecf;&#x697c;/View/CJLTabBar.m"
+            timestampString = "533159807.713982"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "-layoutSubviews"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[CJLTabBar layoutSubviews]"
+                  moduleName = "&#x5de2;&#x7ecf;&#x697c;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/caizhongming/Desktop/developer/UI_practice/%E5%B7%A2%E7%BB%8F%E6%A5%BC/%E5%B7%A2%E7%BB%8F%E6%A5%BC/View/CJLTabBar.m"
+                  timestampString = "533156846.30981"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "841">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[CJLTabBar layoutSubviews]"
+                  moduleName = "&#x5de2;&#x7ecf;&#x697c;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/caizhongming/Desktop/developer/UI_practice/%E5%B7%A2%E7%BB%8F%E6%A5%BC/%E5%B7%A2%E7%BB%8F%E6%A5%BC/View/CJLTabBar.m"
+                  timestampString = "533156846.32005"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "849">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
