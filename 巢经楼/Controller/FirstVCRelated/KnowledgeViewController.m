@@ -12,14 +12,31 @@
 #import "SearchResultTableViewController.h"
 #import "WebViewController.h"
 #import "CONSTFile.h"
+#import "CJLWaterfallLayout.h"
 
 @interface KnowledgeViewController ()
-@property(strong, nonatomic) SearchResultTableViewController *resultVC;
+@property (strong, nonatomic) NSMutableArray *subjectArray;
+@property (strong, nonatomic) SearchResultTableViewController *resultVC;
 @property (nonatomic, strong) NSMutableDictionary *dateDic;
 @property (nonatomic, strong) NSMutableDictionary *searchResultDic;
 @end
 
 @implementation KnowledgeViewController
+
+-(NSMutableArray *)subjectArray
+{
+    if(!_subjectArray){
+        //_subjectArray = [[NSMutableArray alloc] init];
+        _subjectArray = [NSMutableArray arrayWithArray:[NSKeyedUnarchiver unarchiveObjectWithFile:SUBJECTSPATH]];
+        if(!_subjectArray.count){
+            _subjectArray = [NSMutableArray arrayWithArray:[self.rootDic allKeys]];
+            [NSKeyedArchiver archiveRootObject:_subjectArray toFile:SUBJECTSPATH];
+        }
+    }
+    
+    
+    return _subjectArray;
+}
 
 -(NSMutableDictionary *)searchResultDic
 {
@@ -43,6 +60,8 @@
     // Do any additional setup after loading the view.
     self.grid.dataSource = self;
     self.grid.delegate = self;
+    self.grid.collectionViewLayout = [[CJLWaterfallLayout alloc] init];
+    [self setupMovementGesture];
     self.title = @"知识";
     NSString *rootPath = [[NSBundle mainBundle] pathForResource:@"pathData" ofType:@"plist"];
     self.rootDic = [[NSDictionary alloc] initWithContentsOfFile:rootPath];
@@ -121,7 +140,7 @@
             if([sender isKindOfClass:[CustomCollectionViewCell class]]){
                 CustomCollectionViewCell *cell = sender;
                 NSIndexPath *indexPath = [self.grid indexPathForCell:cell];
-                NSString *key = [self.rootDic.allKeys objectAtIndex:indexPath.row];
+                NSString *key = [self.subjectArray objectAtIndex:indexPath.row];
                 knowledgeDetailVC.title = key;
                 knowledgeDetailVC.knowledgeDetailDic = [self.rootDic objectForKey:key];
             }
@@ -144,7 +163,7 @@
     static NSString *cellId = @"bookCell";
     
     CustomCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellId forIndexPath:indexPath];
-    cell.bookName.text = [self.rootDic.allKeys objectAtIndex:indexPath.row];
+    cell.bookName.text = [self.subjectArray objectAtIndex:indexPath.row];
     
     cell.bookName.textAlignment = NSTextAlignmentCenter;
     //[cell.bookName sizeToFit];
@@ -152,7 +171,61 @@
     return cell;
 }
 
+#pragma mark - drag collectionViewcCell
+//设置手势
+-(void)setupMovementGesture
+{
+    UILongPressGestureRecognizer *longPressGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)];
+    [self.grid addGestureRecognizer:longPressGesture];
+}
+//手势action
+-(void)longPress:(UIGestureRecognizer *)gesture
+{
+    //通过手势的location获取indexpath
+    NSIndexPath *cellIndexPath = [self.grid indexPathForItemAtPoint:[gesture locationInView:self.grid]];
+    
+    switch (gesture.state) {
+        case UIGestureRecognizerStateBegan:
+            [self.grid beginInteractiveMovementForItemAtIndexPath:cellIndexPath];
+//            CGRect CellBounds = [self.grid cellForItemAtIndexPath:cellIndexPath].bounds;
+//            CellBounds.size.width = [self.grid cellForItemAtIndexPath:cellIndexPath].bounds.size.width + 10;
+//            CellBounds.size.height = [self.grid cellForItemAtIndexPath:cellIndexPath].bounds.size.height + 10;
+//            [self.grid cellForItemAtIndexPath:cellIndexPath].bounds = CellBounds;
+            break;
+        case UIGestureRecognizerStateChanged:
+            [self.grid updateInteractiveMovementTargetPosition:[gesture locationInView:self.grid]];
+            break;
+        case UIGestureRecognizerStateEnded:
+            [self.grid endInteractiveMovement];
+            //NSIndexPath *cellIndexPath = [self.grid indexPathForItemAtPoint:[gesture locationInView:self.grid]];
+//            CellBounds.size.width = [self.grid cellForItemAtIndexPath:cellIndexPath].bounds.size.width - 10;
+//            CellBounds.size.height = [self.grid cellForItemAtIndexPath:cellIndexPath].bounds.size.height - 10;
+//            [self.grid cellForItemAtIndexPath:cellIndexPath].bounds = CellBounds;
+            break;
+        default:
+            [self.grid cancelInteractiveMovement];
+            break;
+    }
+}
 
+-(BOOL)collectionView:(UICollectionView *)collectionView canMoveItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
+
+-(void)collectionView:(UICollectionView *)collectionView moveItemAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
+{
+    //替换subjectArray内的数据
+    NSString *temp = [self.subjectArray objectAtIndex:sourceIndexPath.row];
+    [self.subjectArray removeObjectAtIndex:sourceIndexPath.row];
+    [self.subjectArray insertObject:temp atIndex:destinationIndexPath.row];
+    [NSKeyedArchiver archiveRootObject:self.subjectArray toFile:SUBJECTSPATH];
+}
+
+
+
+
+#pragma mark - UISearchResultsUpdatingDelegate
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
     //if([searchController isKindOfClass:[SearchSuggestionViewController class]]){
        // SearchSuggestionViewController *customSearchVC = (SearchSuggestionViewController *)searchController;

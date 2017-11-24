@@ -11,6 +11,7 @@
 #import <UIKit/UIKit.h>
 
 #define SEARCHHISTORY_CACHEPATH [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"Searchhistories.plist"] // the path of search record cached
+#define SUBJECTSPATH [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"Subjects.plist"] // the path of search record cached
 
 UIKIT_EXTERN CGFloat const HOTSEARCH_MARGIN;
 UIKIT_EXTERN NSInteger const SEARCHHISTORY_COUNT;
