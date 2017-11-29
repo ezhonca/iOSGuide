@@ -10,4 +10,17 @@
 
 @implementation CustomCollectionViewCell
 
+-(void)awakeFromNib
+{
+    [super awakeFromNib];
+//    CAGradientLayer *layer = [CAGradientLayer layer];
+//    layer.colors = @[(id)[UIColor redColor].CGColor, (id)[UIColor blueColor].CGColor];
+//    layer.frame = self.bounds;
+//    //layer.position = CGPointMake(0, 0);
+//    layer.locations = @[@0.8];
+//    layer.startPoint = CGPointMake(0, 0);
+//    layer.endPoint = CGPointMake(1, 1);
+//    [self.layer addSublayer:layer];
+}
+
 @end

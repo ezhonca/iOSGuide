@@ -23,10 +23,19 @@
     // Do any additional setup after loading the view.
     //self.navi = [[UINavigationController alloc] initWithRootViewController:self];
     //self.definesPresentationContext = YES;
+    
+    
+   
+    
+    //self.searchBar.backgroundColor = [UIColor clearColor];
+    //self.searchBar.layer.borderWidth = 1;
+    //self.searchBar.layer.borderColor = [UIColor redColor].CGColor;
+    
     self.searbarDidSelected = NO;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.searchBar.delegate = self;
+    //设置自定义UISearchbar
     [self setupSearchbar];
 //    self.historyArray = [[NSMutableArray alloc] initWithCapacity:SEARCHHISTORY_COUNT];
 //    [self.historyArray addObject:@"aa"];
@@ -47,7 +56,13 @@
 
 - (void)setupSearchbar
 {
-    self.searchBar.placeholder = @"搜索";
+    self.searchBar.placeholder = @"知识搜索";
+    UITextField * searchField = [self.searchBar valueForKey:@"_searchField"];
+    //[searchField setValue:[UIColor redColor] forKeyPath:@"_placeholderLabel.textColor"];
+    [searchField setValue:[UIFont systemFontOfSize:12 weight:UIFontWeightThin] forKeyPath:@"_placeholderLabel.font"];
+    self.searchBar.backgroundImage = [[UIImage alloc] init];
+    //self.searchBar.barTintColor = [UIColor orangeColor];
+    self.searchBar.backgroundColor = [UIColor colorWithRed:253/255.0 green:146/255.0 blue:38/255.0 alpha:1];
 //    self.searchBar.showsCancelButton = YES;
 //    UIButton *cancelButton = [self.searchBar valueForKey:@"cancelButton"];
 //    if(cancelButton){

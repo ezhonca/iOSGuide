@@ -8,10 +8,12 @@
 
 #import "CJLTabBar.h"
 #import "UIView+FrameExtension.h"
+#import "CJLPopMenuView.h"
 
-@interface CJLTabBar()
+@interface CJLTabBar()<CJLPopMenuViewDelegate>
 
 @property (nonatomic, strong) UIButton *centerButton;
+@property (nonatomic, strong) CJLPopMenuView *popMenu;
 
 
 @end
@@ -25,6 +27,41 @@
     // Drawing code
 }
 */
+#pragma mark - CJLPopMenuViewDelegate
+
+-(CGPoint)centerForCenterButton
+{
+    return self.centerButton.center;
+
+}
+
+-(void)popMenuDisappearCompletionHandle
+{
+    self.centerButton.transform = CGAffineTransformIdentity;
+}
+
+
+
+-(CJLPopMenuView *)popMenu
+{
+    if(!_popMenu){
+        
+        _popMenu = [[CJLPopMenuView alloc] init];
+        _popMenu.centerForCenterPopItem = [self convertPoint:self.centerButton.center toView:self.superview];
+        _popMenu.popItemDelegate = self;
+        __weak CJLTabBar *weakSelf = self;
+        //_popMenu.alpha = 0;
+        _popMenu.disappearBlock = ^{
+            weakSelf.centerButton.transform = CGAffineTransformIdentity;
+            //[waekself.centerButton removeFromSuperview];
+        };
+        [_popMenu setupAllPopItems];
+//        _popMenu.centerForCenterPopItemBlock = ^CGPoint{
+//            return weakSelf.centerButton.center;
+//        };
+    }
+    return _popMenu;
+}
 -(void)awakeFromNib
 {
     [super awakeFromNib];
@@ -35,9 +72,11 @@
     
     //btn.bounds = CGRectMake(0, 0, 64, 64);
     self.centerButton = btn;
+    //取消点击效果
     [self.centerButton addTarget:self action:@selector(buttonClickTest:) forControlEvents:UIControlEventTouchUpInside];
+    self.centerButton.adjustsImageWhenHighlighted = NO;
     [self addSubview:self.centerButton];
-    
+    //self.popMenu.popItemDelegate = self;
    
     //  设置tabbar
     
@@ -48,9 +87,27 @@
 }
 -(void)buttonClickTest:(id)sender
 {
-    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"点击了中间按钮" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
     
-    [alert show];
+//    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"点击了中间按钮" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+//
+//    [alert show];
+    UIWindow *mainWin = [UIApplication sharedApplication].keyWindow;
+    
+    self.popMenu.alpha = 1;
+    [mainWin addSubview:self.popMenu];
+    
+    [UIView animateWithDuration:0.1
+            animations:^{
+                
+                self.centerButton.transform = CGAffineTransformMakeRotation(M_PI_2);
+                [self.popMenu appear];
+               
+                         }
+                     completion:^(BOOL finished) {
+                       //self.centerButton.transform = CGAffineTransformIdentity;
+                         
+                     }];
+   
 }
 
 

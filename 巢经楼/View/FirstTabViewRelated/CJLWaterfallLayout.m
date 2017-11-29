@@ -9,9 +9,9 @@
 #import "CJLWaterfallLayout.h"
 
 static const NSInteger DEFAULTCOLUMNCOUNT = 2;
-static const CGFloat DEFAULTCOLUMNMARGIN = 10;
-static const CGFloat DEFAULTROWMARGIN = 10;
-static const UIEdgeInsets DEFAULTEDGEINSETS = {10, 10, 10, 10};
+static const CGFloat DEFAULTCOLUMNMARGIN = 5;
+static const CGFloat DEFAULTROWMARGIN = 5;
+static const UIEdgeInsets DEFAULTEDGEINSETS = {10, 5, 5, 5};
 
 @interface CJLWaterfallLayout()
 

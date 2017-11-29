@@ -19,9 +19,24 @@
 @property (strong, nonatomic) SearchResultTableViewController *resultVC;
 @property (nonatomic, strong) NSMutableDictionary *dateDic;
 @property (nonatomic, strong) NSMutableDictionary *searchResultDic;
+@property (nonatomic, strong) NSMutableDictionary<NSString *, UIColor *> *subjectColorDic;
 @end
 
 @implementation KnowledgeViewController
+
+-(NSMutableDictionary<NSString *, UIColor *> *)subjectColorDic{
+    if(!_subjectColorDic){
+        _subjectColorDic = [[NSMutableDictionary<NSString *, UIColor *> alloc] init];
+        [self.subjectArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            UIColor *color = [UIColor colorWithRed:(CGFloat)FAVORITECOLORS[idx][0]/255.0f green:(CGFloat)FAVORITECOLORS[idx][1]/255.0f blue:(CGFloat)FAVORITECOLORS[idx][2]/255.0f alpha:1];
+            [_subjectColorDic setObject:color forKey:obj];
+           
+            
+        }];
+       
+    }
+    return _subjectColorDic;
+}
 
 -(NSMutableArray *)subjectArray
 {
@@ -60,7 +75,8 @@
     // Do any additional setup after loading the view.
     self.grid.dataSource = self;
     self.grid.delegate = self;
-    self.grid.collectionViewLayout = [[CJLWaterfallLayout alloc] init];
+    //self.grid.collectionViewLayout = [[CJLWaterfallLayout alloc] init];
+    //self.grid.backgroundColor = [UIColor grayColor];
     [self setupMovementGesture];
     self.title = @"知识";
     NSString *rootPath = [[NSBundle mainBundle] pathForResource:@"pathData" ofType:@"plist"];
@@ -166,6 +182,8 @@
     cell.bookName.text = [self.subjectArray objectAtIndex:indexPath.row];
     
     cell.bookName.textAlignment = NSTextAlignmentCenter;
+    cell.layer.cornerRadius = 9;
+    cell.backgroundColor = [self.subjectColorDic valueForKey:cell.bookName.text];
     //[cell.bookName sizeToFit];
     //cell.selectedBackgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"book"]];
     return cell;

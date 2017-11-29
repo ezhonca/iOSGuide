@@ -42,36 +42,35 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="J0D-fE-kiD">
                                 <rect key="frame" x="0.0" y="116" width="375" height="502"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="5tj-7g-jvb">
-                                    <size key="itemSize" width="120" height="145"/>
+                                    <size key="itemSize" width="180" height="145"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="5" minY="5" maxX="5" maxY="5"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="bookCell" id="jyV-Hg-1gX" customClass="CustomCollectionViewCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="120" height="145"/>
+                                        <rect key="frame" x="5" y="5" width="180" height="250"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="120" height="145"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="180" height="250"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="book-orange" translatesAutoresizingMaskIntoConstraints="NO" id="96P-ns-DGA">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="96P-ns-DGA">
                                                     <rect key="frame" x="24" y="29" width="72" height="70"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="j5n-9H-Fcj">
-                                                    <rect key="frame" x="16" y="112" width="89" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <nil key="textColor"/>
+                                                    <rect key="frame" x="16" y="0.0" width="144" height="187"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                        <size key="customSize" width="120" height="145"/>
+                                        <size key="customSize" width="180" height="250"/>
                                         <connections>
                                             <outlet property="bookName" destination="j5n-9H-Fcj" id="hY6-QS-6cY"/>
                                             <outlet property="imageView" destination="96P-ns-DGA" id="ROF-mc-6BP"/>
@@ -97,7 +96,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1644" y="-316"/>
+            <point key="canvasLocation" x="1644" y="-316.19190404797604"/>
         </scene>
         <!--Knowledge Detail Table View Controller-->
         <scene sceneID="NNR-3C-zhb">
@@ -243,9 +242,13 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jab-eP-ZlG" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="知识" image="library" id="acW-dT-cKf"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9TG-OH-kCd">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="9TG-OH-kCd">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="1" green="0.5560616961" blue="0.17234071200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <color key="textColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -296,10 +299,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="book-orange" width="64" height="64"/>
-        <image name="favorate" width="32" height="32"/>
-        <image name="library" width="32" height="32"/>
-        <image name="my" width="32" height="31"/>
+        <image name="favorate" width="16" height="16"/>
+        <image name="library" width="16" height="16"/>
+        <image name="my" width="16" height="15"/>
         <image name="tab2-doctorshow" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
