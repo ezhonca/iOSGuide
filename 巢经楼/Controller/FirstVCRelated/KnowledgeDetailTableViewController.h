@@ -13,6 +13,8 @@
 
 @property (strong, nonatomic) NSDictionary *knowledgeDetailDic;
 @property (strong, nonatomic) NSMutableArray *ExpandableModelArray;
+@property (nonatomic, strong) NSArray *firstCatalogArray;
+@property (nonatomic, strong) NSArray<NSArray *> *secondCatalogsArray;
 
 
 

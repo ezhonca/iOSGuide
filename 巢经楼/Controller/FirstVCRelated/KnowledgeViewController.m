@@ -13,6 +13,7 @@
 #import "WebViewController.h"
 #import "CONSTFile.h"
 #import "CJLWaterfallLayout.h"
+#import "DBAccess.h"
 
 @interface KnowledgeViewController ()
 @property (strong, nonatomic) NSMutableArray *subjectArray;
@@ -20,9 +21,15 @@
 @property (nonatomic, strong) NSMutableDictionary *dateDic;
 @property (nonatomic, strong) NSMutableDictionary *searchResultDic;
 @property (nonatomic, strong) NSMutableDictionary<NSString *, UIColor *> *subjectColorDic;
+@property (nonatomic, strong) NSArray *allSubjectsFromDB;
 @end
 
 @implementation KnowledgeViewController
+
+-(NSArray *)allSubjectsFromDB
+{
+    return [DBAccess getAllSubjects];
+}
 
 -(NSMutableDictionary<NSString *, UIColor *> *)subjectColorDic{
     if(!_subjectColorDic){
@@ -44,7 +51,8 @@
         //_subjectArray = [[NSMutableArray alloc] init];
         _subjectArray = [NSMutableArray arrayWithArray:[NSKeyedUnarchiver unarchiveObjectWithFile:SUBJECTSPATH]];
         if(!_subjectArray.count){
-            _subjectArray = [NSMutableArray arrayWithArray:[self.rootDic allKeys]];
+            //_subjectArray = [NSMutableArray arrayWithArray:[self.rootDic allKeys]];
+            _subjectArray = [NSMutableArray arrayWithArray:self.allSubjectsFromDB];
             [NSKeyedArchiver archiveRootObject:_subjectArray toFile:SUBJECTSPATH];
         }
     }
@@ -155,10 +163,12 @@
             
             if([sender isKindOfClass:[CustomCollectionViewCell class]]){
                 CustomCollectionViewCell *cell = sender;
-                NSIndexPath *indexPath = [self.grid indexPathForCell:cell];
-                NSString *key = [self.subjectArray objectAtIndex:indexPath.row];
-                knowledgeDetailVC.title = key;
-                knowledgeDetailVC.knowledgeDetailDic = [self.rootDic objectForKey:key];
+//                NSIndexPath *indexPath = [self.grid indexPathForCell:cell];
+//                NSString *key = [self.subjectArray objectAtIndex:indexPath.row];
+                NSString *cellName = cell.bookName.text;
+                knowledgeDetailVC.title = cellName;
+                knowledgeDetailVC.knowledgeDetailDic = [self.rootDic objectForKey:@"Objective-C"];
+                knowledgeDetailVC.firstCatalogArray = [DBAccess getFirstCatalogsWithSubjectName:cellName];
             }
             
         }
@@ -180,8 +190,9 @@
     
     CustomCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellId forIndexPath:indexPath];
     cell.bookName.text = [self.subjectArray objectAtIndex:indexPath.row];
-    
+    //[cell.bookName sizeToFit];
     cell.bookName.textAlignment = NSTextAlignmentCenter;
+    //cell.bookName.center = cell.center;
     cell.layer.cornerRadius = 9;
     cell.backgroundColor = [self.subjectColorDic valueForKey:cell.bookName.text];
     //[cell.bookName sizeToFit];

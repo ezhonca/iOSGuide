@@ -9,12 +9,33 @@
 #import "KnowledgeDetailTableViewController.h"
 #import "ExpandableTableViewHeader.h"
 #import "ContentsTableViewController.h"
+#import "DBAccess.h"
 
 @interface KnowledgeDetailTableViewController ()
-
+@property (nonatomic, strong) NSMutableArray<NSString *> *expandStateArray;
 @end
 
 @implementation KnowledgeDetailTableViewController
+
+-(NSMutableArray *)ExpandableModelArray
+{
+    if(!_expandStateArray){
+        _expandStateArray = [[NSMutableArray<NSString *> alloc] init];
+    }
+    return _expandStateArray;
+}
+
+-(void)loadSecondCatalogsArray
+{
+    NSMutableArray *secondCatalogsArray = [[NSMutableArray<NSArray *> alloc] init];
+    for(NSString *firstCatalog in self.firstCatalogArray){
+        NSArray *secondCatalogs = [DBAccess getSecondCatalogsWithFirstCatalogName:firstCatalog];
+        [secondCatalogsArray addObject:secondCatalogs];
+        [self.ExpandableModelArray addObject:@"0"];
+        
+    }
+    self.secondCatalogsArray = secondCatalogsArray;
+}
 
 - (void)loadDate:(NSDictionary *)dic {
     NSMutableArray *mutableArray = [[NSMutableArray alloc] init];
@@ -22,22 +43,22 @@
         ExpandableTableViewHeaderModel *model = [[ExpandableTableViewHeaderModel alloc] initWithDictionary:dic[key] andSectionName:key];
         [mutableArray addObject:model];
     }
-    
     self.ExpandableModelArray = mutableArray;
-    
-    
 }
 
 - (void)changeExpandStateInSection:(NSInteger)section {
-    ExpandableTableViewHeaderModel *model = self.ExpandableModelArray[section];
-    model.isExpanded = !model.isExpanded;
-    
-    [self.ExpandableModelArray replaceObjectAtIndex:section withObject:model];
+//    ExpandableTableViewHeaderModel *model = self.ExpandableModelArray[section];
+//    model.isExpanded = !model.isExpanded;
+//
+//    [self.ExpandableModelArray replaceObjectAtIndex:section withObject:model];
+    BOOL tmp = ![self.expandStateArray[section] boolValue];
+    [self.expandStateArray replaceObjectAtIndex:section withObject:[NSString stringWithFormat:@"%d", tmp]];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [self loadSecondCatalogsArray];
     [self loadDate:self.knowledgeDetailDic];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -54,13 +75,18 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return self.knowledgeDetailDic.count;
+    return self.firstCatalogArray.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    ExpandableTableViewHeaderModel *model = self.ExpandableModelArray[section];
-    if(model.canExpand && model.isExpanded){
-        return model.cellsDic.count;
+//    ExpandableTableViewHeaderModel *model = self.ExpandableModelArray[section];
+//    if(model.canExpand && model.isExpanded){
+//        return model.cellsDic.count;
+//    }else{
+//        return 0;
+//    }
+    if([self.expandStateArray[section] boolValue]){
+        return self.secondCatalogsArray[section].count;
     }else{
         return 0;
     }
@@ -81,9 +107,10 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:Identifier forIndexPath:indexPath];
     
-    ExpandableTableViewHeaderModel *model = self.ExpandableModelArray[indexPath.section];
+    //ExpandableTableViewHeaderModel *model = self.ExpandableModelArray[indexPath.section];
     
-    cell.textLabel.text = [@"  " stringByAppendingString:[[model.cellsDic allKeys] objectAtIndex:indexPath.row]];
+    //cell.textLabel.text = [@"  " stringByAppendingString:[[model.cellsDic allKeys] objectAtIndex:indexPath.row]];
+    cell.textLabel.text = self.secondCatalogsArray[indexPath.section][indexPath.row];
     cell.textLabel.font = [UIFont systemFontOfSize:15];
     // Configure the cell...
     
@@ -91,7 +118,7 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    return [self.knowledgeDetailDic.allKeys objectAtIndex:section];
+    return self.firstCatalogArray[section];
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
@@ -102,32 +129,64 @@
         
     }
     
-     ExpandableTableViewHeaderModel *model = self.ExpandableModelArray[section];
+    //ExpandableTableViewHeaderModel *model = self.ExpandableModelArray[section];
     //header.headerModel = model;
-    [UIView animateWithDuration:0.25 animations:^{
-       
-        if(!model.isExpanded){
-            header.accessoryView.transform = CGAffineTransformIdentity;
-        }else{
-            header.accessoryView.transform = CGAffineTransformMakeRotation(M_PI);
-        }
-        
-        
-        
-    }];
-    header.textLabel.text = [self.knowledgeDetailDic.allKeys objectAtIndex:section];
+//    [UIView animateWithDuration:0.5 animations:^{
+////        if(!model.isExpanded){
+////            header.accessoryView.transform = CGAffineTransformIdentity;
+////        }else{
+////            header.accessoryView.transform = CGAffineTransformMakeRotation(M_PI);
+////        }
+//        if(![self.expandStateArray[section] boolValue]){
+//            header.accessoryView.transform = CGAffineTransformMakeRotation(M_PI);
+//        }else{
+//            header.accessoryView.transform = CGAffineTransformIdentity;
+//            //header.accessoryView.transform = CGAffineTransformMakeRotation(M_PI);
+//        }
+//
+//
+//
+//    }];
+            if([self.expandStateArray[section] boolValue]){
+                    header.accessoryView.transform = CGAffineTransformIdentity;
+                    //weakHeader.accessoryView.transform = CGAffineTransformMakeRotation(M_PI);
+            }else{
+             
+                    //weakHeader.accessoryView.transform = CGAffineTransformIdentity;
+                    header.accessoryView.transform = CGAffineTransformMakeRotation(M_PI);
+            }
+    //header.textLabel.text = [self.knowledgeDetailDic.allKeys objectAtIndex:section];
+    header.textLabel.text = self.firstCatalogArray[section];
+    
+//    header.headerClickBackBlock = ^{
+//        if(model.canExpand){
+//        [self changeExpandStateInSection:section];
+//        NSIndexSet *indexSet = [[NSIndexSet alloc] initWithIndex:section];
+//            [tableView reloadSections:indexSet  withRowAnimation:UITableViewRowAnimationAutomatic];
+//        }else{
+//            [self performSegueWithIdentifier:@"ShowContents" sender:weakHeader];
+//        }
     __weak ExpandableTableViewHeader *weakHeader = header;
+    __weak KnowledgeDetailTableViewController *weakSelf = self;
+    
+    
+
     header.headerClickBackBlock = ^{
-        if(model.canExpand){
-        [self changeExpandStateInSection:section];
+        [weakSelf changeExpandStateInSection:section];
         NSIndexSet *indexSet = [[NSIndexSet alloc] initWithIndex:section];
-            [tableView reloadSections:indexSet  withRowAnimation:UITableViewRowAnimationAutomatic];
-        }else{
-            [self performSegueWithIdentifier:@"ShowContents" sender:weakHeader];
-        }
-            
-        
-  
+        [UIView animateWithDuration:0.25
+                animations: ^{
+                            if(![weakSelf.expandStateArray[section] boolValue]){
+                                weakHeader.accessoryView.transform = CGAffineTransformMakeRotation(M_PI);
+                            }else{
+                                weakHeader.accessoryView.transform = CGAffineTransformIdentity;
+                                //header.accessoryView.transform = CGAffineTransformMakeRotation(M_PI);
+                            }
+                    //weakHeader.accessoryView.transform = CGAffineTransformMakeRotation(M_PI);
+               }completion:^(BOOL finished) {
+                     [tableView reloadSections:indexSet  withRowAnimation:UITableViewRowAnimationAutomatic];
+        }];
+       
     };
     
     return header;
@@ -181,16 +240,19 @@
     if([segue.identifier isEqualToString:@"ShowContents"]){
         if([segue.destinationViewController isKindOfClass:[ContentsTableViewController class]]){
             ContentsTableViewController *vc = segue.destinationViewController;
-            if([sender isKindOfClass:[ExpandableTableViewHeader class]]){
-                ExpandableTableViewHeader *header = sender;
-                vc.title = header.textLabel.text;
-                vc.contentsDic = [self.knowledgeDetailDic objectForKey:header.textLabel.text];
-            }else if([sender isKindOfClass:[UITableViewCell class]]){
+//            if([sender isKindOfClass:[ExpandableTableViewHeader class]]){
+//                ExpandableTableViewHeader *header = sender;
+//                vc.title = header.textLabel.text;
+//                vc.contentsDic = [self.knowledgeDetailDic objectForKey:header.textLabel.text];
+//            }else if([sender isKindOfClass:[UITableViewCell class]]){
+            if([sender isKindOfClass:[UITableViewCell class]]){
                 UITableViewCell *cell = sender;
-                NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
-                ExpandableTableViewHeaderModel *model = self.ExpandableModelArray[indexPath.section];
-                vc.title = [[model.cellsDic allKeys] objectAtIndex:indexPath.row];
-                vc.contentsDic = [model.cellsDic objectForKey:[[model.cellsDic allKeys] objectAtIndex:indexPath.row]];
+//                NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+//                ExpandableTableViewHeaderModel *model = self.ExpandableModelArray[indexPath.section];
+//                vc.title = [[model.cellsDic allKeys] objectAtIndex:indexPath.row];
+//                vc.contentsDic = [model.cellsDic objectForKey:[[model.cellsDic allKeys] objectAtIndex:indexPath.row]];
+                vc.title = cell.textLabel.text;
+                //vc.contentsDic
             }
         }
     }

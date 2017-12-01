@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F9DB1BCF1A13A4713A6C9AE /* Pods____.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33F6A38E088A3AF74398C791 /* Pods____.framework */; };
 		8B3A4E121F7E6689006CFEBC /* SearchResultTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3A4E111F7E6689006CFEBC /* SearchResultTableViewController.m */; };
 		8B3A4E181F7E9E4F006CFEBC /* SearchSuggestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3A4E171F7E9E4F006CFEBC /* SearchSuggestionViewController.m */; };
 		8B3A4E201F7EC70B006CFEBC /* SearchSuggestionTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3A4E1F1F7EC70B006CFEBC /* SearchSuggestionTableView.m */; };
@@ -35,9 +36,15 @@
 		8BB429C01F7BFBA000AE5B19 /* ContentsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB429BF1F7BFBA000AE5B19 /* ContentsTableViewController.m */; };
 		8BED3C941F7C326100D8EFBB /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BED3C931F7C326100D8EFBB /* WebViewController.m */; };
 		8BF24C051F99CC7F00A223BD /* BookmarkHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BF24C041F99CC7F00A223BD /* BookmarkHandle.m */; };
+		8BF9EBF01FD0D5D200DDEFDF /* CJL.db in Resources */ = {isa = PBXBuildFile; fileRef = 8BF9EBEF1FD0D5D200DDEFDF /* CJL.db */; };
+		8BF9EBF31FD0D63200DDEFDF /* DBAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BF9EBF21FD0D63200DDEFDF /* DBAccess.m */; };
+		8BF9EBF71FD0DE3400DDEFDF /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BF9EBF51FD0DE1500DDEFDF /* libsqlite3.0.tbd */; };
+		8BF9EBF81FD0DEB600DDEFDF /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BF9EBF61FD0DE2D00DDEFDF /* libsqlite3.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		33F6A38E088A3AF74398C791 /* Pods____.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods____.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C47E3469F8EAD289C6455B1 /* Pods-巢经楼.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-巢经楼.debug.xcconfig"; path = "Pods/Target Support Files/Pods-巢经楼/Pods-巢经楼.debug.xcconfig"; sourceTree = "<group>"; };
 		8B3A4E101F7E6689006CFEBC /* SearchResultTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultTableViewController.h; sourceTree = "<group>"; };
 		8B3A4E111F7E6689006CFEBC /* SearchResultTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultTableViewController.m; sourceTree = "<group>"; };
 		8B3A4E161F7E9E4F006CFEBC /* SearchSuggestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchSuggestionViewController.h; sourceTree = "<group>"; };
@@ -89,6 +96,12 @@
 		8BED3C931F7C326100D8EFBB /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		8BF24C031F99CC7F00A223BD /* BookmarkHandle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookmarkHandle.h; sourceTree = "<group>"; };
 		8BF24C041F99CC7F00A223BD /* BookmarkHandle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookmarkHandle.m; sourceTree = "<group>"; };
+		8BF9EBEF1FD0D5D200DDEFDF /* CJL.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = CJL.db; sourceTree = "<group>"; };
+		8BF9EBF11FD0D63200DDEFDF /* DBAccess.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DBAccess.h; sourceTree = "<group>"; };
+		8BF9EBF21FD0D63200DDEFDF /* DBAccess.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DBAccess.m; sourceTree = "<group>"; };
+		8BF9EBF51FD0DE1500DDEFDF /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		8BF9EBF61FD0DE2D00DDEFDF /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		F2D6C14F00C902DC76EBC0FA /* Pods-巢经楼.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-巢经楼.release.xcconfig"; path = "Pods/Target Support Files/Pods-巢经楼/Pods-巢经楼.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,12 +109,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BF9EBF81FD0DEB600DDEFDF /* libsqlite3.tbd in Frameworks */,
+				8BF9EBF71FD0DE3400DDEFDF /* libsqlite3.0.tbd in Frameworks */,
+				0F9DB1BCF1A13A4713A6C9AE /* Pods____.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2882380CCEB914C7298BD536 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7C47E3469F8EAD289C6455B1 /* Pods-巢经楼.debug.xcconfig */,
+				F2D6C14F00C902DC76EBC0FA /* Pods-巢经楼.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		8B3A4E211F7F7DFE006CFEBC /* Extentions */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,12 +154,12 @@
 			children = (
 				8BADE99C1F728035009BB78E /* KnowledgeViewController.h */,
 				8BADE99D1F728035009BB78E /* KnowledgeViewController.m */,
+				8BADE9B41F73BC64009BB78E /* KnowledgeDetailTableViewController.h */,
+				8BADE9B51F73BC64009BB78E /* KnowledgeDetailTableViewController.m */,
 				8B3A4E161F7E9E4F006CFEBC /* SearchSuggestionViewController.h */,
 				8B3A4E171F7E9E4F006CFEBC /* SearchSuggestionViewController.m */,
 				8B3A4E101F7E6689006CFEBC /* SearchResultTableViewController.h */,
 				8B3A4E111F7E6689006CFEBC /* SearchResultTableViewController.m */,
-				8BADE9B41F73BC64009BB78E /* KnowledgeDetailTableViewController.h */,
-				8BADE9B51F73BC64009BB78E /* KnowledgeDetailTableViewController.m */,
 				8BB429BE1F7BFBA000AE5B19 /* ContentsTableViewController.h */,
 				8BB429BF1F7BFBA000AE5B19 /* ContentsTableViewController.m */,
 			);
@@ -171,6 +196,8 @@
 				8B3C9A0D1FA114CC0041A66F /* Default-568h@2x.png */,
 				8BADE9811F722B45009BB78E /* 巢经楼 */,
 				8BADE9801F722B45009BB78E /* Products */,
+				8BF9EBF41FD0DE1400DDEFDF /* Frameworks */,
+				2882380CCEB914C7298BD536 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -248,11 +275,24 @@
 		8BF24C021F99CB5800A223BD /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				8BF9EBEF1FD0D5D200DDEFDF /* CJL.db */,
 				8BF24C031F99CC7F00A223BD /* BookmarkHandle.h */,
 				8BF24C041F99CC7F00A223BD /* BookmarkHandle.m */,
 				8B40F22D1F97DC7D00B0D132 /* BookmarkModel.xcdatamodeld */,
+				8BF9EBF11FD0D63200DDEFDF /* DBAccess.h */,
+				8BF9EBF21FD0D63200DDEFDF /* DBAccess.m */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		8BF9EBF41FD0DE1400DDEFDF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8BF9EBF61FD0DE2D00DDEFDF /* libsqlite3.tbd */,
+				8BF9EBF51FD0DE1500DDEFDF /* libsqlite3.0.tbd */,
+				33F6A38E088A3AF74398C791 /* Pods____.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,9 +302,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8BADE9991F722B46009BB78E /* Build configuration list for PBXNativeTarget "巢经楼" */;
 			buildPhases = (
+				22B8A59CF85FBBF480B6999D /* [CP] Check Pods Manifest.lock */,
 				8BADE97B1F722B45009BB78E /* Sources */,
 				8BADE97C1F722B45009BB78E /* Frameworks */,
 				8BADE97D1F722B45009BB78E /* Resources */,
+				39F2AAC94E2A919CBF7E8333 /* [CP] Embed Pods Frameworks */,
+				0ADA12DFF44A2D2BCB32A489 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -315,6 +358,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BADE9951F722B46009BB78E /* LaunchScreen.storyboard in Resources */,
+				8BF9EBF01FD0D5D200DDEFDF /* CJL.db in Resources */,
 				8BADE9921F722B46009BB78E /* Assets.xcassets in Resources */,
 				8BADE9901F722B46009BB78E /* Main.storyboard in Resources */,
 				8B3C9A0E1FA114CC0041A66F /* Default-568h@2x.png in Resources */,
@@ -323,6 +367,60 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0ADA12DFF44A2D2BCB32A489 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-巢经楼/Pods-巢经楼-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		22B8A59CF85FBBF480B6999D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-巢经楼-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		39F2AAC94E2A919CBF7E8333 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-巢经楼/Pods-巢经楼-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-巢经楼/Pods-巢经楼-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8BADE97B1F722B45009BB78E /* Sources */ = {
@@ -350,6 +448,7 @@
 				8BADE9AB1F72A898009BB78E /* BlurView.m in Sources */,
 				8BF24C051F99CC7F00A223BD /* BookmarkHandle.m in Sources */,
 				8B3A4E241F7F7F57006CFEBC /* UIView+FrameExtension.m in Sources */,
+				8BF9EBF31FD0D63200DDEFDF /* DBAccess.m in Sources */,
 				8B4B95CC1FC7367800FEB4F6 /* CJLTabBar.m in Sources */,
 				8B3A4E201F7EC70B006CFEBC /* SearchSuggestionTableView.m in Sources */,
 			);
@@ -481,25 +580,31 @@
 		};
 		8BADE99A1F722B46009BB78E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C47E3469F8EAD289C6455B1 /* Pods-巢经楼.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = AL9MN53CG2;
 				INFOPLIST_FILE = "巢经楼/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = caizhongming.caojinglou;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 			};
 			name = Debug;
 		};
 		8BADE99B1F722B46009BB78E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F2D6C14F00C902DC76EBC0FA /* Pods-巢经楼.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = AL9MN53CG2;
 				INFOPLIST_FILE = "巢经楼/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = caizhongming.caojinglou;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 			};
 			name = Release;
 		};
