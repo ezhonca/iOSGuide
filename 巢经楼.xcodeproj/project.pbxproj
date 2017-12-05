@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0F9DB1BCF1A13A4713A6C9AE /* Pods____.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33F6A38E088A3AF74398C791 /* Pods____.framework */; };
+		8B1CA9B61FD5FF34001C9C13 /* CJLTipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B1CA9B51FD5FF34001C9C13 /* CJLTipView.m */; };
+		8B1CA9B91FD6FC63001C9C13 /* CJLTipModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B1CA9B81FD6FC63001C9C13 /* CJLTipModel.m */; };
 		8B3A4E121F7E6689006CFEBC /* SearchResultTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3A4E111F7E6689006CFEBC /* SearchResultTableViewController.m */; };
 		8B3A4E181F7E9E4F006CFEBC /* SearchSuggestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3A4E171F7E9E4F006CFEBC /* SearchSuggestionViewController.m */; };
 		8B3A4E201F7EC70B006CFEBC /* SearchSuggestionTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3A4E1F1F7EC70B006CFEBC /* SearchSuggestionTableView.m */; };
@@ -45,6 +47,10 @@
 /* Begin PBXFileReference section */
 		33F6A38E088A3AF74398C791 /* Pods____.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods____.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C47E3469F8EAD289C6455B1 /* Pods-巢经楼.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-巢经楼.debug.xcconfig"; path = "Pods/Target Support Files/Pods-巢经楼/Pods-巢经楼.debug.xcconfig"; sourceTree = "<group>"; };
+		8B1CA9B41FD5FF34001C9C13 /* CJLTipView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJLTipView.h; sourceTree = "<group>"; };
+		8B1CA9B51FD5FF34001C9C13 /* CJLTipView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJLTipView.m; sourceTree = "<group>"; };
+		8B1CA9B71FD6FC63001C9C13 /* CJLTipModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJLTipModel.h; sourceTree = "<group>"; };
+		8B1CA9B81FD6FC63001C9C13 /* CJLTipModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJLTipModel.m; sourceTree = "<group>"; };
 		8B3A4E101F7E6689006CFEBC /* SearchResultTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultTableViewController.h; sourceTree = "<group>"; };
 		8B3A4E111F7E6689006CFEBC /* SearchResultTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultTableViewController.m; sourceTree = "<group>"; };
 		8B3A4E161F7E9E4F006CFEBC /* SearchSuggestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchSuggestionViewController.h; sourceTree = "<group>"; };
@@ -256,6 +262,8 @@
 			children = (
 				8BB429BB1F7A6DC600AE5B19 /* ExpandableTableViewHeaderModel.h */,
 				8BB429BC1F7A6DC600AE5B19 /* ExpandableTableViewHeaderModel.m */,
+				8B1CA9B71FD6FC63001C9C13 /* CJLTipModel.h */,
+				8B1CA9B81FD6FC63001C9C13 /* CJLTipModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -267,6 +275,8 @@
 				8B505E991FCE08A0008A2E36 /* CJLPopMenuView.m */,
 				8B4B95CA1FC7367800FEB4F6 /* CJLTabBar.h */,
 				8B4B95CB1FC7367800FEB4F6 /* CJLTabBar.m */,
+				8B1CA9B41FD5FF34001C9C13 /* CJLTipView.h */,
+				8B1CA9B51FD5FF34001C9C13 /* CJLTipView.m */,
 				8B40F21D1F97D9FC00B0D132 /* FirstTabViewRelated */,
 			);
 			path = View;
@@ -435,8 +445,10 @@
 				8B43B5FB1FC8684800ABD0B5 /* CJLWaterfallLayout.m in Sources */,
 				8B3A4E121F7E6689006CFEBC /* SearchResultTableViewController.m in Sources */,
 				8BADE98D1F722B46009BB78E /* SecondViewController.m in Sources */,
+				8B1CA9B61FD5FF34001C9C13 /* CJLTipView.m in Sources */,
 				8BADE9B61F73BC64009BB78E /* KnowledgeDetailTableViewController.m in Sources */,
 				8BADE99E1F728035009BB78E /* KnowledgeViewController.m in Sources */,
+				8B1CA9B91FD6FC63001C9C13 /* CJLTipModel.m in Sources */,
 				8BADE9871F722B46009BB78E /* AppDelegate.m in Sources */,
 				8BADE9B31F73AEAE009BB78E /* CustomCollectionViewCell.m in Sources */,
 				8BED3C941F7C326100D8EFBB /* WebViewController.m in Sources */,

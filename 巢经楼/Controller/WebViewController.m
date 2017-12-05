@@ -7,6 +7,7 @@
 //
 
 #import "WebViewController.h"
+#import "DBAccess.h"
 
 @interface WebViewController ()
 
@@ -20,19 +21,29 @@
     [super viewDidLoad];
     //self.hidesBottomBarWhenPushed = YES;
     self.tabBarController.tabBar.hidden = YES;
+    self.navigationItem.rightBarButtonItem = self.favoriteBarButtonItem;
     // Do any additional setup after loading the view.
     //self.webView.delegate = self;
 
-    self.webView = [[WKWebView alloc] initWithFrame:self.view.bounds];
-    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.urlString] cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:120]];
-    //[self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://www.apple.com"]]];
-    self.webView.navigationDelegate = self;
-    [self.view addSubview:self.webView];
-    self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    self.activityIndicator.center = self.view.center;
-     [self.activityIndicator startAnimating];
-    self.navigationItem.rightBarButtonItem = self.favoriteBarButtonItem;
-    [self.view addSubview:self.activityIndicator];
+//    self.webView = [[WKWebView alloc] initWithFrame:self.view.bounds];
+//    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.urlString] cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:120]];
+//    //[self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://www.apple.com"]]];
+//    self.webView.navigationDelegate = self;
+//    [self.view addSubview:self.webView];
+    CJLTipModel *tipModel = [DBAccess getTipModelWithTipName:self.name];
+    self.tipView = [CJLTipView tipViewWithTipModel:tipModel];
+    [self.view addSubview:self.tipView];
+    
+    if([self.tipView isKindOfClass:[WKWebView class]]){
+        ((WKWebView *)self.tipView).navigationDelegate = self;
+        self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+        self.activityIndicator.center = self.view.center;
+        [self.activityIndicator startAnimating];
+        
+        [self.view addSubview:self.activityIndicator];
+    }
+    
+    
     
    
     //self.activityIndicator.hidden = YES;

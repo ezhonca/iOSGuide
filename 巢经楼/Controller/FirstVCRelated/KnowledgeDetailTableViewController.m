@@ -253,6 +253,7 @@
 //                vc.contentsDic = [model.cellsDic objectForKey:[[model.cellsDic allKeys] objectAtIndex:indexPath.row]];
                 vc.title = cell.textLabel.text;
                 //vc.contentsDic
+                vc.tipsArray = [DBAccess getTipsWithSecondCatalogName:cell.textLabel.text];
             }
         }
     }

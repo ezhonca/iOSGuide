@@ -13,5 +13,6 @@
 @interface ContentsTableViewController : UITableViewController
 
 @property(nonatomic, copy) NSDictionary *contentsDic;
+@property(strong, nonatomic) NSArray *tipsArray;
 
 @end

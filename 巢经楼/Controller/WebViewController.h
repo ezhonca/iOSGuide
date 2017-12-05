@@ -11,6 +11,7 @@
 #import "BookmarkModel+CoreDataModel.h"
 #import "AppDelegate.h"
 #import "BookmarkHandle.h"
+#import "CJLTipView.h"
 
 @interface WebViewController : UIViewController<WKNavigationDelegate>
 
@@ -19,5 +20,6 @@
 //@property(nonatomic, strong) Bookmark *bookmark;
 @property (strong, nonatomic) WKWebView *webView;
 @property (strong, nonatomic) UIActivityIndicatorView *activityIndicator;
+@property(strong, nonatomic) UIView *tipView;
 
 @end

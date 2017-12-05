@@ -8,6 +8,7 @@
 
 #import "DBAccess.h"
 #import "FMDB.h"
+#import "CJLTipModel.h"
 
 @interface DBAccess ()
 //@property(nonatomic, strong) static FMDatabase *database;
@@ -79,5 +80,38 @@
     return secondCatalogArray;
 }
 
++(NSArray *)getTipsWithSecondCatalogName:(NSString *)secondCatalogName
+{
+    NSMutableArray *tipsArray = [[NSMutableArray alloc] init];
+    FMDatabase *database = [self getDatabase];
+    if([database open]){
+        NSString *sql = [NSString stringWithFormat:@"select name from tip where secondCatalogID = (select id from secondCatalog where name = '%@')", secondCatalogName];
+        FMResultSet *rs = [database executeQuery:sql];
+        while([rs next]){
+            [tipsArray addObject:[rs stringForColumn:@"name"]];
+        }
+        [database close];
+    }
+    return tipsArray;
+}
+
++(CJLTipModel *)getTipModelWithTipName:(NSString *)tipName
+{
+    //NSMutableArray *tipsArray = [[NSMutableArray alloc] init];
+    FMDatabase *database = [self getDatabase];
+    CJLTipModel *tipModel;
+    if([database open]){
+        NSString *sql = [NSString stringWithFormat:@"select sourceType,URL from tip where name = '%@'", tipName];
+        FMResultSet *rs = [database executeQuery:sql];
+        
+        while([rs next]){
+            CJLTipViewType type = [rs intForColumn:@"sourceType"];
+            NSString *URL = [rs stringForColumn:@"URL"];
+            tipModel = [[CJLTipModel alloc] initWithName:tipName andType:type andURL:URL];
+        }
+        [database close];
+    }
+    return tipModel;
+}
 
 @end

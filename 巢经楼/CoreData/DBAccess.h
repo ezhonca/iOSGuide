@@ -7,10 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+@class CJLTipModel;
 
 @interface DBAccess : NSObject
 +(NSArray *)getAllSubjects;
 +(NSArray *)getFirstCatalogsWithSubjectName:(NSString *)subjectName;
 +(NSArray *)getSecondCatalogsWithFirstCatalogName:(NSString *)firstCatalogName;
-
++(NSArray *)getTipsWithSecondCatalogName:(NSString *)secondCatalogName;
++(CJLTipModel *)getTipModelWithTipName:(NSString *)tipName;
 @end

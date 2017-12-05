@@ -15,28 +15,18 @@
 
 @property(strong, nonatomic) NSString *key;
 @property(strong, nonatomic) UIMenuItem *favorate;
+
 @end
 
 @implementation ContentsTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //self.hidesBottomBarWhenPushed = YES;
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+
 }
 
-//- (void)viewWillDisappear:(BOOL)animated
-//{
-//    [super viewWillDisappear:animated];
-//    [self resignFirstResponder];
-//    [[UIMenuController sharedMenuController] setMenuVisible:NO];
-//
-//}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -52,14 +42,16 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return self.contentsDic.count;
+    //return self.contentsDic.count;
+    return self.tipsArray.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    NSString *key = [[self.contentsDic allKeys] objectAtIndex:indexPath.row];
-    cell.textLabel.text = key;
+//    NSString *key = [[self.contentsDic allKeys] objectAtIndex:indexPath.row];
+//    cell.textLabel.text = key;
+    cell.textLabel.text = self.tipsArray[indexPath.row];
   
     // Configure the cell...
     //cell.textLabel.minimumScaleFactor = 0.5;
@@ -198,7 +190,7 @@
                 NSString *key = cell.textLabel.text;
                 //vc.bookmark = [BookmarkHandle FetchBookmark:key];
                 vc.name = key;
-                vc.urlString = [self.contentsDic objectForKey:key];
+                //vc.urlString = [self.contentsDic objectForKey:key];
                 //vc.title = [self.contentsDic objectForKey:key];
             
             }
