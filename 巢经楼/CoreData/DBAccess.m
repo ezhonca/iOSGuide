@@ -9,6 +9,7 @@
 #import "DBAccess.h"
 #import "FMDB.h"
 #import "CJLTipModel.h"
+#import "CJLFavoriteModel.h"
 
 @interface DBAccess ()
 //@property(nonatomic, strong) static FMDatabase *database;
@@ -80,15 +81,34 @@
     return secondCatalogArray;
 }
 
-+(NSArray *)getTipsWithSecondCatalogName:(NSString *)secondCatalogName
++(NSArray<NSString *> *)getAllTipsName
 {
-    NSMutableArray *tipsArray = [[NSMutableArray alloc] init];
+    NSMutableArray<NSString *> *allTipsNameArray = [[NSMutableArray alloc] init];
     FMDatabase *database = [self getDatabase];
     if([database open]){
-        NSString *sql = [NSString stringWithFormat:@"select name from tip where secondCatalogID = (select id from secondCatalog where name = '%@')", secondCatalogName];
+        NSString *sql = [NSString stringWithFormat:@"select name from tip"];
         FMResultSet *rs = [database executeQuery:sql];
         while([rs next]){
-            [tipsArray addObject:[rs stringForColumn:@"name"]];
+            [allTipsNameArray addObject:[rs stringForColumn:@"name"]];
+        }
+        [database close];
+    }
+    return allTipsNameArray;
+}
+
++(NSArray<CJLTipModel *> *)getTipsWithSecondCatalogName:(NSString *)secondCatalogName
+{
+    NSMutableArray<CJLTipModel *> *tipsArray = [[NSMutableArray alloc] init];
+    FMDatabase *database = [self getDatabase];
+    if([database open]){
+        NSString *sql = [NSString stringWithFormat:@"select name,sourceType,URL from tip where secondCatalogID = (select id from secondCatalog where name = '%@')", secondCatalogName];
+        FMResultSet *rs = [database executeQuery:sql];
+        while([rs next]){
+            NSString *name = [rs stringForColumn:@"name"];
+            CJLTipViewType type = [rs intForColumn:@"sourceType"];
+            NSString *URL = [rs stringForColumn:@"URL"];
+             CJLTipModel *tipModel = [[CJLTipModel alloc] initWithName:name andType:type andURL:URL];
+            [tipsArray addObject:tipModel];
         }
         [database close];
     }
@@ -112,6 +132,72 @@
         [database close];
     }
     return tipModel;
+}
+
++(BOOL)insertIntoFavorite:(CJLTipModel *)tipModel
+{
+    FMDatabase *database = [self getDatabase];
+    if([database open]){
+        NSDate *date = [NSDate date];
+        NSDateFormatter *df = [[NSDateFormatter alloc] init];
+        df.dateFormat = @"YYYY-MM-dd HH:mm:ss";
+        NSString *time = [df stringFromDate:date];
+        BOOL isSuccess = [database executeUpdate:@"insert into favorite (name, time) values (?,?)", tipModel.name, time];
+//        FMResultSet *rs = [database executeQuery:@"select * from favorite"];
+//        if([rs next]){
+//            NSString *a =  [rs stringForColumnIndex:1];
+//            NSString *b =  [rs stringForColumnIndex:0];
+//        }
+        [database close];
+        return isSuccess;
+    }
+    return NO;
+    
+}
+
++(BOOL)getFavoriteWithName:(CJLTipModel *)tipModel
+{
+    FMDatabase *database = [self getDatabase];
+    if([database open]){
+        FMResultSet *rs = [database executeQuery:@"select count(*) from favorite where name = ?", tipModel.name];
+        if([rs next]){
+            BOOL isfavorite =  [rs intForColumnIndex:0];
+            [database close];
+            return isfavorite;
+        }
+    }
+    
+    return  NO;
+}
+
++(BOOL)deleteFavoriteWithName:(NSString *)name
+{
+    FMDatabase *database = [self getDatabase];
+    if([database open]){
+        BOOL isSuccess = [database executeUpdate:@"delete from favorite where name = ?", name];
+        [database close];
+        return isSuccess;
+    }
+    
+    return NO;
+}
+
++(NSMutableArray<CJLFavoriteModel *> *)getAllFavorites
+{
+    NSMutableArray<CJLFavoriteModel *> *allFavoriteArray = [[NSMutableArray<CJLFavoriteModel *> alloc] init];
+    FMDatabase *database = [self getDatabase];
+    if([database open]){
+        NSString *sql = [NSString stringWithFormat:@"select name,time from favorite"];
+        FMResultSet *rs = [database executeQuery:sql];
+        while([rs next]){
+            NSString *name = [rs stringForColumn:@"name"];
+            NSString *time = [rs stringForColumn:@"time"];
+            CJLFavoriteModel *favorite = [[CJLFavoriteModel alloc] initWithName:name time:time];
+            [allFavoriteArray addObject:favorite];
+        }
+        [database close];
+    }
+    return allFavoriteArray;
 }
 
 @end

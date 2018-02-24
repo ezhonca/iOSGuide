@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 @class CJLTipModel;
+@class CJLFavoriteModel;
 
 @interface DBAccess : NSObject
 +(NSArray *)getAllSubjects;
@@ -15,4 +16,9 @@
 +(NSArray *)getSecondCatalogsWithFirstCatalogName:(NSString *)firstCatalogName;
 +(NSArray *)getTipsWithSecondCatalogName:(NSString *)secondCatalogName;
 +(CJLTipModel *)getTipModelWithTipName:(NSString *)tipName;
++(NSArray<NSString *> *)getAllTipsName;
++(BOOL)insertIntoFavorite:(CJLTipModel *)tipModel;
++(BOOL)getFavoriteWithName:(CJLTipModel *)tipModel;
++(BOOL)deleteFavoriteWithName:(NSString *)name;
++(NSMutableArray<CJLFavoriteModel *> *)getAllFavorites;
 @end

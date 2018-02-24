@@ -26,15 +26,19 @@
             WKWebView *webView = [[WKWebView alloc] initWithFrame:[UIApplication sharedApplication].keyWindow.frame];
             [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:tipModel.URL] cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:120]];
             return webView;
-            break;}
+            break;
+            
+        }
         case CJLTipViewTypeImage:{
             return [[WKWebView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
-            break;}
+            break;
+            
+        }
         case CJLTipViewTypeText:{
             return [[WKWebView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
-            break;}
+            break;
             
-      
+        }
     }
 }
 @end

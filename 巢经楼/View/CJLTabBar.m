@@ -82,6 +82,7 @@
     
     //[tabBarController.tabBar setBackgroundImage:i];
     self.barStyle = UIBarStyleBlack;
+    //self.translucent = NO;
     //[self setBackgroundImage:[[UIImage alloc] init]];
     //[self setShadowImage:[[UIImage alloc] init]];
 }

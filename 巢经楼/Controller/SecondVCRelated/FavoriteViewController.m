@@ -1,6 +1,6 @@
 //
 //  FavoriteViewController.m
-//  iOS宝典
+//  巢经楼
 //
 //  Created by 蔡钟鸣 on 2017/10/19.
 //  Copyright © 2017年 蔡钟鸣. All rights reserved.
@@ -10,16 +10,33 @@
 #import "AppDelegate.h"
 #import "WebViewController.h"
 #import "BookmarkHandle.h"
-@interface FavoriteViewController ()
+#import "DBAccess.h"
+#import "CJLFavoriteModel.h"
+#import "UIView+FrameExtension.h"
+#import "CJLFavoriteTableViewCell.h"
+#import "UITableView+CJLAnimation.h"
 
+
+@interface FavoriteViewController ()
+@property(nonatomic, strong) NSMutableArray<CJLFavoriteModel *> *favoriteArray;
 @end
 
 @implementation FavoriteViewController
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.favoriteArray = [DBAccess getAllFavorites];
+    [self.tableView reloadData];
+    [self.tableView startAnimationWithType:CJLTableViewAnimationAlpha];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication] delegate];
-    self.managedObjectContext = app.persistentContainer.viewContext;
+    
+    //[[] mutableCopy];
+//    AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+//    self.managedObjectContext = app.persistentContainer.viewContext;
     self.title = @"收藏";
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -36,26 +53,47 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return self.fechedResultController.sections.count;
+    //return self.fechedResultController.sections.count;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    id<NSFetchedResultsSectionInfo> sectionInfo = self.fechedResultController.sections[section];
-    return [sectionInfo numberOfObjects];
+    //id<NSFetchedResultsSectionInfo> sectionInfo = self.fechedResultController.sections[section];
+    //return [sectionInfo numberOfObjects];
+    return self.favoriteArray.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    Bookmark *bookmark = [self.fechedResultController objectAtIndexPath:indexPath];
-    cell.textLabel.text = bookmark.name;
+    CJLFavoriteTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FavoriteTableViewCell" forIndexPath:indexPath];
+    //    NSString *key = [[self.contentsDic allKeys] objectAtIndex:indexPath.row];
+    //    cell.textLabel.text = key;
+    CJLFavoriteModel *favorite = self.favoriteArray[indexPath.row];
+    cell.textLabel.text = favorite.name;
+    cell.textLabel.backgroundColor = [UIColor clearColor];
+    cell.addTimeLabel.text = [@"收藏于：" stringByAppendingString:favorite.time];
+    [cell.addTimeLabel sizeToFit];
+    //cell.detailTextLabel.x_Adjustable += 50;
+    cell.textLabel.font = [UIFont systemFontOfSize:15 weight:UIFontWeightThin];
+    [cell.contentView bringSubviewToFront:cell.addTimeLabel];
+    
+    //cell.imageView.image = [UIImage imageNamed:@""];
+
+    //cell.backgroundColor = [UIColor redColor];
+    // Configure the cell...
+    //cell.textLabel.minimumScaleFactor = 0.5;
     cell.textLabel.numberOfLines = 0;
     cell.textLabel.adjustsFontSizeToFitWidth = YES;
     return cell;
 }
 
 
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 80;
+}
 
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -78,7 +116,11 @@
 //            NSLog(@"Unresolved error %@, %@", error, error.userInfo);
 //            abort();
 //        }
-        [BookmarkHandle DeleteBookmark:[self.fechedResultController objectAtIndexPath:indexPath]];
+        CJLFavoriteModel *model = self.favoriteArray[indexPath.row];
+        [self.favoriteArray removeObject:model];
+        [DBAccess deleteFavoriteWithName:model.name];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        //[BookmarkHandle DeleteBookmark:[self.fechedResultController objectAtIndexPath:indexPath]];
         
     }
 //    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
@@ -128,7 +170,7 @@
 }
 
 #pragma mark - Fetched results controller
-
+/*
 -(NSFetchedResultsController<Bookmark *> *)fechedResultController
 {
     if(_fechedResultController != nil){
@@ -212,5 +254,5 @@
 {
     [self.tableView endUpdates];
 }
-
+*/
 @end

@@ -1,6 +1,6 @@
 //
 //  ContentsTableViewController.m
-//  iOS宝典
+//  巢经楼
 //
 //  Created by 蔡钟鸣 on 2017/9/27.
 //  Copyright © 2017年 蔡钟鸣. All rights reserved.
@@ -9,6 +9,8 @@
 #import "ContentsTableViewController.h"
 #import "WebViewController.h"
 #import "AppDelegate.h"
+#import "UITableView+CJLAnimation.h"
+#import "CJLTipModel.h"
 
 
 @interface ContentsTableViewController ()
@@ -16,13 +18,15 @@
 @property(strong, nonatomic) NSString *key;
 @property(strong, nonatomic) UIMenuItem *favorate;
 
+
 @end
 
 @implementation ContentsTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+//    [self.tableView reloadData];
+//    [self.tableView startAnimationWithType:CJLTableViewAnimationTypecellShrinkToTop];
 
 }
 
@@ -37,22 +41,43 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 
-    return 1;
+    return self.tipsArray.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
     //return self.contentsDic.count;
-    return self.tipsArray.count;
+    return 1;
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 5;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 80;
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 //    NSString *key = [[self.contentsDic allKeys] objectAtIndex:indexPath.row];
 //    cell.textLabel.text = key;
-    cell.textLabel.text = self.tipsArray[indexPath.row];
-  
+    cell.textLabel.text = self.tipsArray[indexPath.section].name;
+    cell.textLabel.font = [UIFont systemFontOfSize:15 weight:UIFontWeightThin];
+    switch (self.tipsArray[indexPath.section].type) {
+        case CJLTipViewTypeWeb:
+            cell.imageView.image = [UIImage imageNamed:@"Website"];
+            break;
+        case CJLTipViewTypeText:
+            cell.imageView.image = [UIImage imageNamed:@"note"];
+            break;
+        case CJLTipViewTypeImage:
+            cell.imageView.image = [UIImage imageNamed:@"image"];
+            break;
+    }
+    //cell.backgroundColor = [UIColor redColor];
     // Configure the cell...
     //cell.textLabel.minimumScaleFactor = 0.5;
     cell.textLabel.numberOfLines = 0;
@@ -74,13 +99,17 @@
         self.key = [[self.contentsDic allKeys] objectAtIndex:indexPath.row];
         
         //UIMenuItem *favorate = [[UIMenuItem alloc] initWithTitle:@"收藏" action:@selector(addFavorate:)];
-        if(self.favorate == nil){
+        
+        /* 暂时关闭长按收藏功能
+        if(!self.favorate){
             self.favorate = [[UIMenuItem alloc] initWithTitle:@"收藏" action:@selector(addFavorate:)];
         }
         UIMenuController *menu = [UIMenuController sharedMenuController];
         [menu setMenuItems:[NSArray arrayWithObjects:self.favorate, nil]];
         [menu setTargetRect:cell.frame inView:cell.superview];
         [menu setMenuVisible:YES animated:YES];
+         
+        */
         //[cell resignFirstResponder];
         //[menu setMenuVisible:NO];
 //        if (![menu isMenuVisible]) {
@@ -98,7 +127,7 @@
     //id view = [sender superview];
     NSLog(@"举报啦");
     if([sender isKindOfClass:[UIMenuController class]]){
-        [BookmarkHandle InsertBookmark:self.key WithBookmarkUrl:[self.contentsDic objectForKey:self.key]];
+        //[BookmarkHandle InsertBookmark:self.key WithBookmarkUrl:[self.contentsDic objectForKey:self.key]];
 //
 //        Bookmark *bookmark = [[Bookmark alloc] init];
 //        bookmark.name = self.key;
@@ -139,10 +168,7 @@
 {
     return YES;
 }
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 40;
-}
+
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -187,9 +213,10 @@
             WebViewController *vc = segue.destinationViewController;
             if([sender isKindOfClass:[UITableViewCell class]]){
                 UITableViewCell *cell = sender;
-                NSString *key = cell.textLabel.text;
+                NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+                //NSString *key = cell.textLabel.text;
                 //vc.bookmark = [BookmarkHandle FetchBookmark:key];
-                vc.name = key;
+                vc.tipModel = self.tipsArray[indexPath.section];
                 //vc.urlString = [self.contentsDic objectForKey:key];
                 //vc.title = [self.contentsDic objectForKey:key];
             

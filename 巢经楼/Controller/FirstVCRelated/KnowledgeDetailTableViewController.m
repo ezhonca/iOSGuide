@@ -1,6 +1,6 @@
 //
 //  KnowledgeDetailTableViewController.m
-//  iOS宝典
+//  巢经楼
 //
 //  Created by 蔡钟鸣 on 2017/9/21.
 //  Copyright © 2017年 蔡钟鸣. All rights reserved.
@@ -10,6 +10,8 @@
 #import "ExpandableTableViewHeader.h"
 #import "ContentsTableViewController.h"
 #import "DBAccess.h"
+#import "UITableView+CJLAnimation.h"
+#import "UIColor+CJLColor.h"
 
 @interface KnowledgeDetailTableViewController ()
 @property (nonatomic, strong) NSMutableArray<NSString *> *expandStateArray;
@@ -57,14 +59,37 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.tableView registerClass:[ExpandableTableViewHeader class] forHeaderFooterViewReuseIdentifier:@"header"];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    //self.tableView.backgroundColor = [UIColor cjl_defaultBackgroundColor];
+    //self.tableView.contentInset = UIEdgeInsetsMake(5, 5, 5, 5);
     [self loadSecondCatalogsArray];
     [self loadDate:self.knowledgeDetailDic];
+//    for(int i = 0; i < self.tableView.numberOfSections; i++){
+//        [self.tableView reloadSections:[[NSIndexSet alloc] initWithIndex:i] withRowAnimation:UITableViewRowAnimationNone];
+//    }
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    //[self.tableView reloadSections:[[NSIndexSet alloc] initWithIndex:section]; withRowAnimation:<#(UITableViewRowAnimation)#>];
+    
+    [self performSelector:@selector(a) withObject:nil afterDelay:0.1];
+   
+}
+-(void)a{
+    [self.tableView startAnimationWithType:CJLTableViewAnimationTypeSectionHeaderTranslationXSpring];
+//    CGFloat totalTime = 0.4;
+//    for(int i = 0; i < self.tableView.numberOfSections; i++){
+//        UITableViewHeaderFooterView *head = [self.tableView headerViewForSection:i];
+//        head.transform = CGAffineTransformMakeTranslation(-100, 0);
+//        [UIView animateWithDuration:totalTime delay:i*(totalTime/self.tableView.numberOfSections) usingSpringWithDamping:0.7 initialSpringVelocity:1 options:UIViewAnimationOptionCurveEaseIn animations:^{
+//            head.transform = CGAffineTransformIdentity;
+//        } completion:^(BOOL finished) {
+//
+//        }];
+//    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -95,11 +120,11 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 50;
+    return 80;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 40;
+    return 60;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -111,7 +136,10 @@
     
     //cell.textLabel.text = [@"  " stringByAppendingString:[[model.cellsDic allKeys] objectAtIndex:indexPath.row]];
     cell.textLabel.text = self.secondCatalogsArray[indexPath.section][indexPath.row];
-    cell.textLabel.font = [UIFont systemFontOfSize:15];
+    cell.textLabel.font = [UIFont systemFontOfSize:18];
+    cell.imageView.image = [UIImage imageNamed:@"book"];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    //cell.backgroundColor = [UIColor cjl_defaultBackgroundColor];
     // Configure the cell...
     
     return cell;
@@ -124,52 +152,28 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     static NSString *HeaderIdentifier = @"header";
     ExpandableTableViewHeader *header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:HeaderIdentifier];
-    if(!header){
-        header = [[ExpandableTableViewHeader alloc] initWithReuseIdentifier:HeaderIdentifier];
-        
+    //UITableViewHeaderFooterView *header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:HeaderIdentifier];
+//    if(!header){
+//        header = [[ExpandableTableViewHeader alloc] initWithReuseIdentifier:HeaderIdentifier];
+//
+//    }
+    if([self.expandStateArray[section] boolValue]){
+        header.accessoryView.transform = CGAffineTransformIdentity;
+        //weakHeader.accessoryView.transform = CGAffineTransformMakeRotation(M_PI);
+    }else{
+
+        //weakHeader.accessoryView.transform = CGAffineTransformIdentity;
+        header.accessoryView.transform = CGAffineTransformMakeRotation(M_PI);
     }
-    
-    //ExpandableTableViewHeaderModel *model = self.ExpandableModelArray[section];
-    //header.headerModel = model;
-//    [UIView animateWithDuration:0.5 animations:^{
-////        if(!model.isExpanded){
-////            header.accessoryView.transform = CGAffineTransformIdentity;
-////        }else{
-////            header.accessoryView.transform = CGAffineTransformMakeRotation(M_PI);
-////        }
-//        if(![self.expandStateArray[section] boolValue]){
-//            header.accessoryView.transform = CGAffineTransformMakeRotation(M_PI);
-//        }else{
-//            header.accessoryView.transform = CGAffineTransformIdentity;
-//            //header.accessoryView.transform = CGAffineTransformMakeRotation(M_PI);
-//        }
-//
-//
-//
-//    }];
-            if([self.expandStateArray[section] boolValue]){
-                    header.accessoryView.transform = CGAffineTransformIdentity;
-                    //weakHeader.accessoryView.transform = CGAffineTransformMakeRotation(M_PI);
-            }else{
-             
-                    //weakHeader.accessoryView.transform = CGAffineTransformIdentity;
-                    header.accessoryView.transform = CGAffineTransformMakeRotation(M_PI);
-            }
-    //header.textLabel.text = [self.knowledgeDetailDic.allKeys objectAtIndex:section];
+
     header.textLabel.text = self.firstCatalogArray[section];
-    
-//    header.headerClickBackBlock = ^{
-//        if(model.canExpand){
-//        [self changeExpandStateInSection:section];
-//        NSIndexSet *indexSet = [[NSIndexSet alloc] initWithIndex:section];
-//            [tableView reloadSections:indexSet  withRowAnimation:UITableViewRowAnimationAutomatic];
-//        }else{
-//            [self performSegueWithIdentifier:@"ShowContents" sender:weakHeader];
-//        }
+    header.headerColor = [UIColor cjl_colorInPool:section];
+
+
     __weak ExpandableTableViewHeader *weakHeader = header;
     __weak KnowledgeDetailTableViewController *weakSelf = self;
-    
-    
+
+
 
     header.headerClickBackBlock = ^{
         [weakSelf changeExpandStateInSection:section];
@@ -186,9 +190,10 @@
                }completion:^(BOOL finished) {
                      [tableView reloadSections:indexSet  withRowAnimation:UITableViewRowAnimationAutomatic];
         }];
-       
+
     };
-    
+    //header.transform = CGAffineTransformMakeTranslation(-500, 0);
+    //header.alignmentRectInsets = UIEdgeInsetsMake(5, 5, 5, 5);
     return header;
 }
 

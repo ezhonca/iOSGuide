@@ -1,6 +1,6 @@
 //
 //  SearchResultTableViewController.m
-//  iOS宝典
+//  巢经楼
 //
 //  Created by 蔡钟鸣 on 2017/9/29.
 //  Copyright © 2017年 蔡钟鸣. All rights reserved.
@@ -42,11 +42,11 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 
-    return 1;
+    return self.resultTipsArray.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.dateDic.count;
+    return 1;
     
 }
 
@@ -58,17 +58,19 @@
         cell=[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:flag];
         cell.backgroundColor = [UIColor clearColor];
     }
-    NSString *cellText = [[self.dateDic allKeys] objectAtIndex:indexPath.row];
+    //NSString *cellText = [[self.dateDic allKeys] objectAtIndex:indexPath.row];
+    NSString *cellText = self.resultTipsArray[indexPath.section];
     //cell.textLabel.text = [[self.dateDic allKeys] objectAtIndex:indexPath.row];
     //cell.textLabel.minimumScaleFactor = 0.5;
     cell.textLabel.numberOfLines = 0;
     cell.textLabel.adjustsFontSizeToFitWidth = YES;
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:cellText];
-    NSRange range = [[attributedString string] rangeOfString:self.searchString];
+    NSRange range = [[attributedString string] rangeOfString:self.searchString options:NSCaseInsensitiveSearch];
     [attributedString addAttribute:NSForegroundColorAttributeName value:[UIColor orangeColor] range:range];
     
     //[attributedString addAttribute:NSFontAttributeName value:[UIFont boldSystemFontOfSize:] range:range];
     cell.textLabel.attributedText = attributedString;
+    cell.textLabel.font = [UIFont systemFontOfSize:15 weight:UIFontWeightThin];
     cell.imageView.image = [UIImage imageNamed:@"search"];
 //    UIImageView *line = [[UIImageView alloc] initWithImage: [UIImage imageNamed:@"cell-content-line"]];
 //    line.height_Adjustable= 0.5;
@@ -82,9 +84,12 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 40;
+    return 60;
 }
-
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 10;
+}
 //-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 //{
 //    return @"搜索结果";
@@ -106,7 +111,7 @@
 {
     
     //self.tableViewDidSelectedBlock([self.dateDic valueForKey:[[self.dateDic allKeys] objectAtIndex:indexPath.row]]);
-    self.tableViewDidSelectedBlock([[self.dateDic allKeys] objectAtIndex:indexPath.row],[self.dateDic valueForKey:[[self.dateDic allKeys] objectAtIndex:indexPath.row]]);
+    self.tableViewDidSelectedBlock(self.resultTipsArray[indexPath.section]);
 //    WebViewController *webVC = [[WebViewController alloc] init];
 //    webVC.urlString = @"https://www.apple.com";
 //    [self.navigationController pushViewController:webVC animated:YES];
@@ -170,7 +175,7 @@
 
 -(instancetype)init{
     if(self = [super init]){
-        self.dateDic = [[NSMutableDictionary alloc] init];
+        //self.dateDic = [[NSMutableDictionary alloc] init];
     }
     return self;
 }

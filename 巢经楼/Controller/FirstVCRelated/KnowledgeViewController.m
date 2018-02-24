@@ -1,6 +1,6 @@
 //
 //  KnowledgeViewController.m
-//  iOS宝典
+//  巢经楼
 //
 //  Created by 蔡钟鸣 on 2017/9/20.
 //  Copyright © 2017年 蔡钟鸣. All rights reserved.
@@ -14,6 +14,8 @@
 #import "CONSTFile.h"
 #import "CJLWaterfallLayout.h"
 #import "DBAccess.h"
+#import "DBAccess.h"
+#import "CJLTipModel.h"
 
 @interface KnowledgeViewController ()
 @property (strong, nonatomic) NSMutableArray *subjectArray;
@@ -22,9 +24,11 @@
 @property (nonatomic, strong) NSMutableDictionary *searchResultDic;
 @property (nonatomic, strong) NSMutableDictionary<NSString *, UIColor *> *subjectColorDic;
 @property (nonatomic, strong) NSArray *allSubjectsFromDB;
+@property (nonatomic, strong) NSArray<NSString *> *allTipsNameArray;
 @end
 
 @implementation KnowledgeViewController
+
 
 -(NSArray *)allSubjectsFromDB
 {
@@ -90,8 +94,8 @@
     NSString *rootPath = [[NSBundle mainBundle] pathForResource:@"pathData" ofType:@"plist"];
     self.rootDic = [[NSDictionary alloc] initWithContentsOfFile:rootPath];
     //self.dateDic = [[NSMutableDictionary alloc] init];
-    [self setDateDicWithRootDic:self.rootDic];
-    
+    //[self setDateDicWithRootDic:self.rootDic];
+    self.allTipsNameArray = [DBAccess getAllTipsName];
     self.resultVC = [[SearchResultTableViewController alloc] init];
 //    [self.resultVC setDateDicWithRootDic:self.rootDic];
 //    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:self.searchController];
@@ -104,7 +108,7 @@
         //if(weakSelf.searchController.searbarDidSelected)
           [weakSelf.searchController.searchBar resignFirstResponder];
     };
-    self.resultVC.tableViewDidSelectedBlock = ^(NSString *name, NSString *urlString){
+    self.resultVC.tableViewDidSelectedBlock = ^(NSString *name){
         if(![weakSelf.searchController.historyArray containsObject:weakSelf.searchController.searchBar.text]){
             [weakSelf.searchController.historyArray insertObject:weakSelf.searchController.searchBar.text atIndex:0];
             if(weakSelf.searchController.historyArray.count > SEARCHHISTORY_COUNT){
@@ -114,10 +118,12 @@
             [weakSelf.searchController.tableView reloadData];
             
         }
+        CJLTipModel *tipModel = [DBAccess getTipModelWithTipName:name];
         WebViewController *webVC = [[WebViewController alloc] init];
+        webVC.tipModel = tipModel;
         //webVC.bookmark = [BookmarkHandle FetchBookmark:name];
-        webVC.name = name;
-        webVC.urlString = urlString;
+//        webVC.name = name;
+//        webVC.urlString = urlString;
         //[weakSelf.navigationController presentViewController:webVC animated:YES completion:nil];
         [weakSelf.navigationController pushViewController:webVC animated:YES];
         //[weakSelf.navigationController showViewController:webVC sender:nil];
@@ -263,17 +269,19 @@
             NSString *searchString = [self.searchController.searchBar text];
             NSPredicate *preicate = [NSPredicate predicateWithFormat:@"SELF CONTAINS[c] %@", searchString];
             
-            if (self.searchResultDic!= nil) {
-                [self.searchResultDic removeAllObjects];
-            }
+//            if (self.searchResultDic!= nil) {
+//                [self.searchResultDic removeAllObjects];
+//            }
             
-            NSMutableArray *searchResultArray = [NSMutableArray arrayWithArray:[[self.dateDic allKeys] filteredArrayUsingPredicate:preicate]];
+            //NSMutableArray *searchResultArray = [NSMutableArray arrayWithArray:[[self.dateDic allKeys] filteredArrayUsingPredicate:preicate]];
+            NSMutableArray *searchResultArray = [NSMutableArray arrayWithArray:[self.allTipsNameArray filteredArrayUsingPredicate:preicate]];
+            self.resultVC.resultTipsArray = searchResultArray;
             //过滤数据
-            for(NSString *key in searchResultArray){
-                [self.searchResultDic setValue:self.dateDic[key] forKey:key];
-            }
+//            for(NSString *key in searchResultArray){
+//                [self.searchResultDic setValue:self.dateDic[key] forKey:key];
+//            }
             //SearchResultTableViewController *resultVC = (SearchResultTableViewController *)self.searchResultsController;
-            self.resultVC.dateDic = self.searchResultDic;
+            //self.resultVC.dateDic = self.searchResultDic;
             self.resultVC.searchString = searchString;
             //刷新表格
             [self.resultVC.tableView reloadData];

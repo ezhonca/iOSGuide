@@ -1,6 +1,6 @@
 //
 //  SearchSuggestionViewController.m
-//  iOS宝典
+//  巢经楼
 //
 //  Created by 蔡钟鸣 on 2017/9/29.
 //  Copyright © 2017年 蔡钟鸣. All rights reserved.
@@ -63,6 +63,7 @@
     self.searchBar.backgroundImage = [[UIImage alloc] init];
     //self.searchBar.barTintColor = [UIColor orangeColor];
     self.searchBar.backgroundColor = [UIColor colorWithRed:253/255.0 green:146/255.0 blue:38/255.0 alpha:1];
+    self.searchBar.barTintColor = [UIColor lightGrayColor];
 //    self.searchBar.showsCancelButton = YES;
 //    UIButton *cancelButton = [self.searchBar valueForKey:@"cancelButton"];
 //    if(cancelButton){

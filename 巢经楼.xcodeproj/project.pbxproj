@@ -10,6 +10,8 @@
 		0F9DB1BCF1A13A4713A6C9AE /* Pods____.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33F6A38E088A3AF74398C791 /* Pods____.framework */; };
 		8B1CA9B61FD5FF34001C9C13 /* CJLTipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B1CA9B51FD5FF34001C9C13 /* CJLTipView.m */; };
 		8B1CA9B91FD6FC63001C9C13 /* CJLTipModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B1CA9B81FD6FC63001C9C13 /* CJLTipModel.m */; };
+		8B1CA9BC1FD8609D001C9C13 /* UITableView+CJLAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B1CA9BB1FD8609D001C9C13 /* UITableView+CJLAnimation.m */; };
+		8B1CA9BF1FD88F3F001C9C13 /* UIColor+CJLColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B1CA9BE1FD88F3F001C9C13 /* UIColor+CJLColor.m */; };
 		8B3A4E121F7E6689006CFEBC /* SearchResultTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3A4E111F7E6689006CFEBC /* SearchResultTableViewController.m */; };
 		8B3A4E181F7E9E4F006CFEBC /* SearchSuggestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3A4E171F7E9E4F006CFEBC /* SearchSuggestionViewController.m */; };
 		8B3A4E201F7EC70B006CFEBC /* SearchSuggestionTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3A4E1F1F7EC70B006CFEBC /* SearchSuggestionTableView.m */; };
@@ -22,6 +24,8 @@
 		8B4B95CC1FC7367800FEB4F6 /* CJLTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4B95CB1FC7367800FEB4F6 /* CJLTabBar.m */; };
 		8B4C75EE1F8C35CC009160DC /* CONSTFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4C75ED1F8C35CC009160DC /* CONSTFile.m */; };
 		8B505E9A1FCE08A0008A2E36 /* CJLPopMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B505E991FCE08A0008A2E36 /* CJLPopMenuView.m */; };
+		8B7EAE4820038D7D001C2622 /* CJLFavoriteModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7EAE4720038D7D001C2622 /* CJLFavoriteModel.m */; };
+		8B7EAE4C2003B2F0001C2622 /* CJLFavoriteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7EAE4A2003B2F0001C2622 /* CJLFavoriteTableViewCell.m */; };
 		8BADE9841F722B46009BB78E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BADE9831F722B46009BB78E /* main.m */; };
 		8BADE9871F722B46009BB78E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BADE9861F722B46009BB78E /* AppDelegate.m */; };
 		8BADE98D1F722B46009BB78E /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BADE98C1F722B46009BB78E /* SecondViewController.m */; };
@@ -51,6 +55,10 @@
 		8B1CA9B51FD5FF34001C9C13 /* CJLTipView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJLTipView.m; sourceTree = "<group>"; };
 		8B1CA9B71FD6FC63001C9C13 /* CJLTipModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJLTipModel.h; sourceTree = "<group>"; };
 		8B1CA9B81FD6FC63001C9C13 /* CJLTipModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJLTipModel.m; sourceTree = "<group>"; };
+		8B1CA9BA1FD8609D001C9C13 /* UITableView+CJLAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableView+CJLAnimation.h"; sourceTree = "<group>"; };
+		8B1CA9BB1FD8609D001C9C13 /* UITableView+CJLAnimation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableView+CJLAnimation.m"; sourceTree = "<group>"; };
+		8B1CA9BD1FD88F3F001C9C13 /* UIColor+CJLColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+CJLColor.h"; sourceTree = "<group>"; };
+		8B1CA9BE1FD88F3F001C9C13 /* UIColor+CJLColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CJLColor.m"; sourceTree = "<group>"; };
 		8B3A4E101F7E6689006CFEBC /* SearchResultTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultTableViewController.h; sourceTree = "<group>"; };
 		8B3A4E111F7E6689006CFEBC /* SearchResultTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultTableViewController.m; sourceTree = "<group>"; };
 		8B3A4E161F7E9E4F006CFEBC /* SearchSuggestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchSuggestionViewController.h; sourceTree = "<group>"; };
@@ -73,6 +81,10 @@
 		8B4C75ED1F8C35CC009160DC /* CONSTFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CONSTFile.m; sourceTree = "<group>"; };
 		8B505E981FCE08A0008A2E36 /* CJLPopMenuView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJLPopMenuView.h; sourceTree = "<group>"; };
 		8B505E991FCE08A0008A2E36 /* CJLPopMenuView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJLPopMenuView.m; sourceTree = "<group>"; };
+		8B7EAE4620038D7D001C2622 /* CJLFavoriteModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJLFavoriteModel.h; sourceTree = "<group>"; };
+		8B7EAE4720038D7D001C2622 /* CJLFavoriteModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJLFavoriteModel.m; sourceTree = "<group>"; };
+		8B7EAE492003B2F0001C2622 /* CJLFavoriteTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJLFavoriteTableViewCell.h; sourceTree = "<group>"; };
+		8B7EAE4A2003B2F0001C2622 /* CJLFavoriteTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJLFavoriteTableViewCell.m; sourceTree = "<group>"; };
 		8BADE97F1F722B45009BB78E /* 巢经楼.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "巢经楼.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BADE9831F722B46009BB78E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8BADE9851F722B46009BB78E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -136,10 +148,14 @@
 		8B3A4E211F7F7DFE006CFEBC /* Extentions */ = {
 			isa = PBXGroup;
 			children = (
+				8B1CA9BA1FD8609D001C9C13 /* UITableView+CJLAnimation.h */,
+				8B1CA9BB1FD8609D001C9C13 /* UITableView+CJLAnimation.m */,
 				8B4C75EC1F8C35CC009160DC /* CONSTFile.h */,
 				8B4C75ED1F8C35CC009160DC /* CONSTFile.m */,
 				8B3A4E221F7F7F57006CFEBC /* UIView+FrameExtension.h */,
 				8B3A4E231F7F7F57006CFEBC /* UIView+FrameExtension.m */,
+				8B1CA9BD1FD88F3F001C9C13 /* UIColor+CJLColor.h */,
+				8B1CA9BE1FD88F3F001C9C13 /* UIColor+CJLColor.m */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -186,6 +202,8 @@
 		8B40F21D1F97D9FC00B0D132 /* FirstTabViewRelated */ = {
 			isa = PBXGroup;
 			children = (
+				8BADE9B11F73AEAE009BB78E /* CustomCollectionViewCell.h */,
+				8BADE9B21F73AEAE009BB78E /* CustomCollectionViewCell.m */,
 				8B43B5F91FC8684800ABD0B5 /* CJLWaterfallLayout.h */,
 				8B43B5FA1FC8684800ABD0B5 /* CJLWaterfallLayout.m */,
 				8B3A4E1E1F7EC70B006CFEBC /* SearchSuggestionTableView.h */,
@@ -226,8 +244,6 @@
 				8BADE9851F722B46009BB78E /* AppDelegate.h */,
 				8BADE9861F722B46009BB78E /* AppDelegate.m */,
 				8BADE98E1F722B46009BB78E /* Main.storyboard */,
-				8BADE9B11F73AEAE009BB78E /* CustomCollectionViewCell.h */,
-				8BADE9B21F73AEAE009BB78E /* CustomCollectionViewCell.m */,
 				8BADE9911F722B46009BB78E /* Assets.xcassets */,
 				8BADE9931F722B46009BB78E /* LaunchScreen.storyboard */,
 				8BADE9961F722B46009BB78E /* Info.plist */,
@@ -264,6 +280,8 @@
 				8BB429BC1F7A6DC600AE5B19 /* ExpandableTableViewHeaderModel.m */,
 				8B1CA9B71FD6FC63001C9C13 /* CJLTipModel.h */,
 				8B1CA9B81FD6FC63001C9C13 /* CJLTipModel.m */,
+				8B7EAE4620038D7D001C2622 /* CJLFavoriteModel.h */,
+				8B7EAE4720038D7D001C2622 /* CJLFavoriteModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -271,6 +289,8 @@
 		8BB429B71F7A6C7A00AE5B19 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8B7EAE492003B2F0001C2622 /* CJLFavoriteTableViewCell.h */,
+				8B7EAE4A2003B2F0001C2622 /* CJLFavoriteTableViewCell.m */,
 				8B505E981FCE08A0008A2E36 /* CJLPopMenuView.h */,
 				8B505E991FCE08A0008A2E36 /* CJLPopMenuView.m */,
 				8B4B95CA1FC7367800FEB4F6 /* CJLTabBar.h */,
@@ -439,6 +459,8 @@
 			files = (
 				8B3A4E181F7E9E4F006CFEBC /* SearchSuggestionViewController.m in Sources */,
 				8BB429BD1F7A6DC600AE5B19 /* ExpandableTableViewHeaderModel.m in Sources */,
+				8B1CA9BC1FD8609D001C9C13 /* UITableView+CJLAnimation.m in Sources */,
+				8B7EAE4C2003B2F0001C2622 /* CJLFavoriteTableViewCell.m in Sources */,
 				8B3C9A111FA115210041A66F /* BlurLayout.m in Sources */,
 				8B505E9A1FCE08A0008A2E36 /* CJLPopMenuView.m in Sources */,
 				8B4C75EE1F8C35CC009160DC /* CONSTFile.m in Sources */,
@@ -453,6 +475,8 @@
 				8BADE9B31F73AEAE009BB78E /* CustomCollectionViewCell.m in Sources */,
 				8BED3C941F7C326100D8EFBB /* WebViewController.m in Sources */,
 				8B40F22F1F97DC7D00B0D132 /* BookmarkModel.xcdatamodeld in Sources */,
+				8B7EAE4820038D7D001C2622 /* CJLFavoriteModel.m in Sources */,
+				8B1CA9BF1FD88F3F001C9C13 /* UIColor+CJLColor.m in Sources */,
 				8B40F2321F98CAD400B0D132 /* FavoriteViewController.m in Sources */,
 				8BB429BA1F7A6D4000AE5B19 /* ExpandableTableViewHeader.m in Sources */,
 				8BB429C01F7BFBA000AE5B19 /* ContentsTableViewController.m in Sources */,

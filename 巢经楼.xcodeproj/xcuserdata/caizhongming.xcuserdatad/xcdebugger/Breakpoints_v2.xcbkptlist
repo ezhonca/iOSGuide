@@ -730,11 +730,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "&#x5de2;&#x7ecf;&#x697c;/View/CJLTabBar.m"
-            timestampString = "533645784.032972"
+            timestampString = "534287174.773943"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
             landmarkName = "CJLTabBar"
             landmarkType = "3">
          </BreakpointContent>
@@ -746,11 +746,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "&#x5de2;&#x7ecf;&#x697c;/View/CJLTabBar.m"
-            timestampString = "533645784.03306"
+            timestampString = "534287174.774014"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
             landmarkName = "CJLTabBar"
             landmarkType = "3">
             <Locations>
@@ -794,11 +794,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "&#x5de2;&#x7ecf;&#x697c;/Controller/FirstVCRelated/KnowledgeViewController.m"
-            timestampString = "533844469.544417"
+            timestampString = "537119205.256397"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "245"
-            endingLineNumber = "245"
+            startingLineNumber = "251"
+            endingLineNumber = "251"
             landmarkName = "-collectionView:moveItemAtIndexPath:toIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
@@ -810,11 +810,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "&#x5de2;&#x7ecf;&#x697c;/Controller/FirstVCRelated/KnowledgeViewController.m"
-            timestampString = "533844469.544608"
+            timestampString = "537119205.256494"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
             landmarkName = "-subjectArray"
             landmarkType = "7">
          </BreakpointContent>
@@ -826,11 +826,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "&#x5de2;&#x7ecf;&#x697c;/Controller/FirstVCRelated/KnowledgeViewController.m"
-            timestampString = "533844469.544722"
+            timestampString = "537119205.256554"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "197"
-            endingLineNumber = "197"
+            startingLineNumber = "203"
+            endingLineNumber = "203"
             landmarkName = "-collectionView:cellForItemAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
@@ -842,11 +842,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "&#x5de2;&#x7ecf;&#x697c;/Controller/FirstVCRelated/KnowledgeViewController.m"
-            timestampString = "533844469.544825"
+            timestampString = "537119205.256606"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "199"
-            endingLineNumber = "199"
+            startingLineNumber = "205"
+            endingLineNumber = "205"
             landmarkName = "-collectionView:cellForItemAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
@@ -858,11 +858,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "&#x5de2;&#x7ecf;&#x697c;/Controller/FirstVCRelated/KnowledgeViewController.m"
-            timestampString = "533844469.544913"
+            timestampString = "537119205.2566561"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "198"
-            endingLineNumber = "198"
+            startingLineNumber = "204"
+            endingLineNumber = "204"
             landmarkName = "-collectionView:cellForItemAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
@@ -874,11 +874,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "&#x5de2;&#x7ecf;&#x697c;/Controller/FirstVCRelated/KnowledgeViewController.m"
-            timestampString = "533844469.545012"
+            timestampString = "537119205.256709"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "-subjectColorDic"
             landmarkType = "7">
          </BreakpointContent>
@@ -890,39 +890,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "&#x5de2;&#x7ecf;&#x697c;/Controller/FirstVCRelated/KnowledgeViewController.m"
-            timestampString = "533844469.545102"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "-subjectColorDic"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "&#x5de2;&#x7ecf;&#x697c;/Controller/FirstVCRelated/KnowledgeViewController.m"
-            timestampString = "533844469.54519"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "-subjectColorDic"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "&#x5de2;&#x7ecf;&#x697c;/Controller/FirstVCRelated/KnowledgeViewController.m"
-            timestampString = "533844469.545276"
+            timestampString = "537119205.256773"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "39"
@@ -937,8 +905,40 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
+            filePath = "&#x5de2;&#x7ecf;&#x697c;/Controller/FirstVCRelated/KnowledgeViewController.m"
+            timestampString = "537119205.256824"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "-subjectColorDic"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "&#x5de2;&#x7ecf;&#x697c;/Controller/FirstVCRelated/KnowledgeViewController.m"
+            timestampString = "537119205.256874"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "-subjectColorDic"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
             filePath = "&#x5de2;&#x7ecf;&#x697c;/View/CJLTabBar.m"
-            timestampString = "533645784.033373"
+            timestampString = "534287174.774916"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "81"
@@ -954,7 +954,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "&#x5de2;&#x7ecf;&#x697c;/View/CJLPopMenuView.m"
-            timestampString = "534119057.746999"
+            timestampString = "537020864.763706"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "91"
@@ -1002,7 +1002,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "&#x5de2;&#x7ecf;&#x697c;/View/CJLPopMenuView.m"
-            timestampString = "534119057.747059"
+            timestampString = "537020864.763759"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "86"
@@ -1018,7 +1018,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "&#x5de2;&#x7ecf;&#x697c;/View/CJLPopMenuView.m"
-            timestampString = "534119057.747109"
+            timestampString = "537020864.763806"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "89"
@@ -1034,7 +1034,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "&#x5de2;&#x7ecf;&#x697c;/View/CJLPopMenuView.m"
-            timestampString = "534119057.747157"
+            timestampString = "537020864.763851"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "93"
@@ -1050,7 +1050,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "&#x5de2;&#x7ecf;&#x697c;/View/CJLPopMenuView.m"
-            timestampString = "534119057.747203"
+            timestampString = "537020864.763894"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "51"
@@ -1066,7 +1066,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "&#x5de2;&#x7ecf;&#x697c;/View/CJLTabBar.m"
-            timestampString = "533645784.033814"
+            timestampString = "534287174.775309"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "34"
@@ -1082,7 +1082,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "&#x5de2;&#x7ecf;&#x697c;/View/CJLTabBar.m"
-            timestampString = "533645784.033876"
+            timestampString = "534287174.775369"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "47"
@@ -1098,7 +1098,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "&#x5de2;&#x7ecf;&#x697c;/View/CJLTabBar.m"
-            timestampString = "533645784.033934"
+            timestampString = "534287174.775424"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "40"
@@ -1114,7 +1114,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "&#x5de2;&#x7ecf;&#x697c;/View/CJLTabBar.m"
-            timestampString = "533645784.033991"
+            timestampString = "534287174.775476"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "49"
@@ -1130,7 +1130,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "&#x5de2;&#x7ecf;&#x697c;/View/CJLTabBar.m"
-            timestampString = "533645784.034048"
+            timestampString = "534287174.775528"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "50"
@@ -1146,7 +1146,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "&#x5de2;&#x7ecf;&#x697c;/View/CJLPopMenuView.m"
-            timestampString = "534119057.747467"
+            timestampString = "537020864.764149"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "177"

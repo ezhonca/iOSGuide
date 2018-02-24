@@ -1,6 +1,6 @@
 //
 //  AppDelegate.m
-//  iOS宝典
+//  巢经楼
 //
 //  Created by 蔡钟鸣 on 2017/9/20.
 //  Copyright © 2017年 蔡钟鸣. All rights reserved.
@@ -29,9 +29,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     //UITabBarController *rootVC = (UITabBarController *)self.window.rootViewController;
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    FavoriteViewController *favoriteVC = [storyboard instantiateViewControllerWithIdentifier:@"favoriteVC"];
-    favoriteVC.managedObjectContext = self.persistentContainer.viewContext;
+//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//    FavoriteViewController *favoriteVC = [storyboard instantiateViewControllerWithIdentifier:@"favoriteVC"];
+    //favoriteVC.managedObjectContext = self.persistentContainer.viewContext;
     
     
     return YES;
