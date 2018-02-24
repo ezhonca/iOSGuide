@@ -42,6 +42,7 @@
 		8BB429C01F7BFBA000AE5B19 /* ContentsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB429BF1F7BFBA000AE5B19 /* ContentsTableViewController.m */; };
 		8BC418ED2041C2770075BE7A /* Favorite.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BC418EC2041C2770075BE7A /* Favorite.storyboard */; };
 		8BC418EF2041CAA30075BE7A /* Knowledge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BC418EE2041CAA30075BE7A /* Knowledge.storyboard */; };
+		8BC418F12041CCD80075BE7A /* Memory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BC418F02041CCD80075BE7A /* Memory.storyboard */; };
 		8BED3C941F7C326100D8EFBB /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BED3C931F7C326100D8EFBB /* WebViewController.m */; };
 		8BF24C051F99CC7F00A223BD /* BookmarkHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BF24C041F99CC7F00A223BD /* BookmarkHandle.m */; };
 		8BF9EBF01FD0D5D200DDEFDF /* CJL.db in Resources */ = {isa = PBXBuildFile; fileRef = 8BF9EBEF1FD0D5D200DDEFDF /* CJL.db */; };
@@ -114,6 +115,7 @@
 		8BB429BF1F7BFBA000AE5B19 /* ContentsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentsTableViewController.m; sourceTree = "<group>"; };
 		8BC418EC2041C2770075BE7A /* Favorite.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Favorite.storyboard; sourceTree = "<group>"; };
 		8BC418EE2041CAA30075BE7A /* Knowledge.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Knowledge.storyboard; sourceTree = "<group>"; };
+		8BC418F02041CCD80075BE7A /* Memory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Memory.storyboard; sourceTree = "<group>"; };
 		8BED3C921F7C326100D8EFBB /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		8BED3C931F7C326100D8EFBB /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		8BF24C031F99CC7F00A223BD /* BookmarkHandle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookmarkHandle.h; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 				8BADE9961F722B46009BB78E /* Info.plist */,
 				8BADE9AF1F739F48009BB78E /* pathData.plist */,
 				8BADE98E1F722B46009BB78E /* Main.storyboard */,
+				8BC418F02041CCD80075BE7A /* Memory.storyboard */,
 				8BC418EE2041CAA30075BE7A /* Knowledge.storyboard */,
 				8BC418EC2041C2770075BE7A /* Favorite.storyboard */,
 				8BADE9821F722B46009BB78E /* Supporting Files */,
@@ -397,6 +400,7 @@
 				8BF9EBF01FD0D5D200DDEFDF /* CJL.db in Resources */,
 				8BC418ED2041C2770075BE7A /* Favorite.storyboard in Resources */,
 				8BC418EF2041CAA30075BE7A /* Knowledge.storyboard in Resources */,
+				8BC418F12041CCD80075BE7A /* Memory.storyboard in Resources */,
 				8BADE9921F722B46009BB78E /* Assets.xcassets in Resources */,
 				8BADE9901F722B46009BB78E /* Main.storyboard in Resources */,
 				8B3C9A0E1FA114CC0041A66F /* Default-568h@2x.png in Resources */,
