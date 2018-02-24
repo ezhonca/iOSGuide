@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1G4-Fw-IHh">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Favorite View Controller-->
+        <scene sceneID="b3p-hS-btZ">
+            <objects>
+                <tableViewController storyboardIdentifier="favoriteVC" id="1G4-Fw-IHh" customClass="FavoriteViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="gaW-s9-MO8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FavoriteTableViewCell" rowHeight="80" id="dzP-pp-2K6" customClass="CJLFavoriteTableViewCell">
+                                <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dzP-pp-2K6" id="ZqQ-6m-Urp">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5RY-yC-Jo0">
+                                            <rect key="frame" x="16" y="57" width="26.5" height="12"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                            <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="5RY-yC-Jo0" firstAttribute="leading" secondItem="ZqQ-6m-Urp" secondAttribute="leading" constant="16" id="9y8-j9-0Fx"/>
+                                        <constraint firstAttribute="bottom" secondItem="5RY-yC-Jo0" secondAttribute="bottom" constant="11" id="JWt-Mj-Hde"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="addTimeLabel" destination="5RY-yC-Jo0" id="6Jd-um-8Pd"/>
+                                    <segue destination="1kB-YW-RxF" kind="show" identifier="ShowWebFromFavorite" id="C4L-nh-d8X"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="1G4-Fw-IHh" id="inL-Dd-ddK"/>
+                            <outlet property="delegate" destination="1G4-Fw-IHh" id="WuA-Km-uHc"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="5Y6-Ls-0ku"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cmn-Yv-f1K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1257" y="545"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="Z4z-AP-2x3">
+            <objects>
+                <viewController id="1kB-YW-RxF" customClass="WebViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8Qo-Ug-ZYw"/>
+                        <viewControllerLayoutGuide type="bottom" id="H1S-gp-Vpv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="USm-6h-5mA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="6lJ-9c-X1q"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LZo-Yf-L2m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2252" y="545"/>
+        </scene>
+    </scenes>
+</document>

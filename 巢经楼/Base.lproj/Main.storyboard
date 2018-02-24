@@ -91,7 +91,6 @@
                     <connections>
                         <outlet property="grid" destination="J0D-fE-kiD" id="QVd-iT-iQB"/>
                         <outlet property="searchBarView" destination="D9o-wZ-eRW" id="ryK-o5-c1j"/>
-                        <segue destination="eUs-lo-hES" kind="show" identifier="SearchResultToWebView" id="Pvm-L8-Z1M"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -127,7 +126,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="62K-PI-7xQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3364" y="457.42128935532236"/>
+            <point key="canvasLocation" x="2351" y="-321"/>
         </scene>
         <!--Contents Table View Controller-->
         <scene sceneID="xPS-GI-qRM">
@@ -158,7 +157,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vYc-kP-chB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4385" y="-321"/>
+            <point key="canvasLocation" x="3076" y="-322"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="iK5-ZH-8rA">
@@ -176,52 +175,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hwK-Qn-MrW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3198" y="-829"/>
-        </scene>
-        <!--Favorite View Controller-->
-        <scene sceneID="8uJ-nN-Iu5">
-            <objects>
-                <tableViewController storyboardIdentifier="favoriteVC" id="R0K-tu-Qog" customClass="FavoriteViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="X2s-ib-Ct7">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FavoriteTableViewCell" rowHeight="80" id="BLG-oS-p7s" customClass="CJLFavoriteTableViewCell">
-                                <rect key="frame" x="0.0" y="28" width="375" height="80"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BLG-oS-p7s" id="Yfl-Gz-v7f">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jq1-zK-guU">
-                                            <rect key="frame" x="16" y="57" width="26.5" height="12"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                            <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="jq1-zK-guU" secondAttribute="bottom" constant="11" id="LnO-Rc-B71"/>
-                                        <constraint firstItem="jq1-zK-guU" firstAttribute="leading" secondItem="Yfl-Gz-v7f" secondAttribute="leading" constant="16" id="sJT-7K-h5L"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="addTimeLabel" destination="jq1-zK-guU" id="P1g-g2-5Hd"/>
-                                    <segue destination="eUs-lo-hES" kind="show" identifier="ShowWebFromFavorite" id="glX-hG-Jee"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="R0K-tu-Qog" id="S8c-h1-1TC"/>
-                            <outlet property="delegate" destination="R0K-tu-Qog" id="hmN-Kz-JPG"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="usX-gY-Rsm"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dyg-DD-eCa" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1564" y="544.67766116941539"/>
+            <point key="canvasLocation" x="3809" y="-322"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -288,12 +242,22 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="R0K-tu-Qog" kind="relationship" relationship="rootViewController" id="cDK-6B-Hde"/>
+                        <segue destination="8BK-il-Q1R" kind="relationship" relationship="rootViewController" id="yPj-T7-254"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m8D-IL-owH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-105.59999999999999" y="545.1274362818591"/>
+            <point key="canvasLocation" x="-167" y="597"/>
+        </scene>
+        <!--Favorite-->
+        <scene sceneID="nU9-vI-aEY">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Favorite" id="8BK-il-Q1R" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="efg-M7-K8d"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r8I-tU-8Fs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="678" y="596"/>
         </scene>
         <!--我的-->
         <scene sceneID="XxK-dH-eDO">
@@ -321,7 +285,4 @@
         <image name="my" width="16" height="15"/>
         <image name="tab2-doctorshow" width="24" height="24"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="glX-hG-Jee"/>
-    </inferredMetricsTieBreakers>
 </document>
