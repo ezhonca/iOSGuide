@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface CJLWaterfallLayout : UICollectionViewLayout
+@property (nonatomic, strong) NSArray<NSNumber *> *cellHeightArray;
 
-
-
+-(instancetype)initWithCellHeightArray:(NSArray<NSNumber *> *)cellHeightArray;
 @end

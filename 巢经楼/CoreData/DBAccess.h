@@ -21,4 +21,5 @@
 +(BOOL)getFavoriteWithName:(CJLTipModel *)tipModel;
 +(BOOL)deleteFavoriteWithName:(NSString *)name;
 +(NSMutableArray<CJLFavoriteModel *> *)getAllFavorites;
++(NSArray<CJLTipModel *> *)getRandomTips:(NSString *)numOfCells;
 @end

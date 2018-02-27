@@ -113,18 +113,22 @@
         <!--回忆-->
         <scene sceneID="qcn-DB-oFl">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VYs-Qb-GRQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tnl-QT-rva" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="回忆" image="my" id="2yM-Vn-hGy"/>
+                    <tabBarItem key="tabBarItem" title="回忆" image="memory" id="2yM-Vn-hGy"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tAX-eH-dH9">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="tAX-eH-dH9">
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <color key="textColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
                         <segue destination="xLT-1w-HG4" kind="relationship" relationship="rootViewController" id="Lim-IC-thg"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VYs-Qb-GRQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="378" y="-1103"/>
         </scene>
@@ -147,7 +151,7 @@
     <resources>
         <image name="favorate" width="16" height="16"/>
         <image name="library" width="16" height="16"/>
-        <image name="my" width="16" height="15"/>
+        <image name="memory" width="24" height="24"/>
         <image name="tab2-doctorshow" width="24" height="24"/>
     </resources>
 </document>

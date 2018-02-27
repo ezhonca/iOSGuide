@@ -28,8 +28,24 @@
 //}
 +(FMDatabase *)getDatabase
 {
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"CJL" ofType:@"db"];
-    return [FMDatabase databaseWithPath:path];
+    NSString *docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString *filename = [docPath stringByAppendingPathComponent:@"CJL.db"];
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    if(![fileManager fileExistsAtPath:filename]){
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"CJL" ofType:@"db"];
+        NSError *error;
+        if ([fileManager copyItemAtPath:path toPath:filename error:&error]) {
+            NSLog(@"数据库移动成功");
+        } else {
+            NSLog(@"数据库移动失败");
+        }
+        //[fileManager copyItemAtPath:path toPath:filename error:error];
+    }
+    
+    
+    
+    return [FMDatabase databaseWithPath:filename];
 }
 
 +(NSArray *)getAllSubjects
@@ -198,6 +214,25 @@
         [database close];
     }
     return allFavoriteArray;
+}
+
++(NSArray<CJLTipModel *> *)getRandomTips:(NSString *)numOfCells
+{
+    NSMutableArray<CJLTipModel *> *tipsArray = [[NSMutableArray alloc] init];
+    FMDatabase *database = [self getDatabase];
+    if([database open]){
+        //NSString *sql = [NSString stringWithFormat:@"select name,sourceType,URL from tip order by random() limit ?", numOfCells];
+        FMResultSet *rs = [database executeQuery:@"select name,sourceType,URL from tip order by random() limit ?", numOfCells];
+        while([rs next]){
+            NSString *name = [rs stringForColumn:@"name"];
+            CJLTipViewType type = [rs intForColumn:@"sourceType"];
+            NSString *URL = [rs stringForColumn:@"URL"];
+            CJLTipModel *tipModel = [[CJLTipModel alloc] initWithName:name andType:type andURL:URL];
+            [tipsArray addObject:tipModel];
+        }
+        [database close];
+    }
+    return tipsArray;
 }
 
 @end

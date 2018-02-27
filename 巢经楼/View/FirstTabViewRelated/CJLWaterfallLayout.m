@@ -11,7 +11,7 @@
 static const NSInteger DEFAULTCOLUMNCOUNT = 2;
 static const CGFloat DEFAULTCOLUMNMARGIN = 5;
 static const CGFloat DEFAULTROWMARGIN = 5;
-static const UIEdgeInsets DEFAULTEDGEINSETS = {10, 5, 5, 5};
+static const UIEdgeInsets DEFAULTEDGEINSETS = {5, 5, 5, 5};
 
 @interface CJLWaterfallLayout()
 
@@ -42,7 +42,8 @@ static const UIEdgeInsets DEFAULTEDGEINSETS = {10, 5, 5, 5};
 -(void)prepareLayout
 {
     [super prepareLayout];
-    
+    //self.headerReferenceSize = CGSizeMake(200, 200);
+    //self.footerReferenceSize = CGSizeMake(200, 200);
     self.contentHeight = 0;
     //清空column高度数据并初始化
     [self.columnHeights removeAllObjects];
@@ -55,6 +56,8 @@ static const UIEdgeInsets DEFAULTEDGEINSETS = {10, 5, 5, 5};
     for(NSInteger i = 0; i < cellsNum; i++){
         [self.attriArray addObject:[self layoutAttributesForItemAtIndexPath:[NSIndexPath indexPathForItem:i inSection:0]]];
     }
+    
+    
 }
 
 -(NSArray<UICollectionViewLayoutAttributes *> *)layoutAttributesForElementsInRect:(CGRect)rect
@@ -69,7 +72,8 @@ static const UIEdgeInsets DEFAULTEDGEINSETS = {10, 5, 5, 5};
     UICollectionViewLayoutAttributes * attri = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
     //获取item的高度和宽度
     CGFloat itemWidth = (self.collectionView.frame.size.width - DEFAULTEDGEINSETS.left - DEFAULTEDGEINSETS.right - (DEFAULTCOLUMNCOUNT -1)*DEFAULTCOLUMNMARGIN) / DEFAULTCOLUMNCOUNT;
-    CGFloat itemHeight = arc4random()%100 + 100;
+    //CGFloat itemHeight = arc4random()%100 + 100;
+    CGFloat itemHeight = [self.cellHeightArray[indexPath.row] doubleValue];
     //找出高度最低的column
     __block NSInteger destColumn = 0;
     __block CGFloat minColumnHeight = [self.columnHeights[0] doubleValue];
@@ -102,6 +106,12 @@ static const UIEdgeInsets DEFAULTEDGEINSETS = {10, 5, 5, 5};
     return CGSizeMake(0, self.contentHeight + DEFAULTEDGEINSETS.bottom);
 }
 
-
+-(instancetype)initWithCellHeightArray:(NSArray<NSNumber *> *)cellHeightArray
+{
+    if(self = [super init]){
+        _cellHeightArray = cellHeightArray;
+    }
+    return self;
+}
 
 @end

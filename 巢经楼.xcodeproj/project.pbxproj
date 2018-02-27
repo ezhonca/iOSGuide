@@ -43,6 +43,8 @@
 		8BC418ED2041C2770075BE7A /* Favorite.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BC418EC2041C2770075BE7A /* Favorite.storyboard */; };
 		8BC418EF2041CAA30075BE7A /* Knowledge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BC418EE2041CAA30075BE7A /* Knowledge.storyboard */; };
 		8BC418F12041CCD80075BE7A /* Memory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BC418F02041CCD80075BE7A /* Memory.storyboard */; };
+		8BC418F82042725B0075BE7A /* MemoryCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC418F72042725B0075BE7A /* MemoryCollectionViewController.m */; };
+		8BC418FB20430D070075BE7A /* MemoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC418FA20430D070075BE7A /* MemoryViewController.m */; };
 		8BED3C941F7C326100D8EFBB /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BED3C931F7C326100D8EFBB /* WebViewController.m */; };
 		8BF24C051F99CC7F00A223BD /* BookmarkHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BF24C041F99CC7F00A223BD /* BookmarkHandle.m */; };
 		8BF9EBF01FD0D5D200DDEFDF /* CJL.db in Resources */ = {isa = PBXBuildFile; fileRef = 8BF9EBEF1FD0D5D200DDEFDF /* CJL.db */; };
@@ -116,6 +118,10 @@
 		8BC418EC2041C2770075BE7A /* Favorite.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Favorite.storyboard; sourceTree = "<group>"; };
 		8BC418EE2041CAA30075BE7A /* Knowledge.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Knowledge.storyboard; sourceTree = "<group>"; };
 		8BC418F02041CCD80075BE7A /* Memory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Memory.storyboard; sourceTree = "<group>"; };
+		8BC418F62042725B0075BE7A /* MemoryCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MemoryCollectionViewController.h; sourceTree = "<group>"; };
+		8BC418F72042725B0075BE7A /* MemoryCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MemoryCollectionViewController.m; sourceTree = "<group>"; };
+		8BC418F920430D070075BE7A /* MemoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MemoryViewController.h; sourceTree = "<group>"; };
+		8BC418FA20430D070075BE7A /* MemoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MemoryViewController.m; sourceTree = "<group>"; };
 		8BED3C921F7C326100D8EFBB /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		8BED3C931F7C326100D8EFBB /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		8BF24C031F99CC7F00A223BD /* BookmarkHandle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookmarkHandle.h; sourceTree = "<group>"; };
@@ -171,13 +177,14 @@
 			children = (
 				8BED3C921F7C326100D8EFBB /* WebViewController.h */,
 				8BED3C931F7C326100D8EFBB /* WebViewController.m */,
-				8B40F21B1F97D9ED00B0D132 /* FirstVCRelated */,
-				8B40F21C1F97D9ED00B0D132 /* SecondVCRelated */,
+				8B40F21B1F97D9ED00B0D132 /* KnowledgeVCRelated */,
+				8B40F21C1F97D9ED00B0D132 /* FavoriteVCRelated */,
+				8BC418F2204271D90075BE7A /* MemoryVCRelated */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		8B40F21B1F97D9ED00B0D132 /* FirstVCRelated */ = {
+		8B40F21B1F97D9ED00B0D132 /* KnowledgeVCRelated */ = {
 			isa = PBXGroup;
 			children = (
 				8BADE99C1F728035009BB78E /* KnowledgeViewController.h */,
@@ -191,10 +198,10 @@
 				8BB429BE1F7BFBA000AE5B19 /* ContentsTableViewController.h */,
 				8BB429BF1F7BFBA000AE5B19 /* ContentsTableViewController.m */,
 			);
-			path = FirstVCRelated;
+			path = KnowledgeVCRelated;
 			sourceTree = "<group>";
 		};
-		8B40F21C1F97D9ED00B0D132 /* SecondVCRelated */ = {
+		8B40F21C1F97D9ED00B0D132 /* FavoriteVCRelated */ = {
 			isa = PBXGroup;
 			children = (
 				8B40F2301F98CAD400B0D132 /* FavoriteViewController.h */,
@@ -202,7 +209,7 @@
 				8BADE98B1F722B46009BB78E /* SecondViewController.h */,
 				8BADE98C1F722B46009BB78E /* SecondViewController.m */,
 			);
-			path = SecondVCRelated;
+			path = FavoriteVCRelated;
 			sourceTree = "<group>";
 		};
 		8B40F21D1F97D9FC00B0D132 /* FirstTabViewRelated */ = {
@@ -309,6 +316,17 @@
 				8B40F21D1F97D9FC00B0D132 /* FirstTabViewRelated */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		8BC418F2204271D90075BE7A /* MemoryVCRelated */ = {
+			isa = PBXGroup;
+			children = (
+				8BC418F62042725B0075BE7A /* MemoryCollectionViewController.h */,
+				8BC418F72042725B0075BE7A /* MemoryCollectionViewController.m */,
+				8BC418F920430D070075BE7A /* MemoryViewController.h */,
+				8BC418FA20430D070075BE7A /* MemoryViewController.m */,
+			);
+			path = MemoryVCRelated;
 			sourceTree = "<group>";
 		};
 		8BF24C021F99CB5800A223BD /* CoreData */ = {
@@ -478,6 +496,7 @@
 				8B4C75EE1F8C35CC009160DC /* CONSTFile.m in Sources */,
 				8B43B5FB1FC8684800ABD0B5 /* CJLWaterfallLayout.m in Sources */,
 				8B3A4E121F7E6689006CFEBC /* SearchResultTableViewController.m in Sources */,
+				8BC418FB20430D070075BE7A /* MemoryViewController.m in Sources */,
 				8BADE98D1F722B46009BB78E /* SecondViewController.m in Sources */,
 				8B1CA9B61FD5FF34001C9C13 /* CJLTipView.m in Sources */,
 				8BADE9B61F73BC64009BB78E /* KnowledgeDetailTableViewController.m in Sources */,
@@ -498,6 +517,7 @@
 				8B3A4E241F7F7F57006CFEBC /* UIView+FrameExtension.m in Sources */,
 				8BF9EBF31FD0D63200DDEFDF /* DBAccess.m in Sources */,
 				8B4B95CC1FC7367800FEB4F6 /* CJLTabBar.m in Sources */,
+				8BC418F82042725B0075BE7A /* MemoryCollectionViewController.m in Sources */,
 				8B3A4E201F7EC70B006CFEBC /* SearchSuggestionTableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

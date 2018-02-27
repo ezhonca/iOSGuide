@@ -85,19 +85,18 @@ int const popItemNum = 3;
 {
     if(self = [super initWithFrame:frame]){
         //self.backgroundColor = [UIColor redColor];
-        
         //self.frame = frame;
         UIVisualEffectView *blurView = [[UIVisualEffectView alloc] initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleLight]];
         blurView.frame = self.frame;
         [self addSubview:blurView];
         UIView *maskView = [[UIView alloc] initWithFrame:blurView.frame];
-        maskView.backgroundColor = [[UIColor orangeColor]colorWithAlphaComponent:0.6];
+        maskView.backgroundColor = [[UIColor orangeColor] colorWithAlphaComponent:0.6];
         maskView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         [blurView.contentView addSubview:maskView];
         
         UILabel *lab = [[UILabel alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
         lab.text = @"111";
-        [self addSubview:lab];
+        //[self addSubview:lab];
         //self.opaque = YES;
         //添加点击手势关闭view
         UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
